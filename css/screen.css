@@ -77,10 +77,26 @@ ul.posts {
 /* Site
 /*
 /*****************************************************************************/
-
 .site {
-  margin: 3em auto 2em auto;
-  line-height: 1.5em;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .site {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .site {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .site {
+    width: 1170px;
+  }
 }
 
 .site img {
@@ -127,7 +143,6 @@ ul.posts {
   }
 
     .site .footer .contact {
-      float: left;
       margin-right: 3em;
     }
 
