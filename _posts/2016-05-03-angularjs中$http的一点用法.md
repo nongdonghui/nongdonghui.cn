@@ -1,3 +1,12 @@
+---
+layout: post
+title: angularjs中$http的一点用法
+---
+
+{{ page.title }}
+================
+
+<p class="meta">03 May 2016 - Nanjing</p>
 > angularjs使用$http简单的封装了js原生的XMLHttpRequest对象
 ### 链式调用
 ```javascript
