@@ -14,6 +14,13 @@ li:not(:last-child) {
   margin-bottom: 18px;
 }
 
+h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
 ul.posts {
   list-style-type: none;
   margin-bottom: 2em;
