@@ -18,8 +18,6 @@ html, body {
 body {
   background-color: white;
   font: 13.34px helvetica, arial, clean, sans-serif;
-  *font-size: small;
-  text-align: center;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -69,7 +67,6 @@ ul.posts {
   ul.posts span {
     color: #aaa;
     font-family: Monaco, "Courier New", monospace;
-    font-size: 80%;
   }
 
 /*****************************************************************************/
