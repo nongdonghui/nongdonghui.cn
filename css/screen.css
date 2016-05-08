@@ -6,6 +6,7 @@ html, body {
 
 body {
   margin: 0;
+  line-height: 1.42857143;
 }
 
 ul.posts {
