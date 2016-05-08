@@ -87,6 +87,7 @@ ul.posts li {
   }
 
     .site .footer .contact {
+      float: left;
       margin-right: 3em;
     }
 
