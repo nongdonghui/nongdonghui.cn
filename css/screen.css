@@ -160,44 +160,44 @@ ul.posts {
 
   /* standard */
 
-  #post pre {
+  /* #post pre {
      border: 1px solid #ddd;
     background-color: #eef; 
     padding: 0 .4em;
   }
-
+  
   #post ul,
   #post ol {
     margin-left: 1.35em;
   }
-
+  
   #post code {
      border: 1px solid #ddd;
     background-color: #eef; 
     font-size: 85%;
     padding: 0 .2em;
   }
-
+  
     
-
-.highlight .lineno { color: #ccc; display:inline-block; padding: 0 5px; border-right:1px solid #ccc; }
-.highlight pre code { display: block; white-space: pre; overflow-x: auto; word-wrap: normal; }
-
-#post pre code {
+  
+  .highlight .lineno { color: #ccc; display:inline-block; padding: 0 5px; border-right:1px solid #ccc; }
+  .highlight pre code { display: block; white-space: pre; overflow-x: auto; word-wrap: normal; }
+  
+  #post pre code {
       border: none;
     }
-
-  /* terminal */
-
+  
+  terminal
+  
   #post pre.terminal {
     border: 1px solid black;
     background-color: #333;
     color: white;
   }
-
+  
   #post pre.terminal code {
     background-color: #333;
-  }
+  } */
 
 #related {
   margin-top: 2em;
