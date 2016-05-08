@@ -822,3 +822,6 @@ li:not(:last-child) {
 .posts li {
   margin-bottom: 0;
 }
+.posts span {
+  color: #aaa;
+}
