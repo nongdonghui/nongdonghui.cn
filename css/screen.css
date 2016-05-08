@@ -6,11 +6,11 @@ html, body {
 
 body {
   margin: 0;
-  line-height: 1.42857143;
+  line-height: 1.6;
 }
 
 li:not(:last-child) {
-    margin-bottom: 10px;
+    margin-bottom: 18px;
 }
 
 ul.posts {
