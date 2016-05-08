@@ -9,36 +9,42 @@ title: angularjs中使用ng-repeat渲染最后一个li的时候设置不同样�
 <p class="meta">2016-05-06 - 南京</p>
 
 如题所示，比如我要在下面的代码的最后一个li节点添加一个样式
-```HTML
+
+```html
 <li ng-repeat="item in items">  
   {{item.name}}  
 </li> 
 ```
 那么我就可以这样加
-```HTML
+
+```html
 <li ng-repeat="item in items" ng-class="{'item-last':$last}">
   {{item.name}}
 </li>
 ```
 还有一种方法就是使用js计算的方法
-```HTML
+
+```html
 <li ng-repeat="item in items" ng-class="isLast($last)">
   {{item.name}}
 </li>
 ```
 Controller中的代码定义是这样
+
 ```js
 $scope.isLast = function(flag) {  
     return flag ? 'item-last' : 'item-not-last';  
 };
 ```
 CSS定义是这样
-```CSS
+
+```css
 .item-last { /* Your Styles */ }
 .item-not-last { /* Your Styles */ }
 ```
 对，这就是一个三元运算，你可以直接在html里面用，像这样
-```HTML
+
+```html
 <li ng-repeat="item in items" ng-class="$last ? 'item-last' : 'item-not-last'">
   {{item.name}}
 </li>
