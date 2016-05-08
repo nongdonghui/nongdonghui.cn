@@ -18,15 +18,7 @@ html, body {
 }
 
 body {
-  line-height: 1.42857143;
-}
-
-h1 {
-  margin-bottom: 1em;
-}
-
-p {
-  margin: 1em 0;
+  margin: 0;
 }
 
 /*****************************************************************************/
@@ -46,7 +38,6 @@ ul.posts {
 
   ul.posts span {
     color: #aaa;
-    font-family: Monaco, "Courier New", monospace;
   }
 
 /*****************************************************************************/
