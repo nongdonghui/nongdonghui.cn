@@ -63,9 +63,11 @@ code {
 	background: #f7f7f7;
 	color: #333;
 	padding: 0 .2em;
+	font-size: inherit;
 }
 code pre {
-	padding: 0 0.5em 0 0.5em !important;	
+	padding: 0 0.5em 0 0.5em !important;
+	font-size: inherit;
 }
 .post > .highlight .lineno {
 	color: #afafaf !important;
@@ -80,4 +82,5 @@ code pre {
 	word-wrap: normal;
 	padding: 5px 0px 5px 10px;
 	line-height: 1.5;
+	font-size: inherit;
 }
