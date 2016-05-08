@@ -99,3 +99,7 @@ ul.posts span {
       .site .footer .contact a {
         color: #8085C1;
       }
+
+.related li:not(:last-child) {
+  margin-bottom: 10px;
+}
