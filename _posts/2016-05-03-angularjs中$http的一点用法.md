@@ -32,7 +32,7 @@ var promise = $http({
 由于$http方法返回一个promise对象，我们可以在响应返回时用then方法来处理回调。  
 如果使用then方法，会得到一个特殊的参数，它代表了相应对象的成功或失败信息，  
 还可以接受两个可选的函数作为参数。或者可以使用success和error回调代替。  
-或者是这样：
+或者是这样：  
 ```javascript
 promise.success(function(data, status, config, headers) {
   //处理成功的响应
