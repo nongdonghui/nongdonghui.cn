@@ -9,5 +9,25 @@ title: welcome to ndh's writer place
     {% for post in site.posts %}
       <li><span>{{ post.date | date: "%Y-%m-%d" }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
-  </ul>   
+  </ul>
+
+  <div class="posts">
+		<h2>Blog Posts</h2>
+		<ul>
+		  {% for post in site.posts %}
+		    {% unless post.next %}
+		      <h3>{{ post.date | date: '%Y %b' }}</h3>
+		    {% else %}
+		      {% capture year %}{{ post.date | date: '%Y %b' }}{% endcapture %}
+		      {% capture nyear %}{{ post.next.date | date: '%Y %b' }}{% endcapture %}
+		      {% if year != nyear %}
+		        <h3>{{ post.date | date: '%Y %b' }}</h3>
+		      {% endif %}
+		    {% endunless %}
+
+		    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+		  {% endfor %}
+		</ul>
+	</div>
+	
 </div>
