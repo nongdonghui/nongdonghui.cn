@@ -35,6 +35,9 @@ ul.posts span {
 }
 
 .site {
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -109,11 +112,4 @@ ul.posts span {
 
 .related li:not(:last-child) {
   margin-bottom: 0;
-}
-.markdown-body {
-    overflow: hidden;
-    font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    word-wrap: break-word;
 }
