@@ -86,6 +86,12 @@ ul.posts {
   line-height: 1.5em;
 }
 
+.site img {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+
 .title {
   color: #a00;
   font-weight: bold;
