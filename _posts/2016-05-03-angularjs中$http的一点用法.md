@@ -48,6 +48,7 @@ then()方法与其他两种方法的主要区别是，它会接收到完整的�
 $http.get('/api/users.json');
 ```
 get(...)方法返回HttpPromise对象，以再发送jsonp请求举例说明： 为了发送JSONP请求，其中url必须包含JSON_CALLBACK字样。jsonp(url, config) 其中config是可选的
+
 ```javascript
 var promise = $http.jsonp('/api/users.json?callback=JSON_CALLBACK');
 ```
@@ -71,6 +72,7 @@ $http({
 
 这个键的值是一个字符串map或对象，会被转换成查询字符串追加在URL后面。如果值不是字符串，会被JSON序列化。  
  比如这个：
+
 ```javascript 
 // 参数会转为?name=ari的形式
 $http({
@@ -83,6 +85,7 @@ $http({
  从AngularJS 1.3开始，它还可以在POST请求里发送二进制数据。  
  要发送一个blob对象，你可以简单地通过使用data参数来传递它。  
  例如：
+
 ```javascript  
 var blob = new Blob(['Hello world'], {type:'text/plain'});
 $http({
@@ -101,6 +104,7 @@ AngularJS传递给then()方法的响应对象包含了五个属性。
 `headers` 这个函数是头信息的getter函数，可以接受一个参数，用来获取对应名字值
 
 例如，用如下代码获取X-Auth-ID的值：
+
 ```javascript  
 $http({
   method: 'GET',
@@ -116,7 +120,8 @@ $http({
 ### 缓存HTTP请求
  默认情况下，$http服务不会对请求进行本地缓存。  
  在发送单独的请求时，我们可以通过向$http请求传入一个布尔值或者一个缓存实例来启用缓存。
-```javascript  
+ 
+```javascript
 $http.get('/api/users.json', {cache: true})
   .success(function(data) {})
   .error(function(data) {});
