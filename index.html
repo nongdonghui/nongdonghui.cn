@@ -4,175 +4,148 @@ title: welcome to ndh's writer place
 ---
 
 <div class="markdown-body">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date: "%Y-%m-%d" }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
+  {%comment%} ++++++++++ We first find start and end years ++++++++++ {%endcomment%}
+	{% assign startYear = 2222 %}
+	{% assign endYear   = 1 %}
 
-  <div class="posts">
-		<h2>Blog Posts</h2>
-		<ul>
-		  {% for post in site.posts %}
-		    {% unless post.next %}
-		      <h3>{{ post.date | date: '%Y %b' }}</h3>
-		    {% else %}
-		      {% capture year %}{{ post.date | date: '%Y %b' }}{% endcapture %}
-		      {% capture nyear %}{{ post.next.date | date: '%Y %b' }}{% endcapture %}
-		      {% if year != nyear %}
-		        <h3>{{ post.date | date: '%Y %b' }}</h3>
-		      {% endif %}
-		    {% endunless %}
+	{% for post in site.posts %}
+	  {%comment%} +++++
+	    "| plus: 0" casts postYear to fixnum, because "post.date | date: "%Y"" is a string
+	    and comparing "2013" with 2012 (string / number) throws an error
+	  +++++ {%endcomment%}
+	  {% assign postYear = post.date | date: "%Y" | plus: 0 %}
 
-		    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-		  {% endfor %}
-		</ul>
-	</div>
+	  {% if postYear > endYear %}{% assign endYear = postYear %}{% endif %}
+	  {% if postYear < startYear %}{% assign startYear = postYear %}{% endif %}
+	{% endfor %}
 
+	{%comment%} +++++++++++++++ build the table +++++++++++++++ {%endcomment%}
 
-	{%comment%} ++++++++++ We first find start and end years ++++++++++ {%endcomment%}
-{% assign startYear = 2222 %}
-{% assign endYear   = 1 %}
+	{% assign tableContent = "<tr><th></th><th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jun</th><th>Jul</th><th>Aug</th><th>Sep</th><th>Oct</th><th>Nov</th><th>Dec</th></tr>" %}
 
-{% for post in site.posts %}
-  {%comment%} +++++
-    "| plus: 0" casts postYear to fixnum, because "post.date | date: "%Y"" is a string
-    and comparing "2013" with 2012 (string / number) throws an error
-  +++++ {%endcomment%}
-  {% assign postYear = post.date | date: "%Y" | plus: 0 %}
+	{%comment%} +++++
+	  currentPostIndex is used to loop over post in an efficient way
+	  Knowing that posts a sorted by date, we don't need to loop over
+	  all posts each time we want to inspect them.
+	  Instead we only loop through posts we don't already inspect.
+	+++++ {%endcomment%}
+	{% assign currentPostIndex = 0 %}
 
-  {% if postYear > endYear %}{% assign endYear = postYear %}{% endif %}
-  {% if postYear < startYear %}{% assign startYear = postYear %}{% endif %}
-{% endfor %}
+	{%comment%} +++++ site.posts array is zero numbered, so last index = size-1 +++++ {%endcomment%}
+	{% assign lastPostIndex = site.posts.size | minus: 1 %}
 
-{%comment%} +++++++++++++++ build the table +++++++++++++++ {%endcomment%}
+	{%comment%} +++++ Looping trough years in REVERSE order +++++ {%endcomment%}
+	{% for year in (startYear...endYear) reversed %}
 
-{% assign tableContent = "<tr><th></th><th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jun</th><th>Jul</th><th>Aug</th><th>Sep</th><th>Oct</th><th>Nov</th><th>Dec</th></tr>" %}
+	  {% assign yearRow = "<tr><th>" | append: year | append: "</th>" %}
 
-{%comment%} +++++
-  currentPostIndex is used to loop over post in an efficient way
-  Knowing that posts a sorted by date, we don't need to loop over
-  all posts each time we want to inspect them.
-  Instead we only loop through posts we don't already inspect.
-+++++ {%endcomment%}
-{% assign currentPostIndex = 0 %}
+	  {%comment%} +++++ Trick to create an empty array +++++ {%endcomment%}
+	  {% assign yearCellsArray = "" | split: "/" %}
 
-{%comment%} +++++ site.posts array is zero numbered, so last index = size-1 +++++ {%endcomment%}
-{% assign lastPostIndex = site.posts.size | minus: 1 %}
+	  {%comment%} +++++ Looping over month reversed +++++ {%endcomment%}
+	  {% for month in (1...12) reversed %}
 
-{%comment%} +++++ Looping trough years in REVERSE order +++++ {%endcomment%}
-{% for year in (startYear...endYear) reversed %}
+	    {% assign postsThisYearMonth = 0 %}
+	    {% assign monthCell = "<td>" %}
 
-  {% assign yearRow = "<tr><th>" | append: year | append: "</th>" %}
+	    {% for postIndex in (currentPostIndex...lastPostIndex) %}
 
-  {%comment%} +++++ Trick to create an empty array +++++ {%endcomment%}
-  {% assign yearCellsArray = "" | split: "/" %}
+	      {% assign p      = site.posts[postIndex] %}
+	      {% assign pYear  = p.date | date: "%Y" | plus: 0 %}
+	      {% assign pMonth = p.date | date: "%m" | plus: 0 %}
 
-  {%comment%} +++++ Looping over month reversed +++++ {%endcomment%}
-  {% for month in (1...12) reversed %}
+	      {% if pYear == year and pMonth == month %}
+	        {% assign postsThisYearMonth = postsThisYearMonth | plus: 1 %}
+	      {% else %}
+	        {%comment%} +++++ Here we stop the loop +++++ {%endcomment%}
+	        {% assign currentPostIndex = postIndex %}
+	        {% break %}
+	      {% endif %}
 
-    {% assign postsThisYearMonth = 0 %}
-    {% assign monthCell = "<td>" %}
+	    {% endfor %}
 
-    {% for postIndex in (currentPostIndex...lastPostIndex) %}
+	    {% if postsThisYearMonth > 0 %}
+	      {% assign linkTargetId = "#" | append: year | append: "-" | append: month %}
+	      {% assign linkStart    = "<a href='" | append: linkTargetId | append: "'>" %}
+	      {% assign linkEnd      = "</a>" %}
+	      {% assign cellContent  = linkStart | append: postsThisYearMonth | append: linkEnd %}
+	    {% else %}
+	      {% assign cellContent  = "&nbsp" %}
+	    {% endif %}
 
-      {% assign p      = site.posts[postIndex] %}
-      {% assign pYear  = p.date | date: "%Y" | plus: 0 %}
-      {% assign pMonth = p.date | date: "%m" | plus: 0 %}
+	    {% assign monthCell = monthCell | append: cellContent | append: "</td>" %}
+	    {% assign yearCellsArray = yearCellsArray | unshift: monthCell %}
 
-      {% if pYear == year and pMonth == month %}
-        {% assign postsThisYearMonth = postsThisYearMonth | plus: 1 %}
-      {% else %}
-        {%comment%} +++++ Here we stop the loop +++++ {%endcomment%}
-        {% assign currentPostIndex = postIndex %}
-        {% break %}
-      {% endif %}
+	  {% endfor %}
 
-    {% endfor %}
+	  {% assign yearCells = yearCellsArray | join: "" %}
+	  {% assign yearRow = yearRow | append: yearCells | append: "</tr>" %}
+	  {% assign tableContent = tableContent | append: yearRow %}
 
-    {% if postsThisYearMonth > 0 %}
-      {% assign linkTargetId = "#" | append: year | append: "-" | append: month %}
-      {% assign linkStart    = "<a href='" | append: linkTargetId | append: "'>" %}
-      {% assign linkEnd      = "</a>" %}
-      {% assign cellContent  = linkStart | append: postsThisYearMonth | append: linkEnd %}
-    {% else %}
-      {% assign cellContent  = "&nbsp" %}
-    {% endif %}
+	{% endfor %}
 
-    {% assign monthCell = monthCell | append: cellContent | append: "</td>" %}
-    {% assign yearCellsArray = yearCellsArray | unshift: monthCell %}
+	<h2>所有文章</h2>
+	<table class="table table-striped blogcalendar">
+	  <tbody>
+	    {{ tableContent }}
+	  </tbody>
+	</table>
 
-  {% endfor %}
+	{%comment%} +++++ Printing posts by Year then month +++++ {%endcomment%}
 
-  {% assign yearCells = yearCellsArray | join: "" %}
-  {% assign yearRow = yearRow | append: yearCells | append: "</tr>" %}
-  {% assign tableContent = tableContent | append: yearRow %}
+	{% assign currentPostIndex = 0 %}
+	{% assign lastPostIndex = site.posts.size | minus: 1 %}
 
-{% endfor %}
+	{% for year in (startYear...endYear) reversed %}
+	  <h3>{{year}}</h3>
+	  {% assign currentYear = year %}
+	  {% for month in (1...12) reversed %}
 
-<h2>All Posts By Date</h2>
-<table class="table table-striped blogcalendar">
-  <tbody>
-    {{ tableContent }}
-  </tbody>
-</table>
+	    {% assign postsArray = "" | split: "/" %}
 
-{%comment%} +++++ Printing posts by Year then month +++++ {%endcomment%}
+	    {%comment%} +++++ Find post for this year / month +++++ {%endcomment%}
+	    {% for postIndex in (currentPostIndex...lastPostIndex) %}
+	      {% assign p      = site.posts[postIndex] %}
+	      {% assign pYear  = p.date | date: "%Y" | plus: 0 %}
+	      {% assign pMonth = p.date | date: "%m" | plus: 0 %}
 
-{% assign currentPostIndex = 0 %}
-{% assign lastPostIndex = site.posts.size | minus: 1 %}
+	      {% if pYear == year and pMonth == month %}
+	        {% assign postsArray = postsArray | push: p %}
+	      {% else %}
+	        {%comment%} +++++ Here we stop the loop +++++ {%endcomment%}
+	        {% assign currentPostIndex = postIndex %}
+	        {% break %}
+	      {% endif %}
+	    {% endfor %}
 
-{% for year in (startYear...endYear) reversed %}
-  <h3>{{year}}</h3>
-  {% assign currentYear = year %}
-  {% for month in (1...12) reversed %}
+	    {% assign postArraySize = postsArray | size %}
 
-    {% assign postsArray = "" | split: "/" %}
+	    {%comment%} +++++ Printing posts if we have some for this year month +++++ {%endcomment%}
+	    {% if postArraySize and postArraySize > 0 %}
 
-    {%comment%} +++++ Find post for this year / month +++++ {%endcomment%}
-    {% for postIndex in (currentPostIndex...lastPostIndex) %}
-      {% assign p      = site.posts[postIndex] %}
-      {% assign pYear  = p.date | date: "%Y" | plus: 0 %}
-      {% assign pMonth = p.date | date: "%m" | plus: 0 %}
+	      {%comment%} +++++ get month name from a post.date +++++ {%endcomment%}
+	      {% assign post = postsArray | first %}
+	      {% assign monthName = post.date | date: "%B" %}
 
-      {% if pYear == year and pMonth == month %}
-        {% assign postsArray = postsArray | push: p %}
-      {% else %}
-        {%comment%} +++++ Here we stop the loop +++++ {%endcomment%}
-        {% assign currentPostIndex = postIndex %}
-        {% break %}
-      {% endif %}
-    {% endfor %}
+	      {% assign monthId = year | append: "-" | append: month %}
 
-    {% assign postArraySize = postsArray | size %}
+	      <h4 id="{{ monthId }}">{{ monthName }} {{ year }}</h4>
+	      <table class="table table-striped">
+	      {% for p in postsArray %}
+	        <tr>
+	          <td>{{ p.date | date: "%Y-%m-%d" }}</td>
+	          <td>
+	              <a href="{{ site.baseurl }}{{ p.url }}">
+	                  {{ p.title }}
+	              </a>
+	          </td>
+	        </tr>
+	      {% endfor %}
+	      </table>
+	    {% endif %}
 
-    {%comment%} +++++ Printing posts if we have some for this year month +++++ {%endcomment%}
-    {% if postArraySize and postArraySize > 0 %}
+	  {% endfor %}
 
-      {%comment%} +++++ get month name from a post.date +++++ {%endcomment%}
-      {% assign post = postsArray | first %}
-      {% assign monthName = post.date | date: "%B" %}
-
-      {% assign monthId = year | append: "-" | append: month %}
-
-      <h4 id="{{ monthId }}">{{ monthName }} {{ year }}</h4>
-      <table class="table table-striped">
-      {% for p in postsArray %}
-        <tr>
-          <td>{{ p.date | date: "%Y-%m-%d" }}</td>
-          <td>
-              <a href="{{ site.baseurl }}{{ p.url }}">
-                  {{ p.title }}
-              </a>
-          </td>
-        </tr>
-      {% endfor %}
-      </table>
-    {% endif %}
-
-  {% endfor %}
-
-{% endfor %}
+	{% endfor %}
 
 </div>
