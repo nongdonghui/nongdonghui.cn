@@ -1,3 +1,13 @@
+---
+layout: post
+title: angularjs中使用ng-repeat渲染最后一个li的时候设置不同样式
+---
+
+{{ page.title }}
+================
+
+<p class="meta">2016-05-06 - 南京</p>
+
 如题所示，比如我要在下面的代码的最后一个li节点添加一个样式
 ```HTML
 <li ng-repeat="item in items">  
