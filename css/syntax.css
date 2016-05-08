@@ -67,6 +67,7 @@ code {
 }
 code pre {
 	padding: 0 0.5em 0 0.5em !important;
+	font-size: inherit;
 }
 .post > .highlight .lineno {
 	color: #afafaf !important;
