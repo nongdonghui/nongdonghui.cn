@@ -60,6 +60,7 @@
 .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
 
 code {
+	font-family:Monaco,Consolas,Menlo,"Andale Mono","Courier New","Ubuntu Mono",Arial,"Microsoft YaHei","Hiragino Sans GB",sans-serif;
 	background: #f7f7f7;
 	color: #333;
 	font-size: 85%;
