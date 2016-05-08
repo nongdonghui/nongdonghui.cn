@@ -358,8 +358,8 @@ pre {
   margin-top: 20px;
   text-align: center;
 }
-.footer a:first {
-  margin-right: 50px;
+.footer a:first-child {
+  margin-right: 20px;
 }
 
 #markup {
