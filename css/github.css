@@ -307,7 +307,7 @@ tt,code {
 pre {
   margin-top: 0;
   margin-bottom: 0;
-  font: 16px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font: 18px Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 
 #realtime .status {
