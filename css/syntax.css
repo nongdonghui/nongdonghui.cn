@@ -62,17 +62,12 @@
 code {
 	background: #f7f7f7;
 	color: #333;
-	margin:0 2px;
-	padding:0 4px;
-	border-radius:4px;
-	letter-spacing:1px;
-	border-bottom:0;
-	word-break:initial;
+	font-size: 85%;
 }
 .post > .highlight .lineno { color: #ccc; display:inline-block; padding: 0 5px; border-right:1px solid #ccc; }
 .post > .highlight pre code { 
 	display: block; white-space: pre; overflow-x: auto; word-wrap: normal;
-
+	font-size: 85%;
 	background: #f7f7f7;
 	border-radius:3px;
 	-moz-border-radius:3px;
