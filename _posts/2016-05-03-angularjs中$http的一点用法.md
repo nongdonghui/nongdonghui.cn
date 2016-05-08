@@ -9,6 +9,7 @@ title: angularjs中$http的一点用法
 <p class="meta">2016-05-03 - 南京</p>
 
 > angularjs使用$http简单的封装了js原生的XMLHttpRequest对象
+
 ### 链式调用
 ```javascript
 $http({
