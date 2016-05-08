@@ -77,5 +77,5 @@ code {
 	padding:5px 0px 5px 10px;
 	white-space:pre;
 	letter-spacing:0.5px;
-	padding: 0 .2em;
+	padding: 0 0.5em 0 1em !important;
 }
