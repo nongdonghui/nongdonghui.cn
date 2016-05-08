@@ -5,8 +5,7 @@ html {
 }
 
 body {
-  margin: 0;
-  background: #f4f4f4;
+  margin: 0;  
 }
 
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary {
@@ -192,7 +191,7 @@ body {
   min-width: 1020px;
   font: 13px/1.4 Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
   color: #333;
-  background-color: #fff;
+  background: #f4f4f4;
 }
 
 a {
