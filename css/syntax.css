@@ -63,7 +63,6 @@ code {
 	font-family:Monaco,Consolas,Menlo,"Andale Mono","Courier New","Ubuntu Mono",Arial,"Microsoft YaHei","Hiragino Sans GB",sans-serif;
 	background: #f7f7f7;
 	color: #333;
-	font-size: 85%;
 	padding: 0 .2em;
 }
 code pre {
@@ -72,7 +71,6 @@ code pre {
 .post > .highlight .lineno { color: #afafaf !important; display:inline-block; padding: 0 5px; border-right:1px solid #6ce26c !important; }
 .post > .highlight pre code { 
 	display: block; white-space: pre; overflow-x: auto; word-wrap: normal;
-	font-size: 85%;
 	background: #f7f7f7;
 	border-radius:3px;
 	-moz-border-radius:3px;
