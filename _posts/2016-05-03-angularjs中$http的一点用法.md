@@ -73,7 +73,7 @@ $http({
 这个键的值是一个字符串map或对象，会被转换成查询字符串追加在URL后面。如果值不是字符串，会被JSON序列化。  
  比如这个：
 
-```javascript 
+```javascript
 // 参数会转为?name=ari的形式
 $http({
   params: {'name': 'ari'}
@@ -86,7 +86,7 @@ $http({
  要发送一个blob对象，你可以简单地通过使用data参数来传递它。  
  例如：
 
-```javascript  
+```javascript
 var blob = new Blob(['Hello world'], {type:'text/plain'});
 $http({
   method: 'POST',
@@ -105,7 +105,7 @@ AngularJS传递给then()方法的响应对象包含了五个属性。
 
 例如，用如下代码获取X-Auth-ID的值：
 
-```javascript  
+```javascript
 $http({
   method: 'GET',
   url: '/api/users.json'
@@ -120,7 +120,7 @@ $http({
 ### 缓存HTTP请求
  默认情况下，$http服务不会对请求进行本地缓存。  
  在发送单独的请求时，我们可以通过向$http请求传入一个布尔值或者一个缓存实例来启用缓存。
- 
+
 ```javascript
 $http.get('/api/users.json', {cache: true})
   .success(function(data) {})
