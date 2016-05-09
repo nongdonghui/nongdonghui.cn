@@ -191,7 +191,6 @@ body {
   min-width: 1020px;
   font: 13px/1.4 Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
   color: #333;
-  background: #f4f4f4;
 }
 
 a {
@@ -337,7 +336,6 @@ pre {
 .container {
     max-width: 920px;
     margin: 0 auto 20px auto;
-    background: #fff;
 }
 
 .header {
@@ -348,7 +346,6 @@ pre {
     border-bottom: 1px solid #CACACA;
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4),0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 10px;
-    padding-left: 10px;
 }
 .footer {
   border-top: 1px solid #eee;
@@ -379,8 +376,6 @@ pre {
   font-size: 16px;
   line-height: 1.6;
   word-wrap: break-word;
-  margin-left: 10px;
-  margin-right: 10px;
 }
 
 .markdown-body>*:first-child {
