@@ -51,15 +51,6 @@ CSS定义是这样
 ```
 ngRepeat还有以下几种类型：
 
-| Item     | Value | Qty   |
-| :------- | ----: | :---: |
-| Computer | $1600 |  5    |
-| Phone    | $12   |  12   |
-| Pipe     | $1    |  234  |
-| Computer | $1600 |  5    |
-| Phone    | $12   |  12   |
-| Pipe     | $1    |  234  |
-
 |  Variable  |  Type      |  Details                                                                     |  
 |  --------- |  --------- |  --------------------------------------------------------------------------  |  
 |  `$index`  |  `number`  |  iterator offset of the repeated element (0..length-1)                       |  
