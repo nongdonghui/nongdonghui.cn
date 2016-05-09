@@ -1,10 +1,15 @@
 ## 文章列表
 ### 2016
 * 5月  
-  [9 ionic登录设计](_posts/2016.05-09-ionic登录设计.md)  
+  [9 ionic登录设计](_posts/2016-05-09-ionic登录设计.md)  
   [8 Github写作注意事项](_posts/2016-05-08-Github写作注意事项.md)  
   [7 前端的一些常用命名积累](_posts/2016-05-07-前端的一些常用命名积累.md)  
   [7 前端工具](_posts/2016-05-07-前端工具.md)  
   [6 angularjs中使用ng-repeat渲染最后一个li的时候设置不同样式](_posts/2016-05-06-angularjs中使用ng-repeat渲染最后一个li的时候设置不同样式.md)  
   [3 angularjs中$http的一点用法](_posts/2016-05-03-angularjs中$http的一点用法.md)  
   [3 ionic设置代理在浏览器调试](_posts/2016-05-03-ionic设置代理在浏览器调试.md)  
+* 4月  
+  [22 ionic应用在mac上使用Xcode7.2(7C68)进行iphone真机测试](_posts/2016-04-22-ionic应用在mac上使用Xcode7.2(7C68)进行iphone真机测试.md)  
+### 2015
+* 12月  
+  [4 SVN更新冲突解释](_posts/2015-12-04-SVN更新冲突解释.md)  
