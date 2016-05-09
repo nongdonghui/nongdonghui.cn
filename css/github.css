@@ -438,6 +438,15 @@ pre {
   line-height: 1.2;
   border-bottom: 1px solid #eee;
 }
+.markdown-body h1:after {
+    content: "";
+    width: 90px;
+    height: 1px;
+    background: #e67e22;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+}
 
 .markdown-body h1 .anchor {
   line-height: 1;
