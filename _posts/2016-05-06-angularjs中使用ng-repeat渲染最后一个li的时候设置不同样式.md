@@ -6,7 +6,7 @@ title: angularjs中使用ng-repeat渲染最后一个li的时候设置不同样�
 {{ page.title }}
 ================
 
-<p class="meta">2016-05-06 - 南京</p>
+`{{ post.date | date: "%Y.%m.%d" }} - 南京`
 
 如题所示，比如我要在下面的代码的最后一个li节点添加一个样式
 
@@ -49,7 +49,8 @@ CSS定义是这样
   {{item.name}}
 </li>
 ```
-ngRepeat还有以下几种类型：  
+ngRepeat还有以下几种类型：
+
 |  Variable  |  Type      |  Details                                                                     |  
 |  --------- |  --------- |  --------------------------------------------------------------------------  |  
 |  `$index`  |  `number`  |  iterator offset of the repeated element (0..length-1)                       |  
@@ -59,4 +60,11 @@ ngRepeat还有以下几种类型：
 |  `$even`   |  `boolean` |  true if the iterator position $index is even (otherwise false).             |  
 |  `$odd`    |  `boolean` |  true if the iterator position $index is odd (otherwise false).              |  
 
-参考文章：[Different class for the last element in ng-repeat](http://stackoverflow.com/questions/14581658/different-class-for-the-last-element-in-ng-repeat)
+**参考文章：**
+
+  * [Different class for the last element in ng-repeat][1]
+  * [ngRepeat][2]
+
+
+[1]: http://stackoverflow.com/questions/14581658/different-class-for-the-last-element-in-ng-repeat
+[2]: https://docs.angularjs.org/api/ng/directive/ngRepeat
