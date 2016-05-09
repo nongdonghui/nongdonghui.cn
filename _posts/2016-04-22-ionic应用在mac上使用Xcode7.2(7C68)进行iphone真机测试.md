@@ -8,13 +8,19 @@ title: ionic应用在mac上使用Xcode7.2(7C68)进行iphone真机测试
 
 `{{ page.date | date: "%Y.%-m.%-d" }} - 南京`
 
-##### 1.前提环境 : 假设已经在mac(OS X El Capitan 版本 10.11.2)上装好了Xcode7.2(7C68)和ionic环境
-##### 2.运行添加ios平台命令 ionic platform add ios
-##### 3.打开Xcode,导入项目
-##### 4.添加Apple ID : Xcode - Preferences - Accounts - +
-##### 5.添加成功后,在Apple IDs下单击选择刚才添加的Apple ID,可以看到右侧的Team Name后边的iOS和Mac都是free,，然后双击(或点击右下角的View Details...按钮)打开Team Name下的那条记录,在Signing Identities下点击iOS Development后边的create按钮,Xcode会自动在后台帮你生成Dev模式需要的certificate(Xcode7以前是没有这个自动生成的,需要手动工作),稍等片刻,完了之后点done
-##### 6.在项目target的General页的Identity->Team中选中刚才Apple ID对应的项,然后我选择了Deployment->Main Interface选项
-##### 7.运行,报异常
+* 前提环境：假设已经在mac(OS X El Capitan 版本 10.11.2)上装好了Xcode7.2(7C68)和ionic环境
+
+* 运行添加ios平台命令 ionic platform add ios
+
+* 打开Xcode,导入项目
+
+* 添加Apple ID：Xcode - Preferences - Accounts - +
+
+* 添加成功后,在Apple IDs下单击选择刚才添加的Apple ID,可以看到右侧的Team Name后边的iOS和Mac都是free,，然后双击(或点击右下角的View Details...按钮)打开Team Name下的那条记录,在Signing Identities下点击iOS Development后边的create按钮,Xcode会自动在后台帮你生成Dev模式需要的certificate(Xcode7以前是没有这个自动生成的,需要手动工作),稍等片刻,完了之后点done
+
+* 在项目target的General页的Identity->Team中选中刚才Apple ID对应的项,然后我选择了Deployment->Main Interface选项
+
+* 运行,报异常
 
 ```sh
 Terminating app due to uncaught exception 'NSUnknownKeyException', reason: '[<UIApplication 0x14e7b130> setValue:forUndefinedKey:]: this class is not key value coding-compliant for the key view.'
@@ -31,8 +37,9 @@ Terminating app due to uncaught exception 'NSUnknownKeyException', reason: '[<UI
 我琢磨着上面那段话的意思,应该是只用选`LandscapeLeft`和`LandscapeRight`两项就可以了,改了一下,运行看看,
 发现在iphone5上是直接横屏的,选上`Upside Down`也是横屏,选上`Portrait`后就竖屏了.
 
-##### PS1:刚开始的时候,是运行后,报这个异常: `could not find developer disk image` 错误然后我就把Xcode 9.3配置包放到 `/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport`路径下
-##### PS2:我开始的时候登录了开发者账号,理论上Xcode7是不需要开发者账号就可以真机测试的
+**PS1：**刚开始的时候,是运行后,报这个异常: `could not find developer disk image` 错误然后我就把Xcode 9.3配置包放到 `/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport`路径下
+
+**PS2：**我开始的时候登录了开发者账号,理论上Xcode7是不需要开发者账号就可以真机测试的
 
 **参考文章：**
 
