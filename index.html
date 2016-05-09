@@ -21,7 +21,7 @@ title: welcome to ndh's writer place
 
 	{%comment%} +++++++++++++++ build the table +++++++++++++++ {%endcomment%}
 
-	{% assign tableContent = "<tr><th></th><th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jun</th><th>Jul</th><th>Aug</th><th>Sep</th><th>Oct</th><th>Nov</th><th>Dec</th></tr>" %}
+	{% assign tableContent = "<tr><th></th><th>1月</th><th>2</th><th>3</th><th>4</th><th>5月</th><th>6</th><th>7</th><th>8</th><th>9月</th><th>10</th><th>11</th><th>12月</th></tr>" %}
 
 	{%comment%} +++++
 	  currentPostIndex is used to loop over post in an efficient way
@@ -125,7 +125,7 @@ title: welcome to ndh's writer place
 
 	      {%comment%} +++++ get month name from a post.date +++++ {%endcomment%}
 	      {% assign post = postsArray | first %}
-	      {% assign monthName = post.date | date: "%B" %}
+	      {% assign monthName = post.date | date: "%-m" | append: "月" %}
 
 	      {% assign monthId = year | append: "-" | append: month %}
 
@@ -133,7 +133,7 @@ title: welcome to ndh's writer place
 	      <table class="table table-striped">
 	      {% for p in postsArray %}
 	        <tr>
-	          <td>{{ p.date | date: "%Y-%m-%d" }}</td>
+	          <td>{{ p.date | date: "%Y.%-m.%-d" }}</td>
 	          <td>
 	              <a href="{{ site.baseurl }}{{ p.url }}">
 	                  {{ p.title }}
