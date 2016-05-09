@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ionic登录设计
+title: ionic应用在mac上使用Xcode7.2(7C68)进行iphone真机测试
 ---
 
 {{ page.title }}
