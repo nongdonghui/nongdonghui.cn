@@ -816,12 +816,6 @@ pre {
 .codehilite .vi { color: #008080 } /* Name.Variable.Instance */
 .codehilite .il { color: #009999 } /* Literal.Number.Integer.Long */
 
-li:not(:last-child) {
-  margin-bottom: 18px;
-}
-.posts li {
-  margin-bottom: 0;
-}
 .posts span {
   color: #aaa;
 }

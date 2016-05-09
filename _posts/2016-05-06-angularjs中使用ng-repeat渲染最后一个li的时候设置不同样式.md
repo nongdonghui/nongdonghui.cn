@@ -12,7 +12,7 @@ title: angularjs中使用ng-repeat渲染最后一个li的时候设置不同样�
 
 ```html
 <li ng-repeat="item in items">  
-  \{{item.name}}  
+  {{item.name}}  
 </li> 
 ```
 那么我就可以这样加
