@@ -444,9 +444,9 @@ pre {
   right: 0px;
   height: 1px;
   background-image: -webkit-linear-gradient(
-    0deg, red 25%, blue 25%, blue 50%, yellow 50%, yellow 75%, green 75%, green 100%);
+    0deg, #428bca 20%, #5cb85c 20%, #5cb85c 40%, #f0ad4e 40%, #f0ad4e 60%, #5bc0de 60%, #5bc0de 80%, #d9534f 80%, #d9534f 100%);
   background-image: -ms-linear-gradient(
-    0deg, red 25%, blue 25%, blue 50%, yellow 50%, yellow 75%, green 75%, green 100%);
+    0deg, #428bca 20%, #5cb85c 20%, #5cb85c 40%, #f0ad4e 40%, #f0ad4e 60%, #5bc0de 60%, #5bc0de 80%, #d9534f 80%, #d9534f 100%);
   background-size: 100%;
 }
 
