@@ -436,15 +436,33 @@ pre {
   padding-bottom: 0.3em;
   font-size: 2.25em;
   line-height: 1.2;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #F05033;
 }
 .markdown-body h1:after {
     content: "";
-    width: 90px;
+    width: 25%;
+    height: 1px;
+    background: #2D89EF;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+}
+.markdown-body h1:after {
+    content: "";
+    width: 25%;
     height: 1px;
     background: #e67e22;
     position: absolute;
-    left: 0;
+    left: 25%;
+    bottom: -1px;
+}
+.markdown-body h1:after {
+    content: "";
+    width: 25%;
+    height: 1px;
+    background: #2B9646;
+    position: absolute;
+    left: 50%;
     bottom: -1px;
 }
 
