@@ -188,7 +188,6 @@ input,select,textarea,button {
 }
 
 body {
-  min-width: 1020px;
   font: 13px/1.4 Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
   color: #333;
 }
@@ -331,11 +330,6 @@ pre {
 
 #realtime .down {
   background-position: 0 -26px;
-}
-
-.container {
-    max-width: 920px;
-    margin: 0 auto 20px auto;
 }
 
 .header {
