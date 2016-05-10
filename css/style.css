@@ -60,3 +60,6 @@ hr {
 .text-center {
   text-align: center;
 }
+.all {
+  float: left;
+}
