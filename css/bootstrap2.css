@@ -909,17 +909,18 @@
   width: 100%;
   max-width: 100%;
   margin-bottom: 20px;
+  border-collapse: collapse;
 }
 th {
-    height: 40px;
-    background: #f5f8fa;
-    border: 1px solid #a3afb6;
-    vertical-align: middle;
-    font-size: 0.9em;
+  height: 40px;
+  background: #f5f8fa;
+  border: 1px solid #a3afb6;
+  vertical-align: middle;
+  font-size: 0.9em;
 }
 td {
-    vertical-align: top;
-    border: 1px solid #a3afb6;
-    padding: 0.4em 0.5em 0.4em 0.5em;
-    font-size: 0.9em;
+  vertical-align: top;
+  border: 1px solid #a3afb6;
+  padding: 0.4em 0.5em 0.4em 0.5em;
+  font-size: 0.9em;
 }
