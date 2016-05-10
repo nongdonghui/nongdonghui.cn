@@ -57,3 +57,6 @@ hr {
   background-image: -ms-linear-gradient(
     0deg, #428bca 20%, #5cb85c 20%, #5cb85c 40%, #f0ad4e 40%, #f0ad4e 60%, #5bc0de 60%, #5bc0de 80%, #d9534f 80%, #d9534f 100%);
 }
+.text-center {
+  text-align: center;
+}
