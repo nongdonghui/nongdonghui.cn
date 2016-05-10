@@ -3,8 +3,7 @@ layout: post
 title: angularjs中使用ng-repeat渲染最后一个li的时候设置不同样式
 ---
 
-{{ page.title }}
-================
+## {{ page.title }}
 
 `{{ page.date | date: "%Y.%-m.%-d" }} - 南京`
 

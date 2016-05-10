@@ -3,8 +3,7 @@ layout: post
 title: angularjs中$http的一点用法
 ---
 
-{{ page.title }}
-================
+## {{ page.title }}
 
 `{{ page.date | date: "%Y.%-m.%-d" }} - 南京`
 

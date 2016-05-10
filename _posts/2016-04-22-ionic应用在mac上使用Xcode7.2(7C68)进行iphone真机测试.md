@@ -3,8 +3,7 @@ layout: post
 title: ionic应用在mac上使用Xcode7.2(7C68)进行iphone真机测试
 ---
 
-{{ page.title }}
-================
+## {{ page.title }}
 
 `{{ page.date | date: "%Y.%-m.%-d" }} - 南京`
 
