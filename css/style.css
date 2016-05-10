@@ -30,31 +30,3 @@ td {
 svg {
   max-width: 100%;
 }
-
-.markdown-body h1:after {
-  content: "";
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  height: 1px;
-  background-image: -webkit-linear-gradient(
-    0deg, #428bca 20%, #5cb85c 20%, #5cb85c 40%, #f0ad4e 40%, #f0ad4e 60%, #5bc0de 60%, #5bc0de 80%, #d9534f 80%, #d9534f 100%);
-  background-image: -ms-linear-gradient(
-    0deg, #428bca 20%, #5cb85c 20%, #5cb85c 40%, #f0ad4e 40%, #f0ad4e 60%, #5bc0de 60%, #5bc0de 80%, #d9534f 80%, #d9534f 100%);
-  background-size: 100%;
-  bottom: 0px;
-}
-
-.markdown-body h2:after {
-  content: "";
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  height: 1px;
-  background-image: -webkit-linear-gradient(
-    0deg, #428bca 20%, #5cb85c 20%, #5cb85c 40%, #f0ad4e 40%, #f0ad4e 60%, #5bc0de 60%, #5bc0de 80%, #d9534f 80%, #d9534f 100%);
-  background-image: -ms-linear-gradient(
-    0deg, #428bca 20%, #5cb85c 20%, #5cb85c 40%, #f0ad4e 40%, #f0ad4e 60%, #5bc0de 60%, #5bc0de 80%, #d9534f 80%, #d9534f 100%);
-  background-size: 100%;
-  bottom: 0px;
-}
