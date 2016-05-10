@@ -85,11 +85,13 @@ title: welcome to ndh's writer place
 	{% endfor %}
 
 	<h2>所有文章</h2>
-	<table class="table table-striped blogcalendar">
-	  <tbody>
-	    {{ tableContent }}
-	  </tbody>
-	</table>
+	<div class="table-responsive">
+		<table class="table table-striped">
+		  <tbody>
+		    {{ tableContent }}
+		  </tbody>
+		</table>
+	</div>
 
 	{%comment%} +++++ Printing posts by Year then month +++++ {%endcomment%}
 
