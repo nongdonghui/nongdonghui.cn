@@ -132,7 +132,7 @@ title: welcome to ndh's writer place
 	      {% assign monthId = year | append: "-" | append: month %}
 
 	      <h4 id="{{ monthId }}">{{ monthName }}</h4>
-	      <table class="table table-striped">
+	      <table class="table">
 	      {% for p in postsArray %}
 	        <tr>
 	          <td>{{ p.date | date: "%-m.%-d" }}</td>
