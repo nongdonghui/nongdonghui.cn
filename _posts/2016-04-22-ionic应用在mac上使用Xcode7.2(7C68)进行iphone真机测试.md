@@ -1,6 +1,9 @@
 ---
 layout: post
 title: ionic应用在mac上使用Xcode7.2(7C68)进行iphone真机测试
+permalink: ionic应用在mac上使用Xcode7.2(7C68)进行iphone真机测试
+comments: True
+categories: ionic
 ---
 
 ## {{ page.title }}

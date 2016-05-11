@@ -1,31 +1,51 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ page.title }}</title>
-    <!-- syntax highlighting CSS -->
-    <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
-    <!-- bootstrap CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.css" type="text/css" media="screen, projection" />
-    <!-- github CSS -->
-    <link rel="stylesheet" href="/css/github.css" type="text/css" />
-    <!-- style CSS -->
-    <link rel="stylesheet" href="/css/style.css" type="text/css" />
-  </head>
-  <body>
-    
-    <div class="container">
-      {{ content }}
-      <hr>
-      <footer>
-        <p class="text-center">
-        <a href="Mailto:357228560@qq.com">email</a>&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="https://github.com/nongdonghui">github</a>
-        </p>
-      </footer>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  {% include head.html %}
+  {% include google_analytics.html %}
+
+  <body class="theme-base-08">
+
+    {% include sidebar.html %}
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">{{ site.title }}</a>
+            <small>{{ site.tagline }}</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        {{ content }}
+      </div>
     </div>
 
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+
   </body>
+
 </html>
+

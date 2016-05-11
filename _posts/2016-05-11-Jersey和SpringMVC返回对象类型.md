@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Jersey和SpringMVC返回对象类型
+permalink: Jersey和SpringMVC返回对象类型
+comments: True
+categories: java
 ---
 
 ## {{ page.title }}

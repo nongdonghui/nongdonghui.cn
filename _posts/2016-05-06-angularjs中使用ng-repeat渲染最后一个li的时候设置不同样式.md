@@ -1,6 +1,9 @@
 ---
 layout: post
 title: angularjs中使用ng-repeat渲染最后一个li的时候设置不同样式
+permalink: angularjs中使用ng-repeat渲染最后一个li的时候设置不同样式
+comments: True
+categories: angularjs
 ---
 
 ## {{ page.title }}
