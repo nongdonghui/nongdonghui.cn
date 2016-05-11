@@ -1,11 +1,11 @@
 ---
-layout: page
+layout: default
 title: Archive
 ---
 
 {% for category in site.categories %}
 
-<div id="{{ category | first }}" class="container"> <h3> {{ category | first | capitalize }} </h3> </div>
+<div id="{{ category | first }}"> <h3> {{ category | first | capitalize }} </h3> </div>
 
 {% for posts in category %}
 
