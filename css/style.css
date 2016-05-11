@@ -4,20 +4,16 @@ body {
   color: #333;
   font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
-.table {
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: 20px;
-  border-collapse: collapse;
+table, th, td {
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 th {
-  border: 1px solid rgba(0, 0, 0, 0.1);
   vertical-align: middle;
   font-size: 0.9em;
+  border-width: 0 1px 1px 0;
 }
 td {
   vertical-align: top;
-  border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 0.4em 0.5em 0.4em 0.5em;
   font-size: 0.9em;
 }
