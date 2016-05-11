@@ -12,6 +12,8 @@ categories: angularjs
 
 > angularjs使用$http简单的封装了js原生的XMLHttpRequest对象
 
+<!--more-->
+
 ### 链式调用
 ```javascript
 $http({

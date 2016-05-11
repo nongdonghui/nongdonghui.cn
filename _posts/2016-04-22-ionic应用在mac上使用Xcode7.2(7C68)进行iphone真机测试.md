@@ -12,6 +12,8 @@ categories: ionic
 
 * 前提环境：假设已经在mac(OS X El Capitan 版本 10.11.2)上装好了Xcode7.2(7C68)和ionic环境
 
+<!--more-->
+
 * 运行添加ios平台命令 ionic platform add ios
 
 * 打开Xcode,导入项目

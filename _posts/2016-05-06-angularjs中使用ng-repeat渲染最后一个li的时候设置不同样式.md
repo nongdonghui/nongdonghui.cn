@@ -12,6 +12,8 @@ categories: angularjs
 
 如题所示，比如我要在下面的代码的最后一个li节点添加一个样式
 
+<!--more-->
+
 ```html
 <li ng-repeat="item in items">  
   {{item.name}}  
