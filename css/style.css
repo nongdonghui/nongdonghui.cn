@@ -4,18 +4,34 @@ body {
   color: #333;
   font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
-table, th, td {
+table,
+th,
+td {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
-th {
-  vertical-align: middle;
-  font-size: 0.9em;
-  border-width: 0 1px 1px 0;
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-width: 1px 0 0 1px;
+  margin-bottom: 24px;
+  width: 100%;
 }
+
+caption,
+th,
 td {
-  vertical-align: top;
-  padding: 0.4em 0.5em 0.4em 0.5em;
-  font-size: 0.9em;
+  font-weight: normal;
+  text-align: left;
+}
+
+th {
+  border-width: 0 1px 1px 0;
+  font-weight: bold;
+}
+
+td {
+  border-width: 0 1px 1px 0;
 }
 .markdown-body img {
   max-width: 100%;
