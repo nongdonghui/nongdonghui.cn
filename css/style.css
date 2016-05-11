@@ -35,6 +35,11 @@ td {
   border-width: 0 1px 1px 0;
   padding: 2px;
 }
+@media (min-width: 768px) {
+  th,td {
+    padding: 8px;
+  }
+}
 .markdown-body img {
   max-width: 100%;
   height: auto;
