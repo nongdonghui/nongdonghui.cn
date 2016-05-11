@@ -1,6 +1,7 @@
 ---
 layout: post
 title: angularjs中$http的一点用法
+categories: angularjs
 ---
 
 ## {{ page.title }}

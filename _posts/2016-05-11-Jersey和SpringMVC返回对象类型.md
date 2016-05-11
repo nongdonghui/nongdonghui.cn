@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Jersey和SpringMVC返回对象类型
+categories: java
 ---
 
 ## {{ page.title }}
