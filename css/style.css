@@ -83,4 +83,7 @@ hr {
 }
 .second-title {
   font-size: 14px;
+  padding-top: 18px;
+  text-decoration: none;
+  color: #337ab7;
 }
