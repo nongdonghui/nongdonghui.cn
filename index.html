@@ -125,8 +125,8 @@ title: welcome to ndh's writer place
 
 	{% endfor %}
 
-	<h2>所有文章</h2>
-	<table class="table">
+	<h2>所有文章<a class="pull-right second-title" href="/archive">分类</a></h2>
+	<table>
 	  <tbody>
 	    {{ tableContent }}
 	  </tbody>
@@ -172,7 +172,7 @@ title: welcome to ndh's writer place
 	      {% assign monthId = year | append: "-" | append: month %}
 
 	      <h4 id="{{ monthId }}">{{ monthName }}</h4>
-	      <table class="table">
+	      <table>
 	      {% for p in postsArray %}
 	        <tr>
 	          <td>{{ p.date | date: "%-m.%-d" }}</td>
