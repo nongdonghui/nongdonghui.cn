@@ -104,12 +104,52 @@ public abstract ResponseBuilder header(String name, Object value);
 
 它也是返回ResponseBuilder，说明就是返回同一个对象一直给它加任务，保证可以一直链接下去
 
+那么如果用angularjs的$resource怎么获取它的headers呢，话不多说，直接上代码
+
+```javascript
+var app = angular.module('TestApp', ['ngResource']);
+
+app.factory('Man', function($resource) {
+  return $resource('/api/man/:id');
+});
+
+app.controller('TestCtrl', function($scope, Man) {
+  // Get specific Man
+  Man.get({id: 1}, function(data, headersGetter) {
+    $scope.man = data;
+    var contentType = headersGetter('content-type');
+    console.log('content-type:' + contentType);
+  });  
+});
+
+// or
+app.factory('Man', function($resource) {
+    return $resource('/api/man/:id', null, {
+        query: {
+            method: 'GET',
+            isArray: true,
+            transformResponse: function(data, headersGetter) {
+                var items = angular.fromJson(data);
+                console.log(items);
+                return items;
+            }
+        }
+    });
+});
+```
+
+是的，就是用then里function的第二个参数，第一个参数是返回的数据
+
 **参考文章：**
 
 * [Post JSON to spring REST webservice][1]
 * [Building Responses][2]
 * [Using Entity Providers to Map HTTP Response and Request Entity Bodies][3]
+* [201 CREATED WITH ANGULAR RESOURCE][4]
+* [AngularJS $http and $resource][5]
 
 [1]: http://www.leveluplunch.com/java/tutorials/014-post-json-to-spring-rest-webservice/
 [2]: https://jersey.java.net/documentation/latest/representations.html#d0e6628
 [3]: http://docs.oracle.com/javaee/6/tutorial/doc/gilik.html#gipze
+[4]: http://www.trajano.net/2013/05/201-created-with-angular-resource/
+[5]: http://en.proft.me/2015/07/4/angularjs-http-and-resource/
