@@ -10,27 +10,27 @@ title: Jersey和SpringMVC返回对象类型
 SpringMVC的rest api返回类型是自己实现的`ResponseEntity`，它只有一个`HttpStatus`类型的属性`statusCode`，然后继承了`HttpEntity`，我们查看里面的主要代码
 
 ```java
-  public static final HttpEntity EMPTY = new HttpEntity();
+public static final HttpEntity EMPTY = new HttpEntity();
 	
-	private final HttpHeaders headers;
+private final HttpHeaders headers;
 
-	private final T body;
+private final T body;
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder("<");
-		if (body != null) {
-			builder.append(body);
-			if (headers != null) {
-				builder.append(',');
-			}
-		}
+@Override
+public String toString() {
+	StringBuilder builder = new StringBuilder("<");
+	if (body != null) {
+		builder.append(body);
 		if (headers != null) {
-			builder.append(headers);
+			builder.append(',');
 		}
-		builder.append('>');
-		return builder.toString();
 	}
+	if (headers != null) {
+		builder.append(headers);
+	}
+	builder.append('>');
+	return builder.toString();
+}
 ```
 
 这里告诉我们ResponseEntity主要有4个属性(statusCode,EMPTY,headers,body)，假如我们有以下的一个方法
