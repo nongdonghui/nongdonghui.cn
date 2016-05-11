@@ -28,12 +28,12 @@ td {
 th {
   border-width: 0 1px 1px 0;
   font-weight: bold;
-  padding: 4px;
+  padding: 3px;
 }
 
 td {
   border-width: 0 1px 1px 0;
-  padding: 4px;
+  padding: 3px;
 }
 .markdown-body img {
   max-width: 100%;
