@@ -1,12 +1,10 @@
 ## General
 
 # Dependencies
-markdown:         kramdown
-highlighter:	  pygments
-pygments_options: ['lineanchors']
-
-kramdown:
-    fenced_code_blocks: true
+markdown: redcarpet
+pygments: true
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "tables", "with_toc_data"]
 
 # Permalinks
 permalink:        pretty
