@@ -6,7 +6,7 @@ categories: angularjs
 
 ## {{ page.title }}
 
-`{{ page.date | date: "%Y.%-m.%-d" }} - 南京`
+{{ page.date | date: "%Y.%-m.%-d" }} - 南京 | <a href="/archive#{{ page.categories }}">{{ page.categories}}</a>
 
 如题所示，比如我要在下面的代码的最后一个li节点添加一个样式
 

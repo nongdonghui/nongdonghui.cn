@@ -6,7 +6,7 @@ categories: angularjs
 
 ## {{ page.title }}
 
-`{{ page.date | date: "%Y.%-m.%-d" }} - 南京`
+{{ page.date | date: "%Y.%-m.%-d" }} - 南京 | <a href="/archive#{{ page.categories }}">{{ page.categories}}</a>
 
 > angularjs使用$http简单的封装了js原生的XMLHttpRequest对象
 

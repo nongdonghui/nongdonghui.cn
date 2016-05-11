@@ -6,7 +6,7 @@ categories: ionic
 
 ## {{ page.title }}
 
-`{{ page.date | date: "%Y.%-m.%-d" }} - 南京`
+{{ page.date | date: "%Y.%-m.%-d" }} - 南京 | <a href="/archive#{{ page.categories }}">{{ page.categories}}</a>
 
 * 前提环境：假设已经在mac(OS X El Capitan 版本 10.11.2)上装好了Xcode7.2(7C68)和ionic环境
 

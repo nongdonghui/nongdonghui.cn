@@ -13,7 +13,7 @@ title: 文章分类
 
 {% if post.url %}
 
-* <span style="color:#9a9a9a">{{ post.date | date_to_string }}</span> &raquo; [ {{ post.title }} ]({{ post.url }})
+* <span style="color:#9a9a9a">{{ post.date | date: "%Y.%-m.%-d" }}</span> &raquo; [ {{ post.title }} ]({{ post.url }})
 
 {% endif %}
 
