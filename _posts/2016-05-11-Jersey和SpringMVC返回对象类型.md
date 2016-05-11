@@ -18,18 +18,18 @@ private final T body;
 
 @Override
 public String toString() {
-	StringBuilder builder = new StringBuilder("<");
-	if (body != null) {
-		builder.append(body);
-		if (headers != null) {
-			builder.append(',');
-		}
-	}
-	if (headers != null) {
-		builder.append(headers);
-	}
-	builder.append('>');
-	return builder.toString();
+  StringBuilder builder = new StringBuilder("<");
+  if (body != null) {
+    builder.append(body);
+    if (headers != null) {
+      builder.append(',');
+    }
+  }
+  if (headers != null) {
+    builder.append(headers);
+  }
+  builder.append('>');
+  return builder.toString();
 }
 ```
 
