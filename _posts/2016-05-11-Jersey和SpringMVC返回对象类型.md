@@ -145,11 +145,13 @@ app.factory('Man', function($resource) {
 * [Post JSON to spring REST webservice][1]
 * [Building Responses][2]
 * [Using Entity Providers to Map HTTP Response and Request Entity Bodies][3]
-* [201 CREATED WITH ANGULAR RESOURCE][4]
-* [AngularJS $http and $resource][5]
+* [How to access response headers using $resource in Angular?][4]
+* [201 CREATED WITH ANGULAR RESOURCE][5]
+* [AngularJS $http and $resource][6]
 
 [1]: http://www.leveluplunch.com/java/tutorials/014-post-json-to-spring-rest-webservice/
 [2]: https://jersey.java.net/documentation/latest/representations.html#d0e6628
 [3]: http://docs.oracle.com/javaee/6/tutorial/doc/gilik.html#gipze
-[4]: http://www.trajano.net/2013/05/201-created-with-angular-resource/
-[5]: http://en.proft.me/2015/07/4/angularjs-http-and-resource/
+[4]: http://stackoverflow.com/questions/28405862/how-to-access-response-headers-using-resource-in-angular
+[5]: http://www.trajano.net/2013/05/201-created-with-angular-resource/
+[6]: http://en.proft.me/2015/07/4/angularjs-http-and-resource/
