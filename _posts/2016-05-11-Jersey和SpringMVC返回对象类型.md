@@ -106,6 +106,8 @@ public abstract ResponseBuilder header(String name, Object value);
 
 **参考文章：**
 
-* [Building Responses][1]
+* [Post JSON to spring REST webservice][1]
+* [Building Responses][2]
 
-[1]: https://jersey.java.net/documentation/latest/representations.html#d0e6628
+[1]: http://www.leveluplunch.com/java/tutorials/014-post-json-to-spring-rest-webservice/
+[2]: https://jersey.java.net/documentation/latest/representations.html#d0e6628
