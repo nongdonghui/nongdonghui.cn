@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Archive
+title: 文章分类
 ---
 
 {% for category in site.categories %}
