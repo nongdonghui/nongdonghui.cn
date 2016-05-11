@@ -1,9 +1,6 @@
 ---
 layout: post
 title: angularjs中$http的一点用法
-permalink: angularjs中$http的一点用法
-comments: True
-categories: angularjs
 ---
 
 ## {{ page.title }}
@@ -11,8 +8,6 @@ categories: angularjs
 `{{ page.date | date: "%Y.%-m.%-d" }} - 南京`
 
 > angularjs使用$http简单的封装了js原生的XMLHttpRequest对象
-
-<!--more-->
 
 ### 链式调用
 ```javascript

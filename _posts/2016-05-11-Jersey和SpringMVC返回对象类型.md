@@ -1,9 +1,6 @@
 ---
 layout: post
 title: Jersey和SpringMVC返回对象类型
-permalink: Jersey和SpringMVC返回对象类型
-comments: True
-categories: java
 ---
 
 ## {{ page.title }}
@@ -11,8 +8,6 @@ categories: java
 `{{ page.date | date: "%Y.%-m.%-d" }} - 南京`
 
 SpringMVC的rest api返回类型是自己实现的`ResponseEntity`，它只有一个`HttpStatus`类型的属性`statusCode`，然后继承了`HttpEntity`，我们查看里面的主要代码
-
-<!--more-->
 
 ```java
 public static final HttpEntity EMPTY = new HttpEntity();

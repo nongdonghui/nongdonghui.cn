@@ -1,9 +1,6 @@
 ---
 layout: post
 title: ionic应用在mac上使用Xcode7.2(7C68)进行iphone真机测试
-permalink: ionic应用在mac上使用Xcode7.2(7C68)进行iphone真机测试
-comments: True
-categories: ionic
 ---
 
 ## {{ page.title }}
@@ -11,8 +8,6 @@ categories: ionic
 `{{ page.date | date: "%Y.%-m.%-d" }} - 南京`
 
 * 前提环境：假设已经在mac(OS X El Capitan 版本 10.11.2)上装好了Xcode7.2(7C68)和ionic环境
-
-<!--more-->
 
 * 运行添加ios平台命令 ionic platform add ios
 

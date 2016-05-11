@@ -1,9 +1,6 @@
 ---
 layout: post
 title: angularjs中使用ng-repeat渲染最后一个li的时候设置不同样式
-permalink: angularjs中使用ng-repeat渲染最后一个li的时候设置不同样式
-comments: True
-categories: angularjs
 ---
 
 ## {{ page.title }}
@@ -11,8 +8,6 @@ categories: angularjs
 `{{ page.date | date: "%Y.%-m.%-d" }} - 南京`
 
 如题所示，比如我要在下面的代码的最后一个li节点添加一个样式
-
-<!--more-->
 
 ```html
 <li ng-repeat="item in items">  

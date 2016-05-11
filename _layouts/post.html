@@ -1,46 +1,30 @@
 ---
 layout: default
 ---
-
-<div class="post">
-  <h1 class="post-title">{{ page.title }}</h1>
-  <span class="post-meta">
-      <span class="post-date">
-          {{ page.date | date_to_string }}
-      </span>
-      <div class="post-meta-separator">
-          &#x2016;
-      </div>
-      <span class="post-categories">
-          <a href="/archive/#{{ page.categories }}">
-              {{ page.categories | first | capitalize }}
-          </a>
-      </span>
-  </span>
-  {{ content }}
+<div class="markdown-body">
+		{{ content }}
+		<h2>相关阅读</h2>
+		<ul class="posts">
+			{% for post in site.related_posts limit:3 %}
+				<li><span>{{ post.date | date: "%Y.%-m.%-d" }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+			{% endfor %}
+		</ul>
+		<p>
+			<!-- 多说评论框 start -->
+			<div class="ds-thread" data-thread-key="{{ page.title }}" data-title="农东辉" data-url="{{ page.url }}"></div>
+			<!-- 多说评论框 end -->
+			<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+			<script type="text/javascript">
+			var duoshuoQuery = {short_name:"nongdonghui"};
+			(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+			ds.charset = 'UTF-8';
+			(document.getElementsByTagName('head')[0]
+			|| document.getElementsByTagName('body')[0]).appendChild(ds);
+			})();
+			</script>
+			<!-- 多说公共JS代码 end -->
+		</p>
 </div>
-
-<hr>
-<p><form action="{{ site.baseurl }}">
-  <button class="btn btn-default btn-lg" href="{{ site.baseurl }}">
-      Back to home...
-  </button>
-</form></p>
-
-<div class="related">
-  <h2>Related Posts</h2>
-  <ul class="related-posts">
-    {% for post in site.related_posts limit:3 %}
-      <li>
-        <h3>
-          <a href="{{ post.url }}">
-            {{ post.title }}
-            <small>{{ post.date | date_to_string }}</small>
-          </a>
-        </h3>
-      </li>
-    {% endfor %}
-  </ul>
-</div>
-
-{% include comments.html %}
