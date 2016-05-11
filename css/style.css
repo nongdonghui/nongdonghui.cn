@@ -11,14 +11,13 @@ body {
   border-collapse: collapse;
 }
 th {
-  background: #FBFAF8;
-  border: 1px solid #eee;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   vertical-align: middle;
   font-size: 0.9em;
 }
 td {
   vertical-align: top;
-  border: 1px solid #eee;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 0.4em 0.5em 0.4em 0.5em;
   font-size: 0.9em;
 }
