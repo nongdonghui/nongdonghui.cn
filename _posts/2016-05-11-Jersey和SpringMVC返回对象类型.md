@@ -106,6 +106,6 @@ public abstract ResponseBuilder header(String name, Object value);
 
 **参考文章：**
 
-* [][1]
+* [Building Responses][1]
 
 [1]: https://jersey.java.net/documentation/latest/representations.html#d0e6628
