@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 介绍3种sublime text主题
-categories: sublime text
+categories: SublimeText
 ---
 
 ## {{ page.title }}
