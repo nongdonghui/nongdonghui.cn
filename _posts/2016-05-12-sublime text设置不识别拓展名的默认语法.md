@@ -1,7 +1,7 @@
 ---
 layout: post
 title: sublime text设置不识别拓展名的默认语法
-categories: sublime text
+categories: sublime-text
 ---
 
 ## {{ page.title }}
