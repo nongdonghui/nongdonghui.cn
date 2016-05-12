@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 介绍3种sublime text主题
+title: 介绍3种SublimeText主题
 categories: SublimeText
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: sublime text设置不识别拓展名的默认语法
+title: SublimeText设置不识别拓展名的默认语法
 categories: SublimeText
 ---
 
