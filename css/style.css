@@ -87,3 +87,23 @@ hr {
   text-decoration: none;
   color: #337ab7;
 }
+a:hover {
+    background-color: #E6EBED;
+    color: #107EC0;
+}
+a:visited {
+    color: #107EC0;
+}
+a:hover {
+    color: #000066;
+}
+a:visited {
+    color: #009999;
+}
+a:link {
+    color: #0F3660;
+}
+
+a {
+    color: #107EC0;
+}
