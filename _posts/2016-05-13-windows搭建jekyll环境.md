@@ -14,10 +14,8 @@ categories: jekyll
 确保安装成功
 
 ```sh
-
 C:\Users\Administrator>ruby -v
 ruby 2.3.0p0 (2015-12-25 revision 53290) [x64-mingw32]
-
 ```
 
 * 安装 Ruby DevKit <http://rubyinstaller.org/downloads/>  
