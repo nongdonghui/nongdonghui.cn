@@ -523,7 +523,6 @@
 .markdown-body pre {
   padding: 16px;
   overflow: auto;
-  overflow-x: scroll;
   font-size: 85%;
   line-height: 1.45;
   /* background-color: #f7f7f7; */
@@ -545,7 +544,6 @@
   padding: 0;
   margin: 0;
   overflow: initial;
-  overflow-x: scroll;
   line-height: inherit;
   word-wrap: normal;
   background-color: transparent;
@@ -564,7 +562,7 @@
   line-height: 10px;
   color: #555;
   vertical-align: middle;
-  background-color: #fcfcfc;
+  /* background-color: #fcfcfc; */
   border: solid 1px #ccc;
   border-bottom-color: #bbb;
   border-radius: 3px;
@@ -677,7 +675,7 @@
   line-height: 10px;
   color: #555;
   vertical-align: middle;
-  background-color: #fcfcfc;
+  /* background-color: #fcfcfc; */
   border: solid 1px #ccc;
   border-bottom-color: #bbb;
   border-radius: 3px;
