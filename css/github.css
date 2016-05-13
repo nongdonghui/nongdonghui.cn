@@ -494,9 +494,8 @@
   padding-top: 0.2em;
   padding-bottom: 0.2em;
   margin: 0;
-  font-size: 85%;
-  background-color: #f2f8fc;
-  border-radius: 3px;
+  font-size: 90%;
+  background-color: rgba(0,0,0,0.04);
 }
 
 .markdown-body code:before,
