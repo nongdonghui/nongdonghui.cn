@@ -51,6 +51,8 @@ and 'install' [options] are:
   -f, --force  overwrite existing helper scripts
 ```
 
+把末尾的分号去掉，继续
+
 ```sh
 C:\RubyDevKit>ruby dk.rb init
 
@@ -58,6 +60,8 @@ Initialization complete! Please review and modify the auto-generated
 'config.yml' file to ensure it contains the root directories to all
 of the installed Rubies you want enhanced by the DevKit.
 ```
+
+初始化完成，install一下
 
 ```sh
 C:\RubyDevKit>ruby dk.rb install
@@ -71,7 +75,7 @@ and rerun 'ruby dk.rb install'
 - C:/Ruby23-x64
 ```
 
-我的\_config.yml最后是这样
+保存，最后我的\_config.yml是这样
 
 ```sh
 ......
@@ -103,7 +107,7 @@ C:\RubyDevKit>ruby dk.rb install
 
 * 安装 Jekyll
 
-确保 gem 已经正确安装
+确保gem已经正确安装
 
 ```sh
 C:\Users\Administrator>gem -v
@@ -128,6 +132,8 @@ Fetching: ffi-1.9.10-x64-mingw32.gem ( 12%)ERROR:  While executing gem ... (Gem:
 hError)
     Errno::ECONNRESET: An existing connection was forcibly closed by the remote host. - SSL_connect
 (https://api.rubygems.org/gems/ffi-1.9.10-x64-mingw32.gem)
+
+重复运行这条命令gem install jekyll直到出现如下的成功提示
 
 C:\Users\Administrator>gem install jekyll
 Fetching: ffi-1.9.10-x64-mingw32.gem (100%)
@@ -173,18 +179,7 @@ ss-converter, colorator, jekyll after 32 seconds
 
 等待过程比较漫长，可能会超过半小时哦
 
-现在可以把自己的name.github.io运行起来了，先clone出来，然后命令行进入目录，执行
-
-```sh
-Jekyll -server -auto
-```
-
-```sh
-E:\myApp\nongdonghui.github.io>Jekyll -server -auto
-jekyll 3.1.3 | Error:  Whoops, we can't understand your command.
-jekyll 3.1.3 | Error:  invalid option: -auto
-jekyll 3.1.3 | Error:  Run your command again with the --help switch to see available options.
-```
+现在可以把你的name.github.io运行起来了，先clone到本地，然后命令行进入目录，执行
 
 ```sh
 E:\myApp\nongdonghui.github.io>jekyll -server -auto
@@ -193,13 +188,15 @@ jekyll 3.1.3 | Error:  invalid option: -auto
 jekyll 3.1.3 | Error:  Run your command again with the --help switch to see available options.
 ```
 
+不能识别命令，查看一下帮助
+
 ```sh
 E:\myApp\nongdonghui.github.io>jekyll --help
 jekyll 3.1.3 -- Jekyll is a blog-aware, static site generator in Ruby
 
 Usage:
 
-  jekyll <subcommand> [options]
+  jekyll \<subcommand\> [options]
 
 Options:
         -s, --source [DIR]  Source directory (defaults to ./)
@@ -247,8 +244,6 @@ pful resources at http://jekyllrb.com/help/!
 首先是pygments变量已经过时，已经用highlighter代替，值有2项可选['rouge', 'pygments']，改一下；还有就是gem没有安装相应的redcarpet插件，安装它
 
 ```sh
-gem install redcarpet
-
 E:\myApp\nongdonghui.github.io>gem install redcarpet
 Fetching: redcarpet-3.3.4.gem (100%)
 Temporarily enhancing PATH to include DevKit...
@@ -259,6 +254,8 @@ Installing ri documentation for redcarpet-3.3.4
 Done installing documentation for redcarpet after 2 seconds
 1 gem installed
 ```
+
+安装后重新执行启动语句
 
 ```sh
 E:\myApp\nongdonghui.github.io>jekyll serve
@@ -279,29 +276,14 @@ ul resources at http://jekyllrb.com/help/!
                     pygments
 ```
 
+提示pygments依赖没有安装，那就安装它
+
 ```sh
 E:\myApp\nongdonghui.github.io>gem install pygments.rb
 ERROR:  While executing gem ... (Gem::RemoteFetcher::UnknownHostError)
     timed out (https://api.rubygems.org/quick/Marshal.4.8/pygments.rb-0.6.3.gemspec.rz)
 
-E:\myApp\nongdonghui.github.io>gem install pygments.rb
-ERROR:  While executing gem ... (Gem::RemoteFetcher::FetchError)
-    Errno::ECONNRESET: An existing connection was forcibly closed by the remote host. - SSL_connect
-(https://api.rubygems.org/quick/Marshal.4.8/pygments.rb-0.6.3.gemspec.rz)
-
-E:\myApp\nongdonghui.github.io>gem install pygments.rb
-Fetching: yajl-ruby-1.2.1.gem (100%)
-Temporarily enhancing PATH to include DevKit...
-Building native extensions.  This could take a while...
-Successfully installed yajl-ruby-1.2.1
-ERROR:  While executing gem ... (Gem::RemoteFetcher::FetchError)
-    Errno::ECONNRESET: An existing connection was forcibly closed by the remote host. - SSL_connect
-(https://api.rubygems.org/quick/Marshal.4.8/posix-spawn-0.3.11.gemspec.rz)
-
-E:\myApp\nongdonghui.github.io>gem install pygments.rb
-ERROR:  While executing gem ... (Gem::RemoteFetcher::FetchError)
-    Errno::ECONNRESET: An existing connection was forcibly closed by the remote host. - SSL_connect
-(https://api.rubygems.org/quick/Marshal.4.8/posix-spawn-0.3.11.gemspec.rz)
+重复运行这条命令gem install pygments.rb直到出现如下的成功提示
 
 E:\myApp\nongdonghui.github.io>gem install pygments.rb
 Fetching: posix-spawn-0.3.11.gem (100%)Fetching: posix-spawn-0.3.11.gem
@@ -344,7 +326,7 @@ Configuration file: E:/myApp/nongdonghui.github.io/_config.yml
 Regenerating: 1 file(s) changed at 2016-05-13 17:44:38      Build Warning: Layout 'nil' requested in atom.xml does not exist.
 ```
 
-提示说重新自动生成了，但是没有找到atom.xml文件内的nil这个布局，而且浏览器界面没有实时刷新最新内容。
+提示说重新自动生成了，但是没有找到atom.xml文件内的nil这个布局，而且浏览器界面没有自动实时刷新最新内容，需要手动刷新。
 
 我们把它的布局设置为default然后Ctrl+S看看
 
@@ -362,58 +344,12 @@ Please add the following to your Gemfile to avoid polling for changes:
 那我们就顺示而为，安装它
 
 ```sh
-E:\myApp\nongdonghui.github.io>gem wdm
-ERROR:  While executing gem ... (Gem::CommandLineError)
-    Unknown command wdm
-
-E:\myApp\nongdonghui.github.io>gem 'wdm'
-ERROR:  While executing gem ... (Gem::CommandLineError)
-    Unknown command wdm
-
 E:\myApp\nongdonghui.github.io>gem install wdm
 ERROR:  While executing gem ... (Gem::RemoteFetcher::FetchError)
     Errno::ECONNRESET: An existing connection was forcibly closed by the remote host. - SSL_connect
 (https://api.rubygems.org/quick/Marshal.4.8/wdm-0.1.1.gemspec.rz)
 
-E:\myApp\nongdonghui.github.io>gem install wdm
-ERROR:  While executing gem ... (Gem::RemoteFetcher::FetchError)
-    Errno::ECONNRESET: An existing connection was forcibly closed by the remote host. - SSL_connect
-(https://api.rubygems.org/quick/Marshal.4.8/wdm-0.1.1.gemspec.rz)
-
-E:\myApp\nongdonghui.github.io>gem install wdm
-ERROR:  While executing gem ... (Gem::RemoteFetcher::FetchError)
-    Errno::ECONNRESET: An existing connection was forcibly closed by the remote host. - SSL_connect
-(https://api.rubygems.org/quick/Marshal.4.8/wdm-0.1.1.gemspec.rz)
-
-E:\myApp\nongdonghui.github.io>gem install wdm
-Fetching: wdm-0.1.1.gem ( 11%)ERROR:  While executing gem ... (Gem::RemoteFetcher::FetchError)
-    Errno::ECONNRESET: An existing connection was forcibly closed by the remote host. - SSL_connect
-(https://api.rubygems.org/gems/wdm-0.1.1.gem)
-
-E:\myApp\nongdonghui.github.io>gem install wdm
-ERROR:  While executing gem ... (Gem::RemoteFetcher::FetchError)
-    Errno::ECONNRESET: An existing connection was forcibly closed by the remote host. - SSL_connect
-(https://api.rubygems.org/gems/wdm-0.1.1.gem)
-
-E:\myApp\nongdonghui.github.io>gem install wdm
-ERROR:  While executing gem ... (Gem::RemoteFetcher::FetchError)
-    Errno::ECONNRESET: An existing connection was forcibly closed by the remote host. - SSL_connect
-(https://api.rubygems.org/gems/wdm-0.1.1.gem)
-
-E:\myApp\nongdonghui.github.io>gem install wdm
-ERROR:  While executing gem ... (Gem::RemoteFetcher::FetchError)
-    Errno::ECONNRESET: An existing connection was forcibly closed by the remote host. - SSL_connect
-(https://api.rubygems.org/gems/wdm-0.1.1.gem)
-
-E:\myApp\nongdonghui.github.io>gem install wdm
-ERROR:  While executing gem ... (Gem::RemoteFetcher::FetchError)
-    Errno::ECONNRESET: An existing connection was forcibly closed by the remote host. - SSL_connect
-(https://api.rubygems.org/gems/wdm-0.1.1.gem)
-
-E:\myApp\nongdonghui.github.io>gem install wdm
-ERROR:  While executing gem ... (Gem::RemoteFetcher::FetchError)
-    Errno::ECONNRESET: An existing connection was forcibly closed by the remote host. - SSL_connect
-(https://api.rubygems.org/gems/wdm-0.1.1.gem)
+重复运行这条命令gem install wdm直到出现如下的成功提示
 
 E:\myApp\nongdonghui.github.io>gem install wdm
 Fetching: wdm-0.1.1.gem (100%)
@@ -447,7 +383,6 @@ Configuration file: E:/myApp/nongdonghui.github.io/_config.yml
 ```sh
 Regenerating: 1 file(s) changed at 2016-05-13 18:09:29 ...done in 1.870219 seconds.
 ```
-
 
 **参考文章：**
 
