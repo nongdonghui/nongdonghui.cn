@@ -8,7 +8,7 @@ categories: jekyll
 
 {{ page.date | date: "%Y.%-m.%-d" }} - 南京 | <a href="/archive#{{ page.categories }}">{{ page.categories}}</a>
 
-* 安装 Ruby <http://rubyinstaller.org/downloads/>  
+* 安装 Ruby [下载地址][6]  
 注意安装过程要勾选的，请全选
 
 确保安装成功
@@ -18,8 +18,8 @@ C:\Users\Administrator>ruby -v
 ruby 2.3.0p0 (2015-12-25 revision 53290) [x64-mingw32]
 ```
 
-* 安装 Ruby DevKit <http://rubyinstaller.org/downloads/>  
-这是一个压缩包，把它解压到C:\RubyDevKit目录下，接着初始化安装
+* 安装 Ruby DevKit [下载地址][6]  
+这是一个exe压缩包，把它解压到`C:\RubyDevKit`目录下，接着初始化安装
 
 初始化命令：
 
@@ -397,3 +397,4 @@ Regenerating: 1 file(s) changed at 2016-05-13 18:09:29 ...done in 1.870219 secon
 [3]: http://blog.csdn.net/qiujuer/article/details/44620019
 [4]: http://blog.fooleap.org/run-jekyll-on-windows.html
 [5]: http://blog.leanote.com/post/551ab4c438f41114e80014af
+[6]: http://rubyinstaller.org/downloads
