@@ -13,7 +13,7 @@ categories: jekyll
 
 确保安装成功
 
-```sh
+```
 C:\Users\Administrator>ruby -v
 ruby 2.3.0p0 (2015-12-25 revision 53290) [x64-mingw32]
 ```
@@ -23,14 +23,14 @@ ruby 2.3.0p0 (2015-12-25 revision 53290) [x64-mingw32]
 
 初始化命令：
 
-```sh
+```
 cd C:\RubyDevKit
 ruby dk.rb init
 ```
 
 注意，一定要在开始，输入cmd然后打开的命令行，命令跳转到该目录进行初始化；而且init后不能有分号，下面是我的init及install过程
 
-```sh
+```
 C:\RubyDevKit>ruby dk.rb init;
 
 Configures an MSYS/MinGW based Development Kit (DevKit) for
@@ -53,7 +53,7 @@ and 'install' [options] are:
 
 把末尾的分号去掉，继续
 
-```sh
+```
 C:\RubyDevKit>ruby dk.rb init
 
 Initialization complete! Please review and modify the auto-generated
@@ -63,21 +63,21 @@ of the installed Rubies you want enhanced by the DevKit.
 
 初始化完成，install一下
 
-```sh
+```
 C:\RubyDevKit>ruby dk.rb install
 Invalid configuration or no Rubies listed. Please fix 'config.yml'
 and rerun 'ruby dk.rb install'
 ```
 
-打开\_config.yml，然后添加相应的ruby目录
+打开config.yml，然后添加相应的ruby目录
 
-```sh
+```
 - C:/Ruby23-x64
 ```
 
-保存，最后我的\_config.yml是这样
+保存，最后我的config.yml是这样
 
-```sh
+```
 ......
 # Example:
 #
@@ -91,7 +91,7 @@ and rerun 'ruby dk.rb install'
 
 关闭cmd窗口重新打开，继续运行命令
 
-```sh
+```
 C:\RubyDevKit>ruby dk.rb install
 [INFO] Updating convenience notice gem override for 'C:/Ruby23-x64'
 [INFO] Installing 'C:/Ruby23-x64/lib/ruby/site_ruby/devkit.rb'
@@ -99,7 +99,7 @@ C:\RubyDevKit>ruby dk.rb install
 
 注意：如果你为了节省时间，在RubyDevKit文件夹上右键-在此处打开命令窗口，然后输入命令，是这么一个结果
 
-```sh
+```
 C:\RubyDevKit>ruby dk.rb install
 'ruby' 不是内部或外部命令，也不是可运行的程序
 或批处理文件。
@@ -109,14 +109,14 @@ C:\RubyDevKit>ruby dk.rb install
 
 确保gem已经正确安装
 
-```sh
+```
 C:\Users\Administrator>gem -v
 2.5.1
 ```
 
 安装 Jekyll
 
-```sh
+```
 C:\Users\Administrator>gem install jekyll
 Fetching: safe_yaml-1.0.4.gem (100%)
 Successfully installed safe_yaml-1.0.4
@@ -179,9 +179,9 @@ ss-converter, colorator, jekyll after 32 seconds
 
 等待过程比较漫长，可能会超过半小时哦
 
-现在可以把你的name.github.io运行起来了，先clone到本地，然后命令行进入目录，执行
+现在可以把你的`name.github.io`运行起来了，先clone到本地，然后命令行进入目录，执行
 
-```sh
+```
 E:\myApp\nongdonghui.github.io>jekyll -server -auto
 jekyll 3.1.3 | Error:  Whoops, we can't understand your command.
 jekyll 3.1.3 | Error:  invalid option: -auto
@@ -190,7 +190,7 @@ jekyll 3.1.3 | Error:  Run your command again with the --help switch to see avai
 
 不能识别命令，查看一下帮助
 
-```sh
+```
 E:\myApp\nongdonghui.github.io>jekyll --help
 jekyll 3.1.3 -- Jekyll is a blog-aware, static site generator in Ruby
 
@@ -220,7 +220,7 @@ Subcommands:
   serve, server, s      Serve your site locally
 ```
 
-```sh
+```
 E:\myApp\nongdonghui.github.io>jekyll serve
 Configuration file: E:/myApp/nongdonghui.github.io/_config.yml
        Deprecation: The 'pygments' configuration option has been renamed to 'highlighter'. Please up
@@ -241,9 +241,9 @@ pful resources at http://jekyllrb.com/help/!
                     redcarpet
 ```
 
-首先是pygments变量已经过时，已经用highlighter代替，值有2项可选['rouge', 'pygments']，改一下；还有就是gem没有安装相应的redcarpet插件，安装它
+首先是`pygments`变量已经过时，已经用`highlighter`代替，值有2项可选`['rouge', 'pygments']`，改一下；还有就是`gem`没有安装相应的`redcarpet`插件，安装它
 
-```sh
+```
 E:\myApp\nongdonghui.github.io>gem install redcarpet
 Fetching: redcarpet-3.3.4.gem (100%)
 Temporarily enhancing PATH to include DevKit...
@@ -257,7 +257,7 @@ Done installing documentation for redcarpet after 2 seconds
 
 安装后重新执行启动语句
 
-```sh
+```
 E:\myApp\nongdonghui.github.io>jekyll serve
 Configuration file: E:/myApp/nongdonghui.github.io/_config.yml
             Source: E:/myApp/nongdonghui.github.io
@@ -278,7 +278,7 @@ ul resources at http://jekyllrb.com/help/!
 
 提示pygments依赖没有安装，那就安装它
 
-```sh
+```
 E:\myApp\nongdonghui.github.io>gem install pygments.rb
 ERROR:  While executing gem ... (Gem::RemoteFetcher::UnknownHostError)
     timed out (https://api.rubygems.org/quick/Marshal.4.8/pygments.rb-0.6.3.gemspec.rz)
@@ -302,7 +302,7 @@ Done installing documentation for posix-spawn, pygments.rb after 2 seconds
 
 再次运行
 
-```sh
+```
 E:\myApp\nongdonghui.github.io>jekyll serve
 Configuration file: E:/myApp/nongdonghui.github.io/_config.yml
             Source: E:/myApp/nongdonghui.github.io
@@ -320,30 +320,30 @@ Configuration file: E:/myApp/nongdonghui.github.io/_config.yml
 [2016-05-13 17:43:07] ERROR `/favicon.ico' not found.
 ```
 
-在浏览器打开http://127.0.0.1:4000就会看到你的主页了，现在可以在本地修改预览好了再提交到服务器了。让我们试着修改一下，看控制台是怎么提示的。Ctrl+S。
+在浏览器打开http://127.0.0.1:4000就会看到你的主页了，现在可以在本地修改预览好了再提交到服务器了。让我们试着修改一下，保存，看控制台是怎么提示的
 
-```sh
+```
 Regenerating: 1 file(s) changed at 2016-05-13 17:44:38      Build Warning: Layout 'nil' requested in atom.xml does not exist.
 ```
 
 提示说重新自动生成了，但是没有找到atom.xml文件内的nil这个布局，而且浏览器界面没有自动实时刷新最新内容，需要手动刷新。
 
-我们把它的布局设置为default然后Ctrl+S看看
+我们把它的布局设置为`default`然后保存看看
 
-```sh
+```
 Regenerating: 1 file(s) changed at 2016-05-13 17:52:03 ...done in 2.111409 seconds.
 ```
 
 启动的时候有如下提示：
 
-```sh
+```
 Please add the following to your Gemfile to avoid polling for changes:
     gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 ```
 
 那我们就顺示而为，安装它
 
-```sh
+```
 E:\myApp\nongdonghui.github.io>gem install wdm
 ERROR:  While executing gem ... (Gem::RemoteFetcher::FetchError)
     Errno::ECONNRESET: An existing connection was forcibly closed by the remote host. - SSL_connect
@@ -364,7 +364,7 @@ Done installing documentation for wdm after 0 seconds
 
 再次运行，没有提示了
 
-```sh
+```
 E:\myApp\nongdonghui.github.io>jekyll s
 Configuration file: E:/myApp/nongdonghui.github.io/_config.yml
             Source: E:/myApp/nongdonghui.github.io
@@ -378,9 +378,9 @@ Configuration file: E:/myApp/nongdonghui.github.io/_config.yml
   Server running... press ctrl-c to stop.
 ```
 
-修改一下文件内容，Ctrl+S，看看效果
+修改一下文件内容，保存看看效果
 
-```sh
+```
 Regenerating: 1 file(s) changed at 2016-05-13 18:09:29 ...done in 1.870219 seconds.
 ```
 
