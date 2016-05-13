@@ -523,7 +523,7 @@
 .markdown-body pre {
   padding: 16px;
   overflow: auto;
-  overflow-x: visible;
+  overflow-x: scroll;
   font-size: 85%;
   line-height: 1.45;
   /* background-color: #f7f7f7; */
@@ -545,7 +545,7 @@
   padding: 0;
   margin: 0;
   overflow: initial;
-  overflow-x: visible;
+  overflow-x: scroll;
   line-height: inherit;
   word-wrap: normal;
   background-color: transparent;
