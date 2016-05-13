@@ -28,11 +28,9 @@ cd C:\RubyDevKit
 ruby dk.rb init
 ```
 
-注意，一定要在开始，输入cmd然后在打开的命令行，命令跳转到该目录进行初始化；而且init后不能有分号，下面是我的init及install过程
+注意，一定要在开始，输入cmd然后打开的命令行，命令跳转到该目录进行初始化；而且init后不能有分号，下面是我的init及install过程
 
 ```sh
-C:\>cd RubyDevKit
-
 C:\RubyDevKit>ruby dk.rb init;
 
 Configures an MSYS/MinGW based Development Kit (DevKit) for
@@ -67,13 +65,13 @@ Invalid configuration or no Rubies listed. Please fix 'config.yml'
 and rerun 'ruby dk.rb install'
 ```
 
-打开config.yml，然后添加相应的ruby目录
+打开\_config.yml，然后添加相应的ruby目录
 
 ```sh
 - C:/Ruby23-x64
 ```
 
-我的config.yml最后是这样
+我的\_config.yml最后是这样
 
 ```sh
 ......

@@ -544,6 +544,7 @@
   padding: 0;
   margin: 0;
   overflow: initial;
+  overflow-x: visible;
   line-height: inherit;
   word-wrap: normal;
   background-color: transparent;
