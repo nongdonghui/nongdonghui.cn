@@ -4,36 +4,21 @@ body {
   color: #333;
   font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
-table,
-th,
-td {
-  border: 1px solid rgba(0, 0, 0, 0.1);
+.table {
+    display: block;
+    width: 100%;
+    overflow: auto;
+    word-break: keep-all;
+    border-spacing: 0;
+    border-collapse: collapse;
 }
-
-table {
-  border-collapse: separate;
-  border-spacing: 0;
-  border-width: 1px 0 0 1px;
-  margin-bottom: 24px;
-  width: 100%;
+.table tr {
+    background-color: #fff;
+    border-top: 1px solid #ccc;
 }
-
-caption,
-th,
-td {
-  font-weight: normal;
-  text-align: left;
-}
-
-th {
-  border-width: 0 1px 1px 0;
-  font-weight: bold;
-  padding: 2px;
-}
-
-td {
-  border-width: 0 1px 1px 0;
-  padding: 2px;
+.table th, .table td {
+    padding: 6px 13px;
+    border: 1px solid #ddd;
 }
 @media (min-width: 768px) {
   th,td {

@@ -2,11 +2,12 @@
 layout: post
 title: windows搭建jekyll环境
 categories: jekyll
+lastModify: 5.14更新
 ---
 
 ## {{ page.title }}
 
-{{ page.date | date: "%Y.%-m.%-d" }} - 南京 | <a href="/archive#{{ page.categories }}">{{ page.categories}}</a>
+{{ page.date  |  date: "%Y.%-m.%-d" }} - 南京  |  <a href="/archive#{{ page.categories }}">{{ page.categories}}</a>
 
 * 安装 Ruby [下载地址][6]  
 注意安装过程要勾选的，请全选
@@ -183,9 +184,9 @@ ss-converter, colorator, jekyll after 32 seconds
 
 ```
 E:\myApp\nongdonghui.github.io>jekyll -server -auto
-jekyll 3.1.3 | Error:  Whoops, we can't understand your command.
-jekyll 3.1.3 | Error:  invalid option: -auto
-jekyll 3.1.3 | Error:  Run your command again with the --help switch to see available options.
+jekyll 3.1.3  |  Error:  Whoops, we can't understand your command.
+jekyll 3.1.3  |  Error:  invalid option: -auto
+jekyll 3.1.3  |  Error:  Run your command again with the --help switch to see available options.
 ```
 
 不能识别命令，查看一下帮助
@@ -384,8 +385,92 @@ Configuration file: E:/myApp/nongdonghui.github.io/_config.yml
 Regenerating: 1 file(s) changed at 2016-05-13 18:09:29 ...done in 1.870219 seconds.
 ```
 
+**更新列表：**
+
+* 2016-5-13
+
+经过调试，发现有一些包含中文的是找不到页面的，在\_config.yml添加了`encoding: utf-8`也是找不到页面
+
+```
+E:\myApp\nongdonghui.github.io>jekyll s
+......
+    Server address: http://127.0.0.1:4000/
+  Server running... press ctrl-c to stop.
+[2016-05-14 11:36:36] ERROR `/java/2016/05/11/Jersey和SpringMVC返回对象类型.html' not found.
+```
+
+试试过用修改cmd的console的编码为utf-8
+
+```
+Active code page: 65001
+
+C:\Users\Administrator>e:
+
+E:\>cd E:\myApp\nongdonghui.github.io
+
+E:\myApp\nongdonghui.github.io>jekyll s -w
+......
+    Server address: http://127.0.0.1:4000/
+  Server running... press ctrl-c to stop.
+[2016-05-14 11:58:51] ERROR `/java/2016/05/11/Jerseyéœå­²pringMVCæ©æ–¿æ´–ç€µç¡…è–„ç»«è¯²ç€·.html' not found.
+[2016-05-14 11:58:51] ERROR Errno::EAGAIN: Resource temporarily unavailable @ io_write - <STDOUT>
+        C:/Ruby23-x64/lib/ruby/2.3.0/webrick/log.rb:78:in `write'
+        C:/Ruby23-x64/lib/ruby/2.3.0/webrick/log.rb:78:in `<<'
+        C:/Ruby23-x64/lib/ruby/2.3.0/webrick/log.rb:78:in `log'
+        C:/Ruby23-x64/lib/ruby/2.3.0/webrick/log.rb:153:in `log'
+        C:/Ruby23-x64/lib/ruby/2.3.0/webrick/log.rb:91:in `error'
+        C:/Ruby23-x64/lib/ruby/2.3.0/webrick/httpserver.rb:100:in `rescue in run'
+        C:/Ruby23-x64/lib/ruby/2.3.0/webrick/httpserver.rb:115:in `run'
+        C:/Ruby23-x64/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+[2016-05-14 11:59:29] ERROR `/éŽ¯è™«ç¡¶/2016/05/12/ç»¯è¤ç²ºéŽ¬Ñƒî„Ÿæ¶”çŠµæ®‘éžå—šÐ’.html' not found.
+```
+
+参考了[cpcp][8]发现根本就没有gbk的
+
+
+|  Code page  |  Country/ Region/ Language  |
+|  ---------  |  -------------------------  |
+|  437  |  United States  |
+|  850  |  Multilingual (Latin I)  |
+|  852  |  Slavic (Latin II)  |
+|  855  |  Cyrillic (Russian)  |
+|  857  |  Turkish  |
+|  859  |  Portuguese  |
+|  861  |  Icelandic  |
+|  862  |  Canadian-French  |
+|  865  |  Nordic  |
+|  866  |  Russian  |
+|  869  |  Modern Greek  |
+|  1252  |  West European Latin  |
+|  65000  |  UTF-7 *  |
+|  65001  |  UTF-8 *  |
+
+还参考了[jekyllrb][9]，用如下命令新建一个jekyll站点
+
+```sh
+~ $ gem install jekyll
+~ $ jekyll new my-awesome-site
+~ $ cd my-awesome-site
+~/my-awesome-site $ jekyll serve
+# => Now browse to http://localhost:4000
+```
+
+结果还是
+
+```
+Not Found
+
+`/java/2016/05/11/Jerseyå’ŒSpringMVCè¿”å›žå¯¹è±¡ç±»åž‹.html' not found.
+WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25) at 127.0.0.1:4000
+
+以下是控制台没有使用Active code page: 65001转utf-8的提示
+
+[2016-05-14 13:01:45] ERROR `/java/2016/05/11/Jersey和SpringMVC返回对象类型.html' not found.
+```
+
 **参考文章：**
 
+* [Run Jekyll on Windows][7]
 * ["cannot load ... redcarpet" running Jekyll locally #8][1]
 * [Jekyll serve didnt work: It looks like you don't have pygments or one of its dependencies installed][2]
 * [Windows下安装Ruby和Jekyll][3]
@@ -398,3 +483,6 @@ Regenerating: 1 file(s) changed at 2016-05-13 18:09:29 ...done in 1.870219 secon
 [4]: http://blog.fooleap.org/run-jekyll-on-windows.html
 [5]: http://blog.leanote.com/post/551ab4c438f41114e80014af
 [6]: http://rubyinstaller.org/downloads
+[7]: http://jekyll-windows.juthilo.com
+[8]: http://ss64.com/nt/chcp.html
+[9]: http://jekyllrb.com/
