@@ -134,11 +134,11 @@
 }
 
 .markdown-body h1 {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .markdown-body h2 {
-  font-size: 21px;
+  font-size: 18px;
 }
 
 .markdown-body h3 {
@@ -333,7 +333,6 @@
 
 .markdown-body h2 {
   padding-bottom: 0.3em;
-  font-size: 1.75em;
   line-height: 1.225;
   position: relative;
 }

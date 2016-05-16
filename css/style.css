@@ -38,7 +38,6 @@ svg {
 }
 .container h2 {
   padding-bottom: 0.3em;
-  font-size: 1.75em;
   line-height: 1.225;
   position: relative;
 }
@@ -71,7 +70,7 @@ hr {
 }
 .second-title {
   font-size: 14px;
-  margin-top: 14px;
+  margin-top: 4px;
   text-decoration: none;
 }
 .idx-h3 {
@@ -85,4 +84,27 @@ hr {
 :link {
   color: #4078c0;
   background: transparent;
+}
+h1 {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+h4 {
+  font-size: 14px;
+}
+
+h5 {
+  font-size: 12px;
+}
+
+h6 {
+  font-size: 11px;
 }
