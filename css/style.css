@@ -81,3 +81,7 @@ hr {
   background: #f9f9f9;
   border-left: 4px solid #5bc0de;
 }
+:link {
+  color: #107EC0;
+  background: transparent;
+}
