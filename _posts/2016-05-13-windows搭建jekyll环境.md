@@ -425,7 +425,7 @@ E:\myApp\nongdonghui.github.io>jekyll s -w
 [2016-05-14 11:59:29] ERROR `/éŽ¯è™«ç¡¶/2016/05/12/ç»¯è¤ç²ºéŽ¬Ñƒî„Ÿæ¶”çŠµæ®‘éžå—šÐ’.html' not found.
 ```
 
-参考了[cpcp][8]发现根本就没有gbk的
+参考了[chcp][8]发现根本就没有gbk的
 
 
 |  Code page  |  Country/ Region/ Language  |
