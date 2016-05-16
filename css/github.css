@@ -478,10 +478,11 @@
   background-color: #fff;
   border-top: 1px solid #ddd;
 }
-
+/*
 .markdown-body table tr:nth-child(2n) {
   background-color: #f8f8f8;
 }
+*/
 
 .markdown-body img {
   max-width: 100%;
