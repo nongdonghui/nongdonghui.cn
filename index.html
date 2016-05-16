@@ -139,7 +139,7 @@ title: welcome to ndh's writer place
 	{% assign lastPostIndex = site.posts.size | minus: 1 %}
 
 	{% for year in (startYear...endYear) reversed %}
-	  <h3>{{year}}</h3>
+    <ul><h3 class="idx-h3">{{year}}</h3>
 	  {% assign currentYear = year %}
 	  {% for month in (1...12) reversed %}
 
@@ -167,15 +167,15 @@ title: welcome to ndh's writer place
 
 	      {%comment%} +++++ get month name from a post.date +++++ {%endcomment%}
 	      {% assign post = postsArray | first %}
-	      {% assign monthName = post.date | date: "%-m" | append: "月" %}
+	      {% assign monthName = post.date | date: "%-m" | append: "" %}
 
 	      {% assign monthId = year | append: "-" | append: month %}
 
-	      <h4 id="{{ monthId }}">{{ monthName }}</h4>
-	      <table class="table">
+	      <li id="{{ monthId }}">{{ monthName }}<br>
+	      <table>
 	      {% for p in postsArray %}
 	        <tr>
-	          <td>{{ p.date | date: "%-m.%-d" }}</td>
+	          <td>{{ p.date | date: "%-d" }}</td>
 	          <td>
 	              <a href="{{ site.baseurl }}{{ p.url }}">
 	                  {{ p.title }}
@@ -184,11 +184,11 @@ title: welcome to ndh's writer place
             <td>{{ p.lastUpdated }}</td>
 	        </tr>
 	      {% endfor %}
-	      </table>
+        </table></li>
 	    {% endif %}
 
 	  {% endfor %}
-
+    </ul>
 	{% endfor %}
 
 </div>
