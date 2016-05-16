@@ -2,7 +2,7 @@
 layout: post
 title: windows搭建jekyll环境
 categories: jekyll
-lastModify: 5.14更新
+lastUpdated: 5.14更新
 ---
 
 ## {{ page.title }}
