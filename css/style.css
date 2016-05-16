@@ -81,5 +81,6 @@ a {
   margin-left: -40px;
 }
 .markdown-body blockquote {
-    background: rgba(0,0,0,0.02);
+  border-left: 4px solid #52E052;
+  background: #E9FBE9;
 }
