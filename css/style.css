@@ -5,27 +5,27 @@ body {
   font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 .table {
-    border-collapse: collapse;
-    border: 0;
-    margin: 1em 0;
-    width: 100%;
+  border-collapse: collapse;
+  border: 0;
+  margin: 1em 0;
+  width: 100%;
 }
 .table tr:last-child {
-    border-bottom: 1px #919699 solid;
+  border-bottom: 1px #919699 solid;
 }
 .table tr {
-    border-top: 1px #eceff8 solid;
+  border-top: 1px #eceff8 solid;
 }
 .table th {
-    padding-left: 2px;
-    text-align: left;
+  padding-left: 2px;
+  text-align: left;
 }
 .table td {
-    padding-left: 2px;
-    vertical-align: top;
+  padding-left: 2px;
+  vertical-align: top;
 }
 .table thead, .table tfoot {
-    background-color: #e2e2e2;
+  background-color: #e2e2e2;
 }
 
 .markdown-body img {
@@ -74,12 +74,7 @@ hr {
   margin-top: 14px;
   text-decoration: none;
 }
-a:hover {
-    background-color: #f1f7fb;
-    color: #107EC0;
-}
-
 a {
-    color: #107EC0;
+  color: #527bbd;
 }
 
