@@ -387,7 +387,7 @@ Regenerating: 1 file(s) changed at 2016-05-13 18:09:29 ...done in 1.870219 secon
 
 **更新列表：**
 
-* 2016-5-13
+* 2016-5-14
 
 经过调试，发现有一些包含中文的是找不到页面的，在\_config.yml添加了`encoding: utf-8`也是找不到页面
 
