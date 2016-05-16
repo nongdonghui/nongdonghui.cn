@@ -2,7 +2,7 @@
 layout: post
 title: windows搭建jekyll环境
 categories: jekyll
-lastUpdated: 5.14更新
+lastUpdated: 5.16更新
 ---
 
 ## {{ page.title }}
@@ -467,6 +467,10 @@ WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25) at 127.0.0.1:4000
 
 [2016-05-14 13:01:45] ERROR `/java/2016/05/11/Jersey和SpringMVC返回对象类型.html' not found.
 ```
+
+* 2016-5-16
+
+但是这一点也不影响发布，发布的文件路径都是正确的，提交到github上也是可以正常访问的，一些无关紧要的东西我们还是不要吹毛求疵了，毕竟还是文章才是核心内容，使用sublime text等的插件预览也是一个不错的选择，我现在就是用markdown插件预览的，其他编辑器也提供相应的插件预览。
 
 **参考文章：**
 
