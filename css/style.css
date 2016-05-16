@@ -80,12 +80,6 @@ a {
 .idx-h3 {
   margin-left: -40px;
 }
-.markdown-body code {
-  font-style: italic;
-}
-.markdown-body pre>code {
-  font-style: normal;
-}
 .markdown-body blockquote {
     background: #f9f9f9;
 }
