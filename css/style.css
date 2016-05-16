@@ -74,9 +74,6 @@ hr {
   margin-top: 14px;
   text-decoration: none;
 }
-a[href]:hover {
-  background: #ffa;
-}
 .idx-h3 {
   margin-left: -40px;
 }
