@@ -86,3 +86,6 @@ a {
 .markdown-body pre>code {
   font-style: normal;
 }
+.markdown-body blockquote {
+    background: #f9f9f9;
+}
