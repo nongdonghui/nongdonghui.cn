@@ -16,9 +16,9 @@ $http({
   url: 'data.json',
   method: 'GET'
 }).success(function(data, header, config, status) {
-  // 响应成功    
+  // 处理成功的响应   
 }).error(function(data, header, config, status) {
-  // 处理响应失败
+  // 处理失败的响应
 });
 ```
 $http服务是只能接受一个参数的函数，这个参数是一个对象，包含了用来生成HTTP请求的配置内容。  
@@ -37,10 +37,10 @@ var promise = $http({
 
 ```javascript
 promise.success(function(data, status, config, headers) {
-  //处理成功的响应
+  // 处理成功的响应
 });
 promise.error(function(data, status, hedaers, config) {
-  //处理失败后的响应
+  // 处理失败的响应
 });
 ```
 then()方法与其他两种方法的主要区别是，它会接收到完整的响应对象，而success()和error()则会对响应对象进行析构。
