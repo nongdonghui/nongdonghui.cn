@@ -84,3 +84,6 @@ a {
   border-left: 4px solid #52E052;
   background: #E9FBE9;
 }
+.markdown-body code {
+  background-color: #E9FBE9;
+}
