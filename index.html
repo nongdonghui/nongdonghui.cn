@@ -62,7 +62,7 @@ title: welcome to ndh's writer place
 
 	{%comment%} +++++++++++++++ build the table +++++++++++++++ {%endcomment%}
 
-	{% assign tableContent = "<tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th></tr>" %}
+	{% assign tableContent = "<thead><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th></tr></thead>" %}
 
 	{%comment%} +++++
 	  currentPostIndex is used to loop over post in an efficient way
@@ -172,7 +172,7 @@ title: welcome to ndh's writer place
 	      {% assign monthId = year | append: "-" | append: month %}
 
 	      <h4 id="{{ monthId }}">{{ monthName }}</h4>
-	      <table>
+	      <table class="table">
 	      {% for p in postsArray %}
 	        <tr>
 	          <td>{{ p.date | date: "%-m.%-d" }}</td>
