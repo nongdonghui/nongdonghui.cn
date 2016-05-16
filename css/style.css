@@ -80,3 +80,9 @@ a {
 .idx-h3 {
   margin-left: -40px;
 }
+.markdown-body code {
+  font-style: italic;
+}
+.markdown-body pre>code {
+  font-style: normal;
+}
