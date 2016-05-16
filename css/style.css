@@ -80,6 +80,7 @@ hr {
 .markdown-body blockquote {
   background: #f8f8f8;
   border-left: 4px solid #5bc0de;
+  padding: 5px 15px;
 }
 :link {
   color: #4078c0;
