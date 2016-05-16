@@ -17,13 +17,11 @@ body {
     border-top: 1px #eceff8 solid;
 }
 .table th {
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    padding-left: 2px;
     text-align: left;
 }
 .table td {
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    padding-left: 2px;
     vertical-align: top;
 }
 .table thead, .table tfoot {
