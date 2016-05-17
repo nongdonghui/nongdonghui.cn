@@ -19,16 +19,16 @@ lastUpdated:
   </head>
   <body>
     
-    <div class="container" id="top">
+    <div class="container">
       ......
     </div>   
     
-    <a href="#goTopBtn" title="返回顶部" class="gotop">
+    <div id="backtotop" title="返回顶部" class="backtotop">
       &nbsp;&nbsp;↑
-    </a>
+    </div>
     <script type="text/javascript">
     function goTopEx() { 
-    var obj = document.getElementById("goTopBtn"); 
+    var obj = document.getElementById("backtotop"); 
     function getScrollTop() { 
     return document.documentElement.scrollTop + document.body.scrollTop; 
     } 
@@ -55,13 +55,13 @@ lastUpdated:
 </html>
 ```
 
-这格式非常不可读，一秒都不想看下去了，想起了预装过的JsFormat插件，于是乎就想，把代码选中，然后用这个插件来把代码格式化，但是找遍了右键和工具栏的功能，就是没有格式化的选项，也在Preferences->Package Settings->JsFormat->Key Bindings - Default查看了一下，快捷键是`ctrl+alt+f`，试过也是不行，无奈只能上网找一下解决方案，最后在[这里][1]发现了别人使用JsFormat的方式是在.js文件里面使用的，然后我也看了[JsFormat github][2]的说明，第一句话就是
+这格式非常不可读，一秒都不想看下去了，想起了预装过的JsFormat插件，于是乎就想，把代码选中，然后用这个插件来把代码格式化，但是找遍了右键和工具栏的功能，就是没有格式化的选项，也在`Preferences->Package Settings->JsFormat->Key Bindings - Default`查看了一下，快捷键是`ctrl+alt+f`，试过也是不行，无奈只能上网找一下解决方案，最后在[这里][1]发现了别人使用JsFormat的方式是在.js文件里面使用的，然后我也看了[JsFormat github][2]的说明，第一句话就是
 
 > **About**
 > -------
 > JsFormat is a javascript formatting plugin for Sublime Text 2. It uses [jsbeautifier][3] to format whole js or json files, or the selected portion(s).
 
-顿时恍然，whole js or json files，所以在安装插件或者在使用插件的时候，还是要看官方的README.md文件，这可能会为自己节约很多时间。
+顿时恍然，`whole js or json files`，所以在安装插件或者在使用插件的时候，还是要看官方的`README.md`文件，这可能会为自己节约很多时间。
 
 **更新列表：**
 
