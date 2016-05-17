@@ -134,9 +134,11 @@ function() {
 * [javascript实用工具方法总结][2]
 * [90 Creative Back To Top Links and Best Practices][3]
 * [stuffandnonsense][4]
+* [JavaScript Memory Profiling][5]
 
 
 [1]: http://www.jb51.net/article/38228.htm
 [2]: http://dreamoftch.iteye.com/blog/1958446
 [3]: http://www.instantshift.com/2009/07/14/90-creative-back-to-top-links-and-best-practices/
 [4]: https://stuffandnonsense.co.uk/
+[5]: https://developer.chrome.com/devtools/docs/javascript-memory-profiling
