@@ -22,24 +22,24 @@ categories: ionic
 
 * 运行,报异常
 
-```sh
-Terminating app due to uncaught exception 'NSUnknownKeyException', reason: '[<UIApplication 0x14e7b130> setValue:forUndefinedKey:]: this class is not key value coding-compliant for the key view.'
-```
+    ```sh
+    Terminating app due to uncaught exception 'NSUnknownKeyException', reason: '[<UIApplication 0x14e7b130> setValue:forUndefinedKey:]: this class is not key value coding-compliant for the key view.'
+    ```
 
-搜索
+    搜索
 
-```sh
-Terminating app due to uncaught exception 'NSUnknownKeyException', reason: '[<UIApplication 0x14e7b130> setValue:forUndefinedKey:]: this class is not key value coding-compliant for the key view.'
-```
+    ```sh
+    Terminating app due to uncaught exception 'NSUnknownKeyException', reason: '[<UIApplication 0x14e7b130> setValue:forUndefinedKey:]: this class is not key value coding-compliant for the key view.'
+    ```
 
-找到这个文章,看到了这句话`Error if Main Interface .xib is selected`,于是我就把Main Interface的选项清空,然后再运行,异常依旧,我再仔细看了这段内容,发现是这么说的: `Do not select a Main Interface - this should be left blank. Make sure you have selected all desired orientations and 'Requires full screen'`,然后我就找`Requires full screen`确保选中,再把`Main Interface`的下面一个项`Device Orientation`全部选上,然后再运行,成功了,app项目正常安装到iphone上运行了,Xcode后台是这样显示的
+    找到这个文章,看到了这句话`Error if Main Interface .xib is selected`,于是我就把Main Interface的选项清空,然后再运行,异常依旧,我再仔细看了这段内容,发现是这么说的: `Do not select a Main Interface - this should be left blank. Make sure you have selected all desired orientations and 'Requires full screen'`,然后我就找`Requires full screen`确保选中,再把`Main Interface`的下面一个项`Device Orientation`全部选上,然后再运行,成功了,app项目正常安装到iphone上运行了,Xcode后台是这样显示的
 
-我琢磨着上面那段话的意思,应该是只用选`LandscapeLeft`和`LandscapeRight`两项就可以了,改了一下,运行看看,
-发现在iphone5上是直接横屏的,选上`Upside Down`也是横屏,选上`Portrait`后就竖屏了.
+    我琢磨着上面那段话的意思,应该是只用选`LandscapeLeft`和`LandscapeRight`两项就可以了,改了一下,运行看看,
+    发现在iphone5上是直接横屏的,选上`Upside Down`也是横屏,选上`Portrait`后就竖屏了.
 
-**PS1：**刚开始的时候,是运行后,报这个异常: `could not find developer disk image` 错误然后我就把Xcode 9.3配置包放到 `/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport`路径下
+    **PS1：**刚开始的时候,是运行后,报这个异常: `could not find developer disk image` 错误然后我就把Xcode 9.3配置包放到 `/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport`路径下
 
-**PS2：**我开始的时候登录了开发者账号,理论上Xcode7是不需要开发者账号就可以真机测试的
+    **PS2：**我开始的时候登录了开发者账号,理论上Xcode7是不需要开发者账号就可以真机测试的
 
 **参考文章：**
 
