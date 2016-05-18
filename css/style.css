@@ -11,10 +11,10 @@ body {
   width: 100%;
 }
 .table tr:last-child {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ebeeee;
 }
 .table tr {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #ebeeee;
 }
 .table th {
   padding-left: 2px;
@@ -25,7 +25,7 @@ body {
   vertical-align: top;
 }
 .table thead, .table tfoot {
-  background-color: #f8f8f8;
+  background-color: #f9fafa;
 }
 
 .markdown-body img {
@@ -77,7 +77,7 @@ hr {
   margin-left: -40px;
 }
 .markdown-body blockquote {
-  background: #f8f8f8;
+  background: #f9fafa;
   border-left: 4px solid #5bc0de;
   padding: 5px 15px;
 }
