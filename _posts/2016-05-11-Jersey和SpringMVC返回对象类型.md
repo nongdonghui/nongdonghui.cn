@@ -47,7 +47,7 @@ public ResponseEntity<String> handle() {
 
 @Path是用jersey的形式调用，它会以这样的数据返回
 
-```sh
+```yml
 response: Resource
   $promise: Promise
   $resolved: true
