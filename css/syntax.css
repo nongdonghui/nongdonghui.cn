@@ -29,7 +29,7 @@
 .highlight .na { color: #333 } /* Name.Attribute */
 .highlight .nb { color: #0086B3 } /* Name.Builtin */
 .highlight .nc { color: #009999; } /* Name.Class */
-.highlight .nd { color: rgb(100, 100, 100) } /* @annountation */
+.highlight .nd { color: rgb(150, 150, 150) } /* @annotation */
 .highlight .no { color: #008080 } /* Name.Constant */
 .highlight .ni { color: #800080 } /* Name.Entity */
 .highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
