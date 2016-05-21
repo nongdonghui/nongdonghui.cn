@@ -18,6 +18,7 @@ lastUpdated:
 7. [总结提高](#总结提高)
 
 ### 工具概述
+
 * Goto Anything
 * Multiple Selections
 * Command Palette
@@ -27,6 +28,7 @@ lastUpdated:
 * Customize Anything
 * Plugin API
 * Cross Platform
+
 ### 下载安装
 ### 基础配置
 ### 常用功能
