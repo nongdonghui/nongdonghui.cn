@@ -81,11 +81,7 @@ lastUpdated:
 * 当前行上下移动：`Ctrl + Shift + ↑/↓`
 * 向左/右缩进：'Ctrl + [/]'
 * 以当前缩进粘贴：'Ctrl + Shift + V'
-* 
-* 
-* 
-* 
-* 
+* 删除行：`Ctrl + X`
 * 
 
 
@@ -174,6 +170,8 @@ lastUpdated:
     保存为html-doctype.sublime-snippet，然后我们`Ctrl + N`，然后SSHTML设置一下html语法，输入html按tab，然后光标就在`<title></title>`和`<p></p>`之间同时闪动了，这就达到联动修改的效果了。
 
     ![snippet1](/images/snippet1.png)
+
+    我们的模板代码是可以加入默认值的，格式很简单${1:Placeholder}，而且还可以嵌套哦${1:Nested ${2:Placeholder}}
 
 ### 高级特性
 ### 总结提高
