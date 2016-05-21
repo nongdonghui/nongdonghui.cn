@@ -17,7 +17,7 @@ lastUpdated:
 6. [高级特性](#高级特性)
 7. [总结提高](#总结提高)
 
-### 工具概述
+### 工具概述(Overview)
 
 * 随意跳转，实时响应变化
     * `Ctrl + P`：输入文件名，实时预览内容，回车打开，↑↓预览其他，有自动完成提示
@@ -40,7 +40,7 @@ lastUpdated:
 * 跨平台(OS X, Windows and Linux)  
     一个license多平台使用
 
-### 下载安装
+### 下载安装(Installation)
 
 * 下载地址：[Sublime Text 3][2]，选择相应平台版本进行下载安装
 * 购买（Purchase）
@@ -56,7 +56,7 @@ lastUpdated:
 
     ```json
     {
-      "caret_style": "phase"
+      "caret_style": "phase",
       "default_encoding": "UTF-8",
       "ensure_newline_at_eof_on_save": true,
       "font_size": 12,
