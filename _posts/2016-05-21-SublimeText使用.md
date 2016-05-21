@@ -94,7 +94,7 @@ lastUpdated:
 * 自定义Snippet代码片段
     Tools | New Snippet...
 
-    ```
+    ```xml
     <snippet>
       <content><![CDATA[
       Hello, ${1:this} is a ${2:snippet}.
@@ -116,7 +116,7 @@ lastUpdated:
 
     这样的效果呢，我们改一下代码
 
-    ```
+    ```xml
     <snippet>
       <content><![CDATA[
       <p>
@@ -131,7 +131,7 @@ lastUpdated:
 
     保存为html-p.sublime-snippet，然后我们`Ctrl + N`，然后SSHTML设置一下html语法，输入p按tab，然后光标就停留在了$1位置了，$1是一个占位符，它标识了光标出现的位置，但是如果我们的模板很长篇大论，我们需要快速切换到模板需要手动输入的位置时，怎么办呢，对了，就是可以用$n来为我们服务，比如我们修改p模板如下
 
-    ```
+    ```xml
     <snippet>
       <content><![CDATA[
       <p>
@@ -152,6 +152,7 @@ lastUpdated:
 
     然后我们`Ctrl + N`，然后SSHTML设置一下html语法，输入p按tab，然后光标就停留在了$1位置了，输入div1，然后按tab，光标就跑到$2位置了，输入div2，按tab，光标就到$3位置了，非常方便，如果我们要联动更改呢，很简单，只要在不同的位置使用相同的$n占位符即可，比如下面的代码
 
+    ```xml
     <snippet>
       <content><![CDATA[
       <!DOCTYPE html>
@@ -168,6 +169,7 @@ lastUpdated:
       <tabTrigger>html</tabTrigger>
       <scope>text.html</scope>
     </snippet>
+    ```
     
     保存为html-doctype.sublime-snippet，然后我们`Ctrl + N`，然后SSHTML设置一下html语法，输入html按tab，然后光标就在`<title></title>`和`<p></p>`之间同时闪动了，这就达到联动修改的效果了。
 
