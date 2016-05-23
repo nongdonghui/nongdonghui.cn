@@ -13,14 +13,14 @@ lastUpdated: 2016-05-23 17:24:23
 {{ page.date | date: "%Y.%-m.%-d" }} - 南京 | <a href="/archive#{{ page.categories }}">{{ page.categories}}</a>
 
 1. [工具概述](#工具概述)
-2. [下载安装](#下载安装-Installation)
+2. [下载安装](#下载安装Installation)
 3. [基础配置](#基础配置)
 4. [常用功能](#常用功能)
 5. [进阶使用](#进阶使用)
 6. [高级特性](#高级特性)
 7. [总结提高](#总结提高)
 
-### 工具概述(Overview )
+### 工具概述Overview 
 
 
 * 随意跳转，实时响应变化
@@ -44,7 +44,7 @@ lastUpdated: 2016-05-23 17:24:23
 * 跨平台(OS X, Windows and Linux)  
     一个license多平台使用
 
-### 下载安装 Installation
+### 下载安装Installation
 
 * 下载地址：[Sublime Text 3][2]，选择相应平台版本进行下载安装
 * 购买（Purchase）
