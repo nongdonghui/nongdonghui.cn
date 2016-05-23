@@ -2,8 +2,11 @@
 layout: post
 title: Sublime Text使用
 categories: SublimeText
-lastUpdated: FILE_CHANGED_ON = '2016-05-23 17:24:33'
+lastUpdated: 
 ---
+
+
+
 
 
 ## {{ page.title }}
@@ -82,13 +85,12 @@ lastUpdated: FILE_CHANGED_ON = '2016-05-23 17:24:33'
 * 下起一行：`Ctrl + Enter`
 * 上起一行：`Ctrl + Shift + Enter`
 * 当前行上下移动：`Ctrl + Shift + ↑/↓`
-* 向左/右缩进：'Ctrl + [/]'
-* 以当前缩进粘贴：'Ctrl + Shift + V'
+* 向左/右缩进：`Ctrl + [/]`
+* 以当前缩进粘贴：`Ctrl + Shift + V`
 * 删除行：`Ctrl + X`
 * 返回上/下一个光标位置：`Alt + - / Alt + Shift + -`
 * 切换到上/下一个视图：`Ctrl + Tab / Ctrl + Shift + Tab`
 * 多行合成一行：`Ctrl + J`
-
 
 ### 进阶使用
 
@@ -97,9 +99,11 @@ lastUpdated: FILE_CHANGED_ON = '2016-05-23 17:24:33'
 
     ```xml
     <snippet>
-      <content><![CDATA[
-      Hello, ${1:this} is a ${2:snippet}.
-      ]]></content>
+      <content>
+        <![CDATA[
+          Hello, ${1:this} is a ${2:snippet}.
+        ]]>
+      </content>
       <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
       <!-- <tabTrigger>hello</tabTrigger> -->
       <!-- Optional: Set a scope to limit where the snippet will trigger -->
@@ -119,11 +123,12 @@ lastUpdated: FILE_CHANGED_ON = '2016-05-23 17:24:33'
 
     ```xml
     <snippet>
-      <content><![CDATA[
-      <p>
-        $1
-      </p>
-      ]]>
+      <content>
+        <![CDATA[
+          <p>
+            $1
+          </p>
+        ]]>
       </content>
       <tabTrigger>p</tabTrigger>
       <scope>text.html</scope>
@@ -134,17 +139,18 @@ lastUpdated: FILE_CHANGED_ON = '2016-05-23 17:24:33'
 
     ```xml
     <snippet>
-      <content><![CDATA[
-      <p>
-        $1
-      </p>
-      <p>
-        $2
-      </p>
-      <p>
-        $3
-      </p>
-      ]]>
+      <content>
+        <![CDATA[
+          <p>
+            $1
+          </p>
+          <p>
+            $2
+          </p>
+          <p>
+            $3
+          </p>
+        ]]>
       </content>
       <tabTrigger>p</tabTrigger>
       <scope>text.html</scope>
@@ -155,17 +161,18 @@ lastUpdated: FILE_CHANGED_ON = '2016-05-23 17:24:33'
 
     ```xml
     <snippet>
-      <content><![CDATA[
-      <!DOCTYPE html>
-      <html>
-      <head>
-        <title>$1</title>
-      </head>
-      <body>
-        <p>$1</p>
-      </body>
-      </html>
-      ]]>
+      <content>
+        <![CDATA[
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <title>$1</title>
+          </head>
+          <body>
+            <p>$1</p>
+          </body>
+          </html>
+        ]]>
       </content>
       <tabTrigger>html</tabTrigger>
       <scope>text.html</scope>
