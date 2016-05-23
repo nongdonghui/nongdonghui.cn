@@ -217,7 +217,7 @@ lastUpdated: 5.23
 
     然而，如果并不想要·YYYY-mm-dd·效果呢，而是想要·YYYY-(+)m-(+)d·效果，查了一下[文档][10]，发现这个语法`%-m和%-d`可以去掉填充的0，但是在win7上并没有效果，于是继续查，最后有一法可用
 
-    ```
+    ```python
     val = '{d.year}-{d.month}-{d.day}'.format(d=datetime.now())
     ```
 
