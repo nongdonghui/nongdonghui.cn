@@ -13,7 +13,7 @@ lastUpdated: 2016-05-23 17:24:23
 {{ page.date | date: "%Y.%-m.%-d" }} - 南京 | <a href="/archive#{{ page.categories }}">{{ page.categories}}</a>
 
 1. [工具概述](#工具概述)
-2. [下载安装](#下载安装)
+2. [下载安装](#下载安装 Installation)
 3. [基础配置](#基础配置)
 4. [常用功能](#常用功能)
 5. [进阶使用](#进阶使用)
