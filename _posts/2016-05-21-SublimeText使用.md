@@ -2,7 +2,7 @@
 layout: post
 title: Sublime Text使用
 categories: SublimeText
-lastUpdated: 
+lastUpdated: 5.23
 ---
 
 ## {{ page.title }}
@@ -17,7 +17,7 @@ lastUpdated:
 6. [高级特性](#高级特性)
 7. [总结提高](#总结提高)
 
-### 工具概述(Overview)
+### 工具概述(Overview )
 
 * 随意跳转，实时响应变化
     * `Ctrl + P`：输入文件名，实时预览内容，回车打开，↑↓预览其他，有自动完成提示
@@ -74,6 +74,7 @@ lastUpdated:
 * 切换语法：`Ctrl + Shift + P` -> `Set Syntax: [语法]`
 * 同时选中html的开始和结束标签进行编辑：光标移到一个标签行上按`Ctrl+Shift+'`
 * 选择单词：`Ctrl + D`
+* 逐个选择：`Ctrl + Shift ←/→`
 * 复制新增当前行下移：`Ctrl + Shift + D`
 * 选择行：`Ctrl + L`
 * 下起一行：`Ctrl + Enter`
@@ -173,21 +174,74 @@ lastUpdated:
 
     我们的模板代码是可以加入默认值的，格式很简单${1:Placeholder}，而且还可以嵌套哦${1:Nested ${2:Placeholder}}
 
+* 自定义插件
+    Tools | New Plugin...
+
+    ```python
+    import sublime, sublime_plugin
+
+    class ExampleCommand(sublime_plugin.TextCommand):
+      def run(self, edit):
+        self.view.insert(edit, 0, "Hello, World!")
+    ```
+
+    这是自动生成的模板，假如我们现在要写一个生成日期的插件，可以修改为如下代码
+
+    ```python
+    import sublime, sublime_plugin
+    from datetime import datetime
+    import time
+
+    class TimestampCommand(sublime_plugin.EventListener):
+        """Expand `isoD`, `now`, `datetime`, `utcnow`, `utcdatetime`,
+           `date` and `time`
+        """
+        def on_query_completions(self, view, prefix, locations):
+            if prefix in ('isoD', 'now', 'datetime'):
+                val = datetime.now().strftime('%Y-%m-%dT%H:%M:%S')
+            elif prefix in ('utcnow', 'utcdatetime'):
+                val = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%S')
+            elif prefix == 'date':
+                val = datetime.now().strftime("%y-%m-%d")
+            elif prefix == 'time':
+                val = str(int(time.time()))
+            else:
+                val = None
+
+            return [(prefix, prefix, val)] if val else []
+    ```
+
+    然后我们保存为timestamp.py，试试效果
+
+    ![date](/images/date.gif)
+
 ### 高级特性
 ### 总结提高
 
 
 **更新列表：**
 
-* 2016-5-21
+* 2016-5-23
 
 
 
 **参考文章：**
 
-* [Sublime Text Help][1]
+* [Sublime Text3 Help][1]
+* [Sublime Text 全程指南][4]
+* [如何优雅地使用Sublime Text][5]
+* [Sublime Text 有哪些使用技巧？][6]
+* [Sublime Text3 Help][7]
+* [Sublime Text 2 - 性感无比的代码编辑器！程序员必备神器！跨平台支持Win/Mac/Linux][8]
+* [Quickly Insert Text & Code with Sublime Text Snippets][9]
 
 
-[1]: http://sublimetext.info/docs/en/index.html
+[1]: http://docs.sublimetext.info/en/latest/
 [2]: http://www.sublimetext.com/3
 [3]: https://www.sublimetext.com/buy
+[4]: http://zh.lucida.me/blog/sublime-text-complete-guide/
+[5]: http://www.jeffjade.com/2015/12/15/2015-04-17-toss-sublime-text/
+[6]: https://www.zhihu.com/question/24896283?rf=19976788
+[7]: http://sublimetext.info/docs/en/index.html
+[8]: http://www.iplaysoft.com/sublimetext.html
+[9]: http://www.granneman.com/webdev/editors/sublime-text/top-features-of-sublime-text/quickly-insert-text-and-code-with-sublime-text-snippets/
