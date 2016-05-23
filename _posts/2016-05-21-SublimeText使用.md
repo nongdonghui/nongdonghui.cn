@@ -170,7 +170,7 @@ lastUpdated: 5.23
     
     保存为html-doctype.sublime-snippet，然后我们`Ctrl + N`，然后SSHTML设置一下html语法，输入html按tab，然后光标就在`<title></title>`和`<p></p>`之间同时闪动了，这就达到联动修改的效果了。
 
-    ![snippet1](/images/snippet1.png)
+    ![snippet1](/images/snippet1.gif)
 
     我们的模板代码是可以加入默认值的，格式很简单${1:Placeholder}，而且还可以嵌套哦${1:Nested ${2:Placeholder}}
 
