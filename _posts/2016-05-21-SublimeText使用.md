@@ -215,6 +215,14 @@ lastUpdated: 5.23
 
     ![date](/images/date.gif)
 
+    然而，如果并不想要·YYYY-mm-dd·效果呢，而是想要·YYYY-(+)m-(+)d·效果，查了一下[文档][10]，发现这个语法`%-m和%-d`可以去掉填充的0，但是在win7上并没有效果，于是继续查，最后有一法可用
+
+    ```
+    val = '{d.year}-{d.month}-{d.day}'.format(d=datetime.now())
+    ```
+
+    ![date2](/images/date2.gif)
+
 ### 高级特性
 ### 总结提高
 
@@ -234,6 +242,8 @@ lastUpdated: 5.23
 * [Sublime Text3 Help][7]
 * [Sublime Text 2 - 性感无比的代码编辑器！程序员必备神器！跨平台支持Win/Mac/Linux][8]
 * [Quickly Insert Text & Code with Sublime Text Snippets][9]
+* [strftime][10]
+* [python-datetime-formatting-without-zero-padding][11]
 
 
 [1]: http://docs.sublimetext.info/en/latest/
@@ -245,3 +255,5 @@ lastUpdated: 5.23
 [7]: http://sublimetext.info/docs/en/index.html
 [8]: http://www.iplaysoft.com/sublimetext.html
 [9]: http://www.granneman.com/webdev/editors/sublime-text/top-features-of-sublime-text/quickly-insert-text-and-code-with-sublime-text-snippets/
+[10]: http://strftime.org/
+[11]: http://stackoverflow.com/questions/9525944/python-datetime-formatting-without-zero-padding
