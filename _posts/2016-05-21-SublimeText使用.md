@@ -244,6 +244,7 @@ lastUpdated: 5.23
 * [Quickly Insert Text & Code with Sublime Text Snippets][9]
 * [strftime][10]
 * [python-datetime-formatting-without-zero-padding][11]
+* [Insert current timestamp into Sublime Text][12]
 
 
 [1]: http://docs.sublimetext.info/en/latest/
@@ -257,3 +258,4 @@ lastUpdated: 5.23
 [9]: http://www.granneman.com/webdev/editors/sublime-text/top-features-of-sublime-text/quickly-insert-text-and-code-with-sublime-text-snippets/
 [10]: http://strftime.org/
 [11]: http://stackoverflow.com/questions/9525944/python-datetime-formatting-without-zero-padding
+[12]: http://kevinmorey.com/post/84828796419/insert-current-timestamp-into-sublime-text
