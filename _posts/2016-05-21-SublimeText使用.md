@@ -2,8 +2,9 @@
 layout: post
 title: Sublime Text使用
 categories: SublimeText
-lastUpdated: 5.23
+lastUpdated: FILE_CHANGED_ON = '2016-05-23 17:24:33'
 ---
+
 
 ## {{ page.title }}
 
@@ -18,6 +19,7 @@ lastUpdated: 5.23
 7. [总结提高](#总结提高)
 
 ### 工具概述(Overview )
+
 
 * 随意跳转，实时响应变化
     * `Ctrl + P`：输入文件名，实时预览内容，回车打开，↑↓预览其他，有自动完成提示
@@ -83,7 +85,9 @@ lastUpdated: 5.23
 * 向左/右缩进：'Ctrl + [/]'
 * 以当前缩进粘贴：'Ctrl + Shift + V'
 * 删除行：`Ctrl + X`
-* 
+* 返回上/下一个光标位置：`Alt + - / Alt + Shift + -`
+* 切换到上/下一个视图：`Ctrl + Tab / Ctrl + Shift + Tab`
+* 多行合成一行：`Ctrl + J`
 
 
 ### 进阶使用
@@ -224,6 +228,9 @@ lastUpdated: 5.23
     ![date2](/images/date2.gif)
 
 ### 高级特性
+
+* 实时打印当前操作的命令，可以使用`Ctrl + \``，然后输入`sublime.log_commands(True)`回车进行启动监控
+
 ### 总结提高
 
 
