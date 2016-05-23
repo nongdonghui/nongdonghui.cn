@@ -2,9 +2,8 @@
 layout: post
 title: Sublime Text使用
 categories: SublimeText
-lastUpdated: 
+lastUpdated: 2016-05-23 17:24:23
 ---
-
 
 
 
@@ -45,7 +44,7 @@ lastUpdated:
 * 跨平台(OS X, Windows and Linux)  
     一个license多平台使用
 
-### 下载安装(Installation)
+### 下载安装 Installation
 
 * 下载地址：[Sublime Text 3][2]，选择相应平台版本进行下载安装
 * 购买（Purchase）
@@ -266,6 +265,7 @@ lastUpdated:
 * [strftime][10]
 * [python-datetime-formatting-without-zero-padding][11]
 * [Insert current timestamp into Sublime Text][12]
+* [api][13]
 
 
 [1]: http://docs.sublimetext.info/en/latest/
@@ -280,3 +280,4 @@ lastUpdated:
 [10]: http://strftime.org/
 [11]: http://stackoverflow.com/questions/9525944/python-datetime-formatting-without-zero-padding
 [12]: http://kevinmorey.com/post/84828796419/insert-current-timestamp-into-sublime-text
+[13]: http://www.sublimetext.com/docs/3/api_reference.html
