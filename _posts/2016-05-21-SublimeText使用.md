@@ -2,11 +2,9 @@
 layout: post
 title: Sublime Text使用
 categories: SublimeText
-lastUpdated: 2016-05-23 17:24:23
+created: {{}}
+lastUpdated: 5.24
 ---
-
-
-
 
 ## {{ page.title }}
 
@@ -246,6 +244,69 @@ lastUpdated: 2016-05-23 17:24:23
 
 ### 总结提高
 
+* 假如我现在有一个模板是这样
+
+    ```
+    ---
+    layout: post
+    title: title
+    categories: svn
+    lastUpdated:
+    ---
+    ```
+
+    我现在想让lastUpdated自动更新时间，思路是这样的：
+    我现在的文件命名规则是YYYY-mm-dd-title.md，那么就要获取这个文件名中的日期作为创建日期(你也可以建一个created:这样的标题保存创建日期)，然后和今天的日期比较，如果不相等，则在保存之前自动修改lastUpdated:
+
+    代码是这样的
+
+    ```python
+    import sublime
+    import sublime_plugin
+    from datetime import datetime
+
+    class AutoUpdateLastUpdatedCommand(sublime_plugin.TextCommand):
+        def run(self, edit):
+            LASTUPDATED_PATTERN = 'lastUpdated:( )?(\\d+)?(.)?(\\d+)?'
+            fileName = self.view.file_name()
+            if not fileName:
+              print('Thers isn\'t a fileName')
+            if fileName:
+              # get create date from file name like this C:\project\simple\2016-05-23-title.md
+              created = fileName[fileName.rfind('\\')+1:fileName.rfind('\\')+11]
+              current = datetime.now().strftime("%Y-%m-%d")
+              if not created == current:
+                self.edit = edit
+                idx = self.view.find(LASTUPDATED_PATTERN, 1)
+                suffix = fileName[fileName.rfind('.'):]
+                # only change the files that
+                #   contain 'lastUpdated:' and suffix is '.md(is not case sensitive)'
+                if idx and suffix.upper() == '.MD':
+                    today = '{d.month}.{d.day}'.format(d=datetime.now())
+                    replacement = 'lastUpdated: %s' % today
+                    self.view.replace(edit, idx, replacement)
+                    self.view.end_edit (edit)
+
+    class AutoUpdateLastUpdatedListener(sublime_plugin.EventListener):
+        def on_pre_save(self, view):
+            view.run_command('auto_update_last_updated')
+    ```
+
+    上面的python代码涉及到的语法
+    * 只有if语句，if语句后面加:然后换行写逻辑代码
+    * if里面的逻辑且要用and英文
+    * rfind函数也可以用rindex代替，逆向检索字符出现的位置，参考[这里][14]
+    * 没有substring函数，要用[start_idx:end_idx]来代替，start_idx和end_idx是可选项，参考[这里][15]
+    * 比较用==或者is，参考[这里][16]
+    * 转换为大写用.upper()函数
+    * 'lastUpdated: %s' % today这里的s是占位符，会用today填充
+    * 如果使用`import datetime`会报[异常][17]
+    
+        ```
+        AttributeError: 'module' object has no attribute 'now'
+        ```
+        要修改为`from datetime import datetime`，这是版本问题导致
+    * 保存自动更新时间请参考[1][18]，[2][19]，[3][20]
 
 **更新列表：**
 
@@ -266,6 +327,9 @@ lastUpdated: 2016-05-23 17:24:23
 * [python-datetime-formatting-without-zero-padding][11]
 * [Insert current timestamp into Sublime Text][12]
 * [api][13]
+* [Find String index from last in Python][14]
+* [Is there a way to substring a string in Python?][15]
+* [Why does comparing strings in Python using either '==' or 'is' sometimes produce a different result?][16]
 
 
 [1]: http://docs.sublimetext.info/en/latest/
@@ -281,3 +345,10 @@ lastUpdated: 2016-05-23 17:24:23
 [11]: http://stackoverflow.com/questions/9525944/python-datetime-formatting-without-zero-padding
 [12]: http://kevinmorey.com/post/84828796419/insert-current-timestamp-into-sublime-text
 [13]: http://www.sublimetext.com/docs/3/api_reference.html
+[14]: http://stackoverflow.com/questions/9572490/find-string-index-from-last-in-python
+[15]: http://stackoverflow.com/questions/663171/is-there-a-way-to-substring-a-string-in-python
+[16]: http://stackoverflow.com/questions/1504717/why-does-comparing-strings-in-python-using-either-or-is-sometimes-produce
+[17]: http://stackoverflow.com/questions/19231458/module-object-has-no-attribute-now-will-trying-to-create-a-csv
+[18]: https://forum.sublimetext.com/t/automatically-updated-timestamp/7156
+[19]: http://stackoverflow.com/questions/28032780/automatic-update-date-in-sublime-by-save
+[20]: http://stackoverflow.com/questions/23355542/sublime-text-3-plugin-for-removing-quotes
