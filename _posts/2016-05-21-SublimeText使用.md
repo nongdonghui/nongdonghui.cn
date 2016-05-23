@@ -232,15 +232,10 @@ lastUpdated: FILE_CHANGED_ON = '2016-05-23 17:24:33'
 * 实时打印当前操作的命令，可以使用
 
     ```
-
     Ctrl + `
-
     然后输入
-
     sublime.log_commands(True)
-
     回车进行启动监控
-    
     ```
 
 ### 总结提高
