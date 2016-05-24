@@ -327,19 +327,19 @@ lastUpdated: 5.24
                 command= "cd "+current_directory+" & "+current_driver+" & start cmd"
                 os.system(command)
           ```
-      * 再建一个Context.sublime-menu文件，内容如下
+    * 再建一个Context.sublime-menu文件，内容如下
 
-          ```
-          [
-               { "command": "cmd" }
-          ]
-          ```
-      * 现在你可以在文件上右键看到cmd命令了，你可以绑定快捷键Preferences -> Key Bindings - User
+        ```
+        [
+             { "command": "cmd" }
+        ]
+        ```
+    * 现在你可以在文件上右键看到cmd命令了，你可以绑定快捷键Preferences -> Key Bindings - User
       
-          ```
-          { "keys": ["c", "m", "d"], "command": "cmd"}
-          ```
-          这样只要在打开的文件上输入cmd就可以自动打开命令行了
+        ```
+        { "keys": ["c", "m", "d"], "command": "cmd"}
+        ```
+        这样只要在打开的文件上输入cmd就可以自动打开命令行了
 
 **参考文章：**
 
