@@ -330,7 +330,7 @@ lastUpdated: 5.24
 
     * 再建一个Context.sublime-menu文件，内容如下
 
-        ```
+        ```json
         [
              { "command": "cmd" }
         ]
@@ -338,7 +338,7 @@ lastUpdated: 5.24
 
     * 现在你可以在文件上右键看到cmd命令了，你可以绑定快捷键Preferences -> Key Bindings - User
 
-        ```
+        ```json
         { "keys": ["c", "m", "d"], "command": "cmd"}
         ```
         这样只要在打开的文件上输入cmd就可以自动打开命令行了
