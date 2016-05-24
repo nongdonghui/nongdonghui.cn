@@ -2,6 +2,7 @@
 layout: post
 title: Jersey和SpringMVC返回对象类型
 categories: java
+lastUpdated: 5.24
 ---
 
 ## {{ page.title }}
@@ -140,6 +141,229 @@ app.factory('Man', function($resource) {
 ```
 
 是的，就是用then里function的第二个参数，第一个参数是返回的数据
+
+**更新列表：**
+
+* 2016-5-24
+* spring-web从4.1.0开始，ResponseEntity也新增了链式调用写法兼容java8语法，而且新增了RequestEntity类
+
+    ```java
+    package org.springframework.http;
+
+    import java.net.URI;
+    import java.util.Arrays;
+    import java.util.HashSet;
+    import org.springframework.util.MultiValueMap;
+    import org.springframework.util.ObjectUtils;
+
+    public class ResponseEntity<T> extends HttpEntity<T>
+    {
+      private final HttpStatus statusCode;
+
+      public ResponseEntity(HttpStatus statusCode)
+      {
+        this.statusCode = statusCode;
+      }
+
+      public ResponseEntity(T body, HttpStatus statusCode)
+      {
+        super(body);
+        this.statusCode = statusCode;
+      }
+
+      public ResponseEntity(MultiValueMap<String, String> headers, HttpStatus statusCode)
+      {
+        super(headers);
+        this.statusCode = statusCode;
+      }
+
+      public ResponseEntity(T body, MultiValueMap<String, String> headers, HttpStatus statusCode)
+      {
+        super(body, headers);
+        this.statusCode = statusCode;
+      }
+
+      public HttpStatus getStatusCode()
+      {
+        return this.statusCode;
+      }
+
+      public boolean equals(Object other)
+      {
+        if (this == other) {
+          return true;
+        }
+        if ((!(other instanceof ResponseEntity)) || (!super.equals(other))) {
+          return false;
+        }
+        ResponseEntity otherEntity = (ResponseEntity)other;
+        return ObjectUtils.nullSafeEquals(this.statusCode, otherEntity.statusCode);
+      }
+
+      public int hashCode()
+      {
+        return super.hashCode() * 29 + ObjectUtils.nullSafeHashCode(this.statusCode);
+      }
+
+      public String toString()
+      {
+        StringBuilder builder = new StringBuilder("<");
+        builder.append(this.statusCode.toString());
+        builder.append(' ');
+        builder.append(this.statusCode.getReasonPhrase());
+        builder.append(',');
+        Object body = getBody();
+        HttpHeaders headers = getHeaders();
+        if (body != null) {
+          builder.append(body);
+          if (headers != null) {
+            builder.append(',');
+          }
+        }
+        if (headers != null) {
+          builder.append(headers);
+        }
+        builder.append('>');
+        return builder.toString();
+      }
+
+      public static BodyBuilder status(HttpStatus status)
+      {
+        return new DefaultBuilder(status);
+      }
+
+      public static BodyBuilder status(int status)
+      {
+        return status(HttpStatus.valueOf(status));
+      }
+
+      public static BodyBuilder ok()
+      {
+        return status(HttpStatus.OK);
+      }
+
+      public static <T> ResponseEntity<T> ok(T body)
+      {
+        BodyBuilder builder = ok();
+        return builder.body(body);
+      }
+
+      public static BodyBuilder created(URI location)
+      {
+        BodyBuilder builder = status(HttpStatus.CREATED);
+        return (BodyBuilder)builder.location(location);
+      }
+
+      public static BodyBuilder accepted()
+      {
+        return status(HttpStatus.ACCEPTED);
+      }
+
+      public static HeadersBuilder<?> noContent()
+      {
+        return status(HttpStatus.NO_CONTENT);
+      }
+
+      public static BodyBuilder badRequest()
+      {
+        return status(HttpStatus.BAD_REQUEST);
+      }
+
+      public static HeadersBuilder<?> notFound()
+      {
+        return status(HttpStatus.NOT_FOUND);
+      }
+
+      private static class DefaultBuilder
+        implements ResponseEntity.BodyBuilder
+      {
+        private final HttpStatus status;
+        private final HttpHeaders headers = new HttpHeaders();
+
+        public DefaultBuilder(HttpStatus status) {
+          this.status = status;
+        }
+
+        public ResponseEntity.BodyBuilder header(String headerName, String[] headerValues)
+        {
+          for (String headerValue : headerValues) {
+            this.headers.add(headerName, headerValue);
+          }
+          return this;
+        }
+
+        public ResponseEntity.BodyBuilder allow(HttpMethod[] allowedMethods)
+        {
+          this.headers.setAllow(new HashSet(Arrays.asList(allowedMethods)));
+          return this;
+        }
+
+        public ResponseEntity.BodyBuilder contentLength(long contentLength)
+        {
+          this.headers.setContentLength(contentLength);
+          return this;
+        }
+
+        public ResponseEntity.BodyBuilder contentType(MediaType contentType)
+        {
+          this.headers.setContentType(contentType);
+          return this;
+        }
+
+        public ResponseEntity.BodyBuilder eTag(String eTag)
+        {
+          this.headers.setETag(eTag);
+          return this;
+        }
+
+        public ResponseEntity.BodyBuilder lastModified(long date)
+        {
+          this.headers.setLastModified(date);
+          return this;
+        }
+
+        public ResponseEntity.BodyBuilder location(URI location)
+        {
+          this.headers.setLocation(location);
+          return this;
+        }
+
+        public ResponseEntity<Void> build()
+        {
+          return new ResponseEntity(null, this.headers, this.status);
+        }
+
+        public <T> ResponseEntity<T> body(T body)
+        {
+          return new ResponseEntity(body, this.headers, this.status);
+        }
+      }
+
+      public static abstract interface BodyBuilder extends ResponseEntity.HeadersBuilder<BodyBuilder>
+      {
+        public abstract BodyBuilder contentLength(long paramLong);
+
+        public abstract BodyBuilder contentType(MediaType paramMediaType);
+
+        public abstract <T> ResponseEntity<T> body(T paramT);
+      }
+
+      public static abstract interface HeadersBuilder<B extends HeadersBuilder<B>>
+      {
+        public abstract B header(String paramString, String[] paramArrayOfString);
+
+        public abstract B allow(HttpMethod[] paramArrayOfHttpMethod);
+
+        public abstract B eTag(String paramString);
+
+        public abstract B lastModified(long paramLong);
+
+        public abstract B location(URI paramURI);
+
+        public abstract ResponseEntity<Void> build();
+      }
+    }
+    ```
 
 **参考文章：**
 
