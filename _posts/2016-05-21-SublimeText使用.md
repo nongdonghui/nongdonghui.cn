@@ -313,7 +313,7 @@ lastUpdated: 5.24
 * 2016-5-24
 * 自定义cmd命令行，输入cmd直接弹出命令行
     * Preferences -> Browser Packages里新建一个CMD文件夹
-    * CMD文件夹内新建一个cmd.py文件，代码如下
+    * CMD文件夹内新建一个cmd.py文件(也可以使用Tools | New Plugin...)，代码如下
         ```python
         import os, sublime_plugin
         class CmdCommand(sublime_plugin.TextCommand):
