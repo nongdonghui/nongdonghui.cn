@@ -314,6 +314,7 @@ lastUpdated: 5.24
 * 自定义cmd命令行，输入cmd直接弹出命令行
     * Preferences -> Browser Packages里新建一个CMD文件夹
     * CMD文件夹内新建一个cmd.py文件(也可以使用Tools | New Plugin...)，代码如下
+    
         ```python
         import os, sublime_plugin
         class CmdCommand(sublime_plugin.TextCommand):
@@ -327,12 +328,14 @@ lastUpdated: 5.24
                 os.system(command)
           ```
       * 再建一个Context.sublime-menu文件，内容如下
+
           ```
           [
                { "command": "cmd" }
           ]
           ```
       * 现在你可以在文件上右键看到cmd命令了，你可以绑定快捷键Preferences -> Key Bindings - User
+      
           ```
           { "keys": ["c", "m", "d"], "command": "cmd"}
           ```
