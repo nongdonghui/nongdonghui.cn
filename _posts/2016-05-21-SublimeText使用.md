@@ -244,7 +244,7 @@ lastUpdated: 5.24
 
 ### 总结提高
 
-* 假如我现在有一个模板是这样
+* 自动修改模板最后更新时间
 
     ```
     ---
@@ -310,9 +310,33 @@ lastUpdated: 5.24
 
 **更新列表：**
 
-* 2016-5-23
-
-
+* 2016-5-24
+* 自定义cmd命令行，输入cmd直接弹出命令行
+    * Preferences -> Browser Packages里新建一个CMD文件夹
+    * CMD文件夹内新建一个cmd.py文件，代码如下
+        ```python
+        import os, sublime_plugin
+        class CmdCommand(sublime_plugin.TextCommand):
+            def run(self, edit):
+                file_name=self.view.file_name()
+                path=file_name.split("\\")
+                current_driver=path[0]
+                path.pop()
+                current_directory="\\".join(path)
+                command= "cd "+current_directory+" & "+current_driver+" & start cmd"
+                os.system(command)
+          ```
+      * 再建一个Context.sublime-menu文件，内容如下
+          ```
+          [
+               { "command": "cmd" }
+          ]
+          ```
+      * 现在你可以在文件上右键看到cmd命令了，你可以绑定快捷键Preferences -> Key Bindings - User
+          ```
+          { "keys": ["c", "m", "d"], "command": "cmd"}
+          ```
+          这样只要在打开的文件上输入cmd就可以自动打开命令行了
 
 **参考文章：**
 
@@ -330,6 +354,7 @@ lastUpdated: 5.24
 * [Find String index from last in Python][14]
 * [Is there a way to substring a string in Python?][15]
 * [Why does comparing strings in Python using either '==' or 'is' sometimes produce a different result?][16]
+* [How can I open command line prompt from Sublime in windows7][21]
 
 
 [1]: http://docs.sublimetext.info/en/latest/
@@ -352,3 +377,4 @@ lastUpdated: 5.24
 [18]: https://forum.sublimetext.com/t/automatically-updated-timestamp/7156
 [19]: http://stackoverflow.com/questions/28032780/automatic-update-date-in-sublime-by-save
 [20]: http://stackoverflow.com/questions/23355542/sublime-text-3-plugin-for-removing-quotes
+[21]: http://stackoverflow.com/questions/18606682/how-can-i-open-command-line-prompt-from-sublime-in-windows7
