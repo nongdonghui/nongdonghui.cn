@@ -9,7 +9,7 @@ lastUpdated:
 
 {{ page.date | date: "%Y.%-m.%-d" }} - 南京 | <a href="/archive#{{ page.categories }}">{{ page.categories}}</a>
 
-angularjs的ng-repeat的默认生成格式是ng-repear="(key, value) in collection"，它可以输出键值对，例如key={{key}}, value={{value}}。
+angularjs的ng-repeat的默认生成格式是ng-repeat="(key, value) in object"，它可以输出键值对，打印key={{key}}, value={{value}}，这是输出对象的，如果是输出单纯数组的，直接ng-repeat="item in collection"，打印{{item}}，如果输出对象数组的，也一样直接ng-repeat="item in collection"，打印{{item.prop}}
 
 **JavaScript**
 
@@ -80,7 +80,10 @@ $scope.data = array;
 
 * [AngularJS Tutorial - ng-repeat with key and value pair][1]
 * [How can I iterate over the keys, value in ng-repeat in angular][2]
+* [THEDATAPOINTENGINEERING8 FEATURES OF NG-REPEAT
+8 Features of ng-repeat][3]
 
 
 [1]: http://www.java2s.com/Tutorials/Javascript/AngularJS_Example/Directives/2920__ng_repeat_with_key_and_value_pair.htm
 [2]: http://stackoverflow.com/questions/15127834/how-can-i-iterate-over-the-keys-value-in-ng-repeat-in-angular
+[3]: https://blog.rjmetrics.com/2015/09/02/8-features-of-ng-repeat/
