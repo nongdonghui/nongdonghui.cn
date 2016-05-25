@@ -421,7 +421,7 @@
 }
 
 .markdown-body li>p {
-  margin-top: 16px;
+  margin-top: 0;
 }
 
 .markdown-body dl {
