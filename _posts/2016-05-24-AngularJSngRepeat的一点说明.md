@@ -22,7 +22,7 @@ $scope.data = {
   'eet_no': 'ewew',
 };
 var array = [];
-for(var key in $scope.data){
+for (var key in $scope.data) {
   var test = {};
   test[key]=$scope.data[key];
   array.push(test);
@@ -35,7 +35,7 @@ $scope.data = array;
 ```html
 <p ng-repeat="obj in data">
   <font ng-repeat="(key, value) in obj">
-    {\{key}} : {{value}}
+    {&nbsp;{key}} : {&nbsp;{value}}
   </font>
 </p>
 ```
