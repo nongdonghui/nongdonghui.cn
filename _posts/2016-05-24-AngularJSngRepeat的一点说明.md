@@ -35,9 +35,7 @@ $scope.data = array;
 ```html
 <p ng-repeat="obj in data">
   <font ng-repeat="(key, value) in obj">
-    {% raw %}
-    {{key}} : {{value}}
-    {% endraw %}
+    {{ "{{ key " }}}} : {{ "{{ value " }}}}
   </font>
 </p>
 ```
