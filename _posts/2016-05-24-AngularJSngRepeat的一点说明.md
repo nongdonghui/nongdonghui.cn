@@ -9,7 +9,7 @@ lastUpdated: 5.25
 
 {{ page.date | date: "%Y.%-m.%-d" }} - 南京 | <a href="/archive#{{ page.categories }}">{{ page.categories}}</a>
 
-angularjs的ng-repeat的默认生成格式是`ng-repeat="(key, value) in object"`，它可以输出键值对，打印key=&#123;{key}}, value={{value}}，这是输出对象的，如果是输出单纯数组的，直接`ng-repeat="item in collection"，打印{{item}}`，如果输出对象数组的，也一样直接`ng-repeat="item in collection"，打印{{item.prop}}`
+angularjs的ng-repeat的默认生成格式是`ng-repeat="(key, value) in object"`，它可以输出键值对，打印key=&#123;{key}}, value=&#123;{value}}，这是输出对象的，如果是输出单纯数组的，直接`ng-repeat="item in collection"`，打印&#123;{item}}，如果输出对象数组的，也一样直接`ng-repeat="item in collection"`，打印&#123;{item.prop}}
 
 **JavaScript**
 
@@ -35,7 +35,7 @@ $scope.data = array;
 ```html
 <p ng-repeat="obj in data">
   <font ng-repeat="(key, value) in obj">
-    {{key}} : {{value}}
+    &#123;{key}} : {{value}}
   </font>
 </p>
 ```
