@@ -15,11 +15,11 @@ angularjs的ng-repeat的默认生成格式是`ng-repeat="(key, value) in object"
 
 ```javascript
 $scope.data = {
-  "id": 2,
-  "project": "wewe2012",
-  "date": "2013-02-26",
-  "description": "ewew",
-  "eet_no": "ewew",
+  'id': 2,
+  'project': 'wewe2012',
+  'date': '2013-02-26',
+  'description': 'ewew',
+  'eet_no': 'ewew',
 };
 var array = [];
 for(var key in $scope.data){
@@ -59,9 +59,9 @@ $scope.data = array;
     var myApp = angular.module('myApp', []);
     function MyCtrl($scope) {
       $scope.school = {
-        name: "A",
+        name: 'A',
         sub: {
-          firstlang: "Java"
+          firstlang: 'Java'
         }
       }
     }
