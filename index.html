@@ -131,7 +131,7 @@ title: welcome to ndh's writer place
 	    {{ tableContent }}
 	  </tbody>
 	</table>
-	
+
 
 	{%comment%} +++++ Printing posts by Year then month +++++ {%endcomment%}
 
@@ -139,7 +139,7 @@ title: welcome to ndh's writer place
 	{% assign lastPostIndex = site.posts.size | minus: 1 %}
 
 	{% for year in (startYear...endYear) reversed %}
-    <ul><h3 class="idx-h3">{{year}}</h3>
+    <table class="table">
 	  {% assign currentYear = year %}
 	  {% for month in (1...12) reversed %}
 
@@ -171,8 +171,7 @@ title: welcome to ndh's writer place
 
 	      {% assign monthId = year | append: "-" | append: month %}
 
-	      <li id="{{ monthId }}">{{ monthName }}<br>
-	      <table>
+        <thead><tr id="{{ monthId }}"><th>{{ monthName }}</th><th></th><th>{{year}}</th></tr></thead>
 	      {% for p in postsArray %}
 	        <tr>
 	          <td>{{ p.date | date: "%-d" }}</td>
@@ -184,11 +183,11 @@ title: welcome to ndh's writer place
             <td>{{ p.lastUpdated }}</td>
 	        </tr>
 	      {% endfor %}
-        </table></li>
+
 	    {% endif %}
 
 	  {% endfor %}
-    </ul>
+    </table>
 	{% endfor %}
 
 </div>
