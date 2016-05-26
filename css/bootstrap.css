@@ -889,6 +889,12 @@
   .hidden-xs {
     display: none !important;
   }
+  .container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .hidden-sm {
