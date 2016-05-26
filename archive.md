@@ -9,7 +9,7 @@ title: 文章分类
 {% for posts in category %}
 {% for post in posts %}
 {% if post.url %}
-  <span style="margin-left: 18px;color:#9a9a9a">{{ post.date | date: "%Y.%-m.%-d" }}</span> &raquo; <div>[ {{ post.title }} ]({{ post.url }})</div>
+  <span style="margin-left: 18px;color:#9a9a9a">{{ post.date | date: "%Y.%-m.%-d" }}</span> &raquo; [ {{ post.title }} ]({{ post.url }})
 {% endif %}
 {% endfor %}
 {% endfor %}
