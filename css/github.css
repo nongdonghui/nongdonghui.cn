@@ -28,7 +28,7 @@
 }
 
 .markdown-body h1 {
-  font-size: 2em;
+  font-size: 20px;
   margin: 0.67em 0;
 }
 
@@ -309,7 +309,7 @@
 
 .markdown-body h1 {
   padding-bottom: 0.3em;
-  font-size: 2.25em;
+  font-size: 20px;
   line-height: 1.2;
   position: relative;
 }
@@ -355,7 +355,7 @@
 }
 
 .markdown-body h3 {
-  font-size: 1.5em;
+  font-size: 16px;
   line-height: 1.43;
 }
 
@@ -364,7 +364,7 @@
 }
 
 .markdown-body h4 {
-  font-size: 1.25em;
+  font-size: 14px;
 }
 
 .markdown-body h4 .anchor {
@@ -372,7 +372,7 @@
 }
 
 .markdown-body h5 {
-  font-size: 1em;
+  font-size: 12px;
 }
 
 .markdown-body h5 .anchor {
@@ -380,7 +380,7 @@
 }
 
 .markdown-body h6 {
-  font-size: 1em;
+  font-size: 11px;
   color: #777;
 }
 
