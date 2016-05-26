@@ -3,6 +3,7 @@ layout: page
 title: 文章分类
 ---
 
+<div class="archive">
 {% for category in site.categories %}
 
 <div id="{{ category | first }}"> <h3> {{ category | first | capitalize }} </h3> </div>
@@ -22,3 +23,4 @@ title: 文章分类
 {% endfor %}
   
 {% endfor %}
+</div>
