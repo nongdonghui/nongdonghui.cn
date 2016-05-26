@@ -71,6 +71,7 @@ hr {
 }
 .all {
   float: left;
+  margin-top: -12px;
 }
 .second-title {
   font-size: 14px;
