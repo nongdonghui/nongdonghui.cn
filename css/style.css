@@ -131,3 +131,6 @@ h6 {
   text-decoration: none;
   cursor: pointer;
 }
+.markdown-body blockquote>ol{
+  padding-left: 1.4em;
+}
