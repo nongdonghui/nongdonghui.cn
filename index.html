@@ -171,7 +171,7 @@ title: welcome to ndh's writer place
 
 	      {% assign monthId = year | append: "-" | append: month %}
 
-        <thead><tr id="{{ monthId }}"><th>{{ monthName }}</th><th></th><th class="pull-right">{{year}}</th></tr></thead>
+        <thead><tr id="{{ monthId }}"><th>{{ monthName }}.</th><th></th><th class="pull-right">{{year}}</th></tr></thead>
 	      {% for p in postsArray %}
 	        <tr>
 	          <td>{{ p.date | date: "%-d" }}</td>
