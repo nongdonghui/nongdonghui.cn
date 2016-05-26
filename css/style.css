@@ -27,6 +27,9 @@ body {
 .table thead, .table tfoot {
   background-color: #f9fafa;
 }
+.table a {
+  text-decoration: none;
+}
 
 .markdown-body img {
   max-width: 100%;
@@ -40,6 +43,7 @@ svg {
   padding-bottom: 0.3em;
   line-height: 1.225;
   position: relative;
+  margin: 0;
 }
 .container h2:after {
   content: "";
@@ -73,11 +77,7 @@ hr {
   margin-top: 4px;
   text-decoration: none;
 }
-.idx-h3 {
-  margin-left: -20px;
-  margin-top: -4px;
-  margin-bottom: 4px;
-}
+
 ul {
   padding-left: 1.25em;
 }
