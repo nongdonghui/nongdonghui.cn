@@ -2,7 +2,7 @@
 layout: post
 title: AngularJS ngRepeat的一点说明
 categories: angularjs
-lastUpdated: 5.25
+lastUpdated: 5.27
 ---
 
 ## {{ page.title }}
@@ -15,17 +15,17 @@ angularjs的ng-repeat的默认生成格式是`ng-repeat="(key, value) in object"
 
 ```javascript
 $scope.data = {
-  'id': 2,
-  'project': 'wewe2012',
-  'date': '2013-02-26',
-  'description': 'ewew',
-  'eet_no': 'ewew',
+  'id': 1,
+  'project': 'equip2012',
+  'date': '2012-02-26',
+  'description': 'equip',
+  'equip_no': 'e001',
 };
 var array = [];
 for (var key in $scope.data) {
-  var test = {};
-  test[key] = $scope.data[key];
-  array.push(test);
+  var map = {};
+  map[key] = $scope.data[key];
+  array.push(map);
 }
 $scope.data = array;
 ```
@@ -45,14 +45,14 @@ $scope.data = array;
 ```html
 <!DOCTYPE html>
 <html ng-app>
-<!--   w  ww .  j  a v  a 2  s  .  c om-->
+<!-- www.java2s.com -->
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js"></script>
 </head>
 <body ng-app="myApp">
   <div ng-controller="MyCtrl">
     <ul>
-      <li ng-repeat="(key, value) in school.sub">first language is = {{value}}</li>
+      <li ng-repeat="(key, value) in school.sub">first language is = {% raw %}{{value}}{% endraw %}</li>
     </ul>
   </div>
   <script type='text/javascript'>
@@ -72,7 +72,8 @@ $scope.data = array;
 
 **更新列表：**
 
-*
+* 2016-5-27
+* 修改输出花括号格式
 
 
 
