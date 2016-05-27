@@ -2,7 +2,7 @@
 layout: post
 title: AngularJS记录checkbox选中项方法
 categories: angularjs
-lastUpdated:
+lastUpdated: 5.27
 ---
 
 ## {{ page.title }}
@@ -59,13 +59,14 @@ lastUpdated:
 
 **更新列表：**
 
-*
+* 2016-5-27
+* 添加引用
 
 
 
 **参考文章：**
 
-* [xxx][1]
+* [How to bind to list of checkbox values with AngularJS][1]
 
 
-[1]: http://xxx
+[1]: http://stackoverflow.com/questions/14514461/how-to-bind-to-list-of-checkbox-values-with-angularjs
