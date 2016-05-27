@@ -88,6 +88,9 @@ ul {
   border-left: 4px solid #5bc0de;
   padding: 5px 15px;
 }
+.markdown-body blockquote>h3 {
+  margin-bottom: 4px;
+}
 :link {
   color: #4078c0;
   background: transparent;
