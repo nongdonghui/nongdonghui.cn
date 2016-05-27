@@ -2,7 +2,7 @@
 layout: post
 title: 理解javascript自执行函数
 categories: javascript
-lastUpdated: 
+lastUpdated: 5.27
 ---
 
 ## {{ page.title }}
@@ -124,7 +124,8 @@ function() {
 
 **更新列表：**
 
-* 2016-5-13
+* 2016-5-27
+* 添加[引用][6]
 
 
 
@@ -135,6 +136,7 @@ function() {
 * [90 Creative Back To Top Links and Best Practices][3]
 * [stuffandnonsense][4]
 * [JavaScript Memory Profiling][5]
+* [Immediately-Invoked Function Expression][6]
 
 
 [1]: http://www.jb51.net/article/38228.htm
@@ -142,3 +144,4 @@ function() {
 [3]: http://www.instantshift.com/2009/07/14/90-creative-back-to-top-links-and-best-practices/
 [4]: https://stuffandnonsense.co.uk/
 [5]: https://developer.chrome.com/devtools/docs/javascript-memory-profiling
+[6]: http://benalman.com/news/2010/11/immediately-invoked-function-expression/#iife
