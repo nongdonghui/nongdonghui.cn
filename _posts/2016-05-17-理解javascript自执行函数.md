@@ -125,7 +125,7 @@ function() {
 **更新列表：**
 
 * 2016-5-27
-* 添加[引用][6]
+* 添加引用:[Immediately-Invoked Function Expression][6]，[JavaScript从入门到提高前需要注意的细节：函数部分][7]
 
 
 
@@ -137,6 +137,7 @@ function() {
 * [stuffandnonsense][4]
 * [JavaScript Memory Profiling][5]
 * [Immediately-Invoked Function Expression][6]
+* [JavaScript从入门到提高前需要注意的细节：函数部分][7]
 
 
 [1]: http://www.jb51.net/article/38228.htm
@@ -145,3 +146,4 @@ function() {
 [4]: https://stuffandnonsense.co.uk/
 [5]: https://developer.chrome.com/devtools/docs/javascript-memory-profiling
 [6]: http://benalman.com/news/2010/11/immediately-invoked-function-expression/#iife
+[7]: https://msdn.microsoft.com/zh-cn/library/hh968323.aspx#
