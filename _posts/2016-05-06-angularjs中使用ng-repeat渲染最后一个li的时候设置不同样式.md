@@ -12,7 +12,7 @@ categories: angularjs
 
 ```html
 <li ng-repeat="item in items">
-  <% raw %>{{item.name}}<% endraw %>
+  {% raw %}{{item.name}}{% endraw %}
 </li>
 ```
 那么我就可以这样加
@@ -20,7 +20,7 @@ categories: angularjs
 ```html
 <li ng-repeat="item in items"
     ng-class="{'item-last':$last}">
-  <% raw %>{{item.name}}<% endraw %>
+  {% raw %}{{item.name}}{% endraw %}
 </li>
 ```
 还有一种方法就是使用js计算的方法
@@ -28,7 +28,7 @@ categories: angularjs
 ```html
 <li ng-repeat="item in items"
     ng-class="isLast($last)">
-  <% raw %>{{item.name}}<% endraw %>
+  {% raw %}{{item.name}}{% endraw %}
 </li>
 ```
 Controller中的代码定义是这样
@@ -50,7 +50,7 @@ CSS定义是这样
 <li ng-repeat="item in items"
     ng-class="$last ? 'item-last'
                     : 'item-not-last'">
-  <% raw %>{{item.name}}<% endraw %>
+  {% raw %}{{item.name}}{% endraw %}
 </li>
 ```
 ngRepeat还有以下几种类型：
