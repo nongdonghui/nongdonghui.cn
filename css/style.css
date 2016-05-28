@@ -90,6 +90,7 @@ ul {
 }
 .markdown-body blockquote>h3 {
   margin-bottom: 4px;
+  border-bottom: 1px dotted #ddd;
 }
 :link {
   color: #4078c0;
