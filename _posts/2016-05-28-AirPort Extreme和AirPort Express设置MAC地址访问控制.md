@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Win7下AirPort Extreme和AirPort Express设置MAC地址访问控制
-categories: categories
+categories: apple
 lastUpdated: 5.29
 ---
 
