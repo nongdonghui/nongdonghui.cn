@@ -23,21 +23,21 @@ lastUpdated: 5.29
 
 一般Airport Express是用来从Airport Extreme接收信号的，相当于子无线路由，信号与Airport Extreme同步
 
-首先，点击选中Airport Express，记录它的AirPort ID(就是它的MAC地址)
+**首先**，点击选中Airport Express，记录它的AirPort ID(就是它的MAC地址)
 
 接着我们选择Airport Extreme，点手动设置，输入密码，选择AirPort下的访问控制，默认是未启用的，我们选择定时访问
 
 ![AirPortSetting1](/images/AirPortSetting1.png)
 
-然后要为我们的一台设备添加MAC白名单，点击`+`按钮，输入要允许访问网络的MAC地址或者点本电脑
+**然后**，要为我们的一台设备添加MAC白名单，点击`+`按钮，输入要允许访问网络的MAC地址或者点本电脑
 
 ![AirPortSetting2](/images/AirPortSetting2.png)
 
-最后修改(默认)项的(不限制)，这一项必须要修改，不然就是全部允许访问了，把它修改为不访问
+**最后**，修改(默认)项的(不限制)，这一项必须要修改，不然就是全部允许访问了，把它修改为不访问
 
 ![AirPortSetting3](/images/AirPortSetting3.png)
 
-如果你想把Airport Express也设置进去，则再添加一个即可，这样就OK了，单击`更新`之后，等待自动重启后，只有上面设置了MAC白名单的设备能访问网络了。
+**如果**，你想把Airport Express也设置进去，则再添加一个即可，这样就OK了，单击`更新`之后，等待自动重启后，只有上面设置了MAC白名单的设备能访问网络了。
 
 **更新列表：**
 
