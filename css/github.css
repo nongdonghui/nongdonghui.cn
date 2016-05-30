@@ -524,8 +524,9 @@
   overflow: auto;
   font-size: 85%;
   line-height: 1.42857143;
-  background-color: #eff0f1;
-  border-radius: 0;
+  background-color: #fbfbfb;
+  border-radius: 3px;
+  border: 1px solid #ddd;
 }
 
 .markdown-body .highlight pre {
