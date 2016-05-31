@@ -2,7 +2,7 @@
 layout: post
 title: Understanding AngularJS $resource
 categories: angularjs
-lastUpdated: 5.30
+lastUpdated: 5.31
 ---
 
 ## {{ page.title }}
@@ -128,6 +128,209 @@ public ResponseEntity<List<User>> patchUsers(@PathVariable("id") String id, @Req
   return new ResponseEntity(HttpStatus.OK);
 }
 ```
+
+A full demonstration:
+
+**1-UserResource.java**
+
+```java
+package com.risinda.erp.mbl.facade;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+@Controller
+@RequestMapping("/api")
+public class UserResource {
+  public static List<User> userList = new ArrayList<User>();
+  static {
+    for (int i = 0; i < 3; i++) {
+      User u = new User();
+      u.setId(i);
+      u.setName("我是" + i);
+      userList.add(u);
+    }
+  }
+  
+  @RequestMapping(value = "/users",
+          method = RequestMethod.POST,
+          produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<User> create(@RequestBody User user) {
+    int i = 0;
+    for (User u : userList) {
+      if (u.getId() > i) {
+        i = u.getId();
+      }
+    }
+    User u = new User();
+    u.setId(i + 1);
+    u.setName("我是" + (i + 1) );
+    userList.add(u);
+    return new ResponseEntity<User>(user, HttpStatus.OK);
+  }
+  
+  @RequestMapping(value = "/users/{id}",
+      method = RequestMethod.DELETE,
+      produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<Void> delete(@PathVariable Integer id) {
+    for (User u : userList) {
+      if (u.getId().equals(id)) {
+        userList.remove(u);
+      }
+    }
+    return new ResponseEntity<Void>(HttpStatus.OK);
+  }
+  
+  @RequestMapping(value = "/users/{id}",
+          method = RequestMethod.PUT,
+          produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<User> update(@RequestBody User user) {
+    for (User u : userList) {
+      if (u.getId().equals(user.getId())) {
+        u.setName(user.getName());
+      }
+    }
+    return new ResponseEntity<User>(user, HttpStatus.OK);
+  }
+  
+  @RequestMapping(value = "/users/{id}",
+      method = RequestMethod.GET,
+      produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<User> get(@PathVariable Integer id) {
+    User user = null;
+    for (User u : userList) {
+      if (u.getId().equals(id)) {
+        user = u;
+      }
+    }
+    return new ResponseEntity<User>(user, HttpStatus.OK);
+  }
+  
+  @RequestMapping(value = "/users",
+      method = RequestMethod.GET,
+      produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<List<User>> getAll() {
+    return new ResponseEntity<List<User>>(userList, HttpStatus.OK);
+  }
+}
+class User implements Serializable {
+  private static final long serialVersionUID = 1L;
+  
+  private Integer id;
+  private String name;
+  
+  public Integer getId() {
+    return id;
+  }
+  public void setId(Integer id) {
+    this.id = id;
+  }
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+}
+```
+
+**2-UserService**
+
+```javascript
+.factory('UserService', function ($resource, HOST, localStorageService) {
+  return $resource(
+    HOST + 'api/users/:id/:action',
+    {
+      id: '@id',
+      action: '@action',
+      access_token: angular.fromJson(localStorageService.getItem('profile')).access_token
+    },
+    {
+      'update': {
+        method: 'PUT'
+      }
+    }
+  );
+})
+```
+
+**3-Controller**
+
+```javascript
+.controller('UserCtrl', function($scope, UserService) {
+  $scope.add = function() {
+    var newUser = {name: 'I am 101'};
+    UserService.save(newUser, function(result) {
+      console.log(result);
+    });
+  };
+
+  $scope.delete = function() {
+    UserService.delete({id: 101}, function(result) {
+      console.log(result);
+    });
+  };
+
+  $scope.get = function() {
+    UserService.get({id: 1}, function(result) {
+      console.log(result);
+    });
+  };
+
+  $scope.update = function() {
+    var modifyingUser = {
+      id: 1,
+      name: 'I am 1++'
+    };
+    UserService.update(modifyingUser, function(result) {
+      console.log(result);
+    });
+  };
+
+  $scope.getAll = function() {
+    UserService.query(function(result) {
+      console.log(result);
+    });
+  };
+});
+```
+
+**4-invoked result**
+
+$scope.add();
+
+![add_user](/images/add_user.png)
+
+$scope.delete();
+
+![delete_Forbidden](/images/delete_Forbidden.png)
+
+Add `DELETE` to web.xml's cors.allowed.methods param-value
+
+![delete_ok](/images/delete_ok.png)
+
+$scope.get();
+
+![get_user1](/images/get_user1.png)
+
+$scope.update();
+
+![update_user1](/images/update_user1.png)
+
+$scope.getAll();
+
+![get_all_user](/images/get_all_user.png)
+
 
 **更新列表：**
 
