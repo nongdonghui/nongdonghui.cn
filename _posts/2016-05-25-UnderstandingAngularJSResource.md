@@ -129,6 +129,12 @@ public ResponseEntity<List<User>> patchUsers(@PathVariable("id") String id, @Req
 }
 ```
 
+**更新列表：**
+
+* 2016-5-30
+* 填充内容
+* 2016-5-31
+
 A full demonstration:
 
 **1-UserResource.java**
@@ -330,12 +336,6 @@ $scope.update();
 $scope.getAll();
 
 ![get_all_user](/images/get_all_user.png)
-
-
-**更新列表：**
-
-* 2016-5-30
-* 填充内容
 
 
 
