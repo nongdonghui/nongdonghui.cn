@@ -315,7 +315,7 @@ $scope.delete();
 
 ![delete_Forbidden](/images/delete_Forbidden.png)
 
-Add `DELETE` to param-value of cors.allowed.methods in web.xml
+Add `DELETE` to param-value of cors.allowed.methods in web.xml and reinvoke $scope.delete();
 
 ![delete_ok](/images/delete_ok.png)
 
