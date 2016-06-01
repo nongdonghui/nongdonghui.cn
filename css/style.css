@@ -144,3 +144,9 @@ h6 {
   margin-left: auto;
   margin-right: auto;
 }
+@media (max-width: 767px) {
+  .container {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
