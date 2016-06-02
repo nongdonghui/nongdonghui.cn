@@ -2,7 +2,7 @@
 layout: post
 title: hexo搭建github pages
 categories: github
-lastUpdated: 5.31
+lastUpdated: 6.2
 ---
 
 ## {{ page.title }}
@@ -11,14 +11,15 @@ lastUpdated: 5.31
 
 1.npm安装hexo
 
-命令：`$ npm install hexo -g`
+命令
+
+```sh
+$ npm install hexo -g
+```
 
 执行过程
 
 ```
-Microsoft Windows [版本 6.1.7601]
-版权所有 (c) 2009 Microsoft Corporation。保留所有权利。
-
 C:\Users\Administrator>npm install hexo -g
 npm WARN optional dep failed, continuing fsevents@1.0.12
 npm WARN optional dep failed, continuing fsevents@1.0.12
@@ -75,16 +76,13 @@ ighlight.js@9.4.0)
 ├── warehouse@2.2.0 (graceful-fs@4.1.4, is-plain-object@2.0.1, JSONStream@1.1.1, cuid@1.3.8)
 └── cheerio@0.20.0 (entities@1.1.1, dom-serializer@0.1.0, css-select@1.2.0, htmlparser2@3.8.3, js
 dom@7.2.2)
-
-C:\Users\Administrator>
-C:\Users\Administrator>
 ```
 
-2.简单发布
+2.本地初始化运行
 
 命令
 
-```
+```sh
 $ hexo init blog
 $ cd blog
 $ npm install
