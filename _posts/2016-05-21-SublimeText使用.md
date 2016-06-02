@@ -74,19 +74,27 @@ lastUpdated: 6.2
 * 插件包管理器安装
 
     快捷键Ctrl+`或View | Show Console调出命令行，输入以下代码
+
     ```python
     import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
     ```
+
     按回车键，等待安装完成后重启Sublime Text  
-    常用的插件有：  
-    ConvertToUTF8：解决输入法不跟随的问题  
+    常用的插件有：
+
+    ConvertToUTF8：解决输入法不跟随的问题
+
     Emmet：html快速构建工具
+
     Bracket Highlighter：括号对高亮
-    插件安装方法：  
-    打开命令板，快捷键Ctrl+Shift+P或Tools | Command Palette  
-    输入pci(全称是Package Control: Install Package)，回车  
-    待输入框再次出现后输入 Emmet 找到Emmet插件后回车进行安装，
-    待左下角的跑马灯跑完之后说明安装成功了
+
+    插件安装方法：
+
+    打开命令板，快捷键Ctrl+Shift+P或Tools | Command Palette
+
+    输入pci(全称是Package Control: Install Package)，回车
+
+    待输入框再次出现后输入 Emmet 找到Emmet插件后回车进行安装，待左下角的跑马灯跑完之后说明安装成功了
 
 ### 常用功能
 
