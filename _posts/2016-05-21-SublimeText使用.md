@@ -103,7 +103,7 @@ lastUpdated: 6.2
 * 切换语法：`Ctrl` + `Shift` + `P` -> Set Syntax: [语法]
 * 同时选中html的开始和结束标签进行编辑：光标移到一个标签行上按`Ctrl` + `Shift +`'`
 * 选择单词：`Ctrl` + `D`
-* 逐个选择：`Ctrl` + `Shift + `←`/`→`
+* 逐个选择：`Ctrl` + `Shift` + `←`/`→`
 * 复制新增当前行下移：`Ctrl` + `Shift` + `D`
 * 选择行：`Ctrl` + `L`
 * 下起一行：`Ctrl` + `Enter`
