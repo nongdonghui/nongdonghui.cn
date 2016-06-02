@@ -2,14 +2,14 @@
 layout: post
 title: AngularJS ngRepeat的一点说明
 categories: angularjs
-lastUpdated: 5.27
+lastUpdated: 6.2
 ---
 
 ## {{ page.title }}
 
 {{ page.date | date: "%Y.%-m.%-d" }} - 南京 | <a href="/archive#{{ page.categories }}">{{ page.categories}}</a>
 
-angularjs的ng-repeat的默认生成格式是`ng-repeat="(key, value) in object"`，它可以输出键值对，打印key=&#123;{key}}, value=&#123;{value}}，这是输出对象的，如果是输出单纯数组的，直接`ng-repeat="item in collection"`，打印&#123;{item}}，如果输出对象数组的，也一样直接`ng-repeat="item in collection"`，打印&#123;{item.prop}}
+angularjs的ng-repeat的默认生成格式是**ng-repeat="(key, value) in object"**，它可以输出键值对，打印 key=**&#123;{key}}**, value=**&#123;{value}}**，这是输出对象的，如果是输出单纯数组的，直接**ng-repeat="item in collection"**，打印**&#123;{item}}**，如果输出对象数组的，也一样直接**ng-repeat="item in collection"**，打印**&#123;{item.prop}}**
 
 **JavaScript**
 
