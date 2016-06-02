@@ -70,6 +70,12 @@ hr {
 .text-center {
   text-align: center;
 }
+.pull-left {
+  float: left !important;
+}
+.pull-right {
+  float: right !important;
+}
 .all {
   float: left;
   margin-top: -12px;
