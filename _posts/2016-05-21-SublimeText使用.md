@@ -23,18 +23,18 @@ lastUpdated: 6.2
 
 
 * 随意跳转，实时响应变化
-    * `Ctrl + P`：输入文件名，实时预览内容，回车打开，↑↓预览其他，有自动完成提示
-    * `Ctrl + P`：输入@+标记，实时跳到相应内容，可简写首字母组合，有自动完成提示
-    * `Ctrl + P`：输入#+字符，实时跳到相应内容，有自动完成提示
-    * `Ctrl + P`：输入:+行号，实时跳到相应行
+    * `Ctrl` + `P`：输入文件名，实时预览内容，回车打开，↑↓预览其他，有自动完成提示
+    * `Ctrl` + `P`：输入@+标记，实时跳到相应内容，可简写首字母组合，有自动完成提示
+    * `Ctrl` + `P`：输入#+字符，实时跳到相应内容，有自动完成提示
+    * `Ctrl` + `P`：输入:+行号，实时跳到相应行
 * 强大的多行选择和多行编辑，实时响应变化  
-    每行输入一个星期，把他们都选上，按`Ctrl + Shift + L`，然后输入双引号，按End然后输入逗号(,)，按`Ctrl+J`排放在一行，按`Ctrl + L`选择一行，`Shift + ←`去选换行符，按[加数组标识，按`Home`，回到行首，定义变量名称
+    每行输入一个星期，把他们都选上，按`Ctrl` + `Shift` + `L`，然后输入双引号，按End然后输入逗号(,)，按`Ctrl` + `J`排放在一行，按`Ctrl` + `L`选择一行，`Shift` + `←`去选换行符，按[加数组标识，按`Home`，回到行首，定义变量名称
 * 无所不能的命令板  
-    只要按`Ctrl + Shift + P`调出这个板，输入模糊的记忆，就能调取你想设置的功能窗
-* 全屏自由无干扰模式(`Shift + F11`,再按一次退出该模式)  
-    隐藏菜单栏：`View | Hide Menu`，显示菜单栏：按`Ctrl + Shift + P`，输入`vmenu`
+    只要按`Ctrl` + `Shift` + `P`调出这个板，输入模糊的记忆，就能调取你想设置的功能窗
+* 全屏自由无干扰模式(`Shift` + `F11`,再按一次退出该模式)  
+    隐藏菜单栏：View | Hide Menu，显示菜单栏：按`Ctrl` + `Shift` + `P`，输入vmenu
 * 拆分编辑，像视频多监控区域一样，多区域编辑，支持四个区域  
-    `View | Layout`设定行列Grid模式，或`File | New View into File`，然后拖拽标签页到区域
+    View | Layout设定行列Grid模式，或File | New View into File，然后拖拽标签页到区域
 * 语法高亮、代码提示补全、代码折叠、自定义皮肤/配色方案、多便签页
 * 自定义Anything  
     可以自定义按键绑定，菜单栏，代码片段/模板，宏定义，自动完成和更多内容
@@ -69,51 +69,52 @@ lastUpdated: 6.2
       "trim_trailing_white_space_on_save": true
     }
     ```  
-    保存位置：`Packages/User/Preferences.sublime-settings`
+    保存位置：Packages/User/Preferences.sublime-settings
 
 * 插件包管理器安装
 
-    快捷键`Ctrl+``或`View | Show Console`调出命令行，输入以下代码
+    快捷键`Ctrl`+`{% raw %}`{% endraw %}`或View | Show Console调出命令行，输入以下代码
 
     ```python
     import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
     ```
 
-    按回车键，等待安装完成后重启Sublime Text  
+    按回车键，等待安装完成后重启Sublime Text
+
     常用的插件有：
 
-    `ConvertToUTF8`：解决输入法不跟随的问题
+    **ConvertToUTF8**：解决输入法不跟随的问题
 
-    `Emmet`：html快速构建工具
+    **Emmet**：html快速构建工具
 
-    `Bracket Highlighter`：括号对高亮
+    **Bracket Highlighter**：括号对高亮
 
     插件安装方法：
 
-    打开命令板，快捷键`Ctrl+Shift+P`或`Tools | Command Palette`
+    打开命令板，快捷键`Ctrl` + `Shift` + `P`或Tools | Command Palette
 
-    输入pci(全称是`Package Control: Install Package`)，回车
+    输入pci(全称是Package Control: Install Package)，回车
 
-    待输入框再次出现后输入 `Emmet` 找到`Emmet`插件后回车进行安装，待左下角的跑马灯跑完之后说明安装成功了
+    待输入框再次出现后输入 Emmet 找到Emmet插件后回车进行安装，待左下角的跑马灯跑完之后说明安装成功了
 
 ### 常用功能
 
-* 新建：`Ctrl + N`
-* 切换语法：`Ctrl + Shift + P` -> `Set Syntax: [语法]`
-* 同时选中html的开始和结束标签进行编辑：光标移到一个标签行上按`Ctrl+Shift+'`
-* 选择单词：`Ctrl + D`
-* 逐个选择：`Ctrl + Shift ←/→`
-* 复制新增当前行下移：`Ctrl + Shift + D`
-* 选择行：`Ctrl + L`
-* 下起一行：`Ctrl + Enter`
-* 上起一行：`Ctrl + Shift + Enter`
-* 当前行上下移动：`Ctrl + Shift + ↑/↓`
-* 向左/右缩进：`Ctrl + [/]`
-* 以当前缩进粘贴：`Ctrl + Shift + V`
-* 删除行：`Ctrl + X`
-* 返回上/下一个光标位置：`Alt + - / Alt + Shift + -`
-* 切换到上/下一个视图：`Ctrl + Tab / Ctrl + Shift + Tab`
-* 多行合成一行：`Ctrl + J`
+* 新建：`Ctrl` + `N`
+* 切换语法：`Ctrl` + `Shift` + `P` -> Set Syntax: [语法]
+* 同时选中html的开始和结束标签进行编辑：光标移到一个标签行上按`Ctrl` + `Shift +`'`
+* 选择单词：`Ctrl` + `D`
+* 逐个选择：`Ctrl` + `Shift + `←/→`
+* 复制新增当前行下移：`Ctrl` + `Shift` + `D`
+* 选择行：`Ctrl` + `L`
+* 下起一行：`Ctrl` + `Enter`
+* 上起一行：`Ctrl` + `Shift` + `Enter`
+* 当前行上下移动：`Ctrl` + `Shift` + `↑/↓`
+* 向左/右缩进：`Ctrl` + `[/]`
+* 以当前缩进粘贴：`Ctrl` + `Shift` + `V`
+* 删除行：`Ctrl` + `X`
+* 返回上/下一个光标位置：`Alt` + `-` / `Alt` + `Shift` + `-`
+* 切换到上/下一个视图：`Ctrl` + `Tab` / `Ctrl` + `Shift` + `Tab`
+* 多行合成一行：`Ctrl` + `J`
 
 ### 进阶使用
 
@@ -158,7 +159,7 @@ lastUpdated: 6.2
     </snippet>
     ```
 
-    保存为html-p.sublime-snippet，然后我们`Ctrl + N`，然后SSHTML设置一下html语法，输入p按tab，然后光标就停留在了$1位置了，$1是一个占位符，它标识了光标出现的位置，但是如果我们的模板很长篇大论，我们需要快速切换到模板需要手动输入的位置时，怎么办呢，对了，就是可以用$n来为我们服务，比如我们修改p模板如下
+    保存为html-p.sublime-snippet，然后我们`Ctrl` + `N`，然后SSHTML设置一下html语法，输入p按tab，然后光标就停留在了$1位置了，$1是一个占位符，它标识了光标出现的位置，但是如果我们的模板很长篇大论，我们需要快速切换到模板需要手动输入的位置时，怎么办呢，对了，就是可以用$n来为我们服务，比如我们修改p模板如下
 
     ```xml
     <snippet>
@@ -180,7 +181,7 @@ lastUpdated: 6.2
     </snippet>
     ```
 
-    然后我们`Ctrl + N`，然后SSHTML设置一下html语法，输入p按tab，然后光标就停留在了$1位置了，输入div1，然后按tab，光标就跑到$2位置了，输入div2，按tab，光标就到$3位置了，非常方便，如果我们要联动更改呢，很简单，只要在不同的位置使用相同的$n占位符即可，比如下面的代码
+    然后我们`Ctrl` + `N`，然后SSHTML设置一下html语法，输入p按tab，然后光标就停留在了$1位置了，输入div1，然后按tab，光标就跑到$2位置了，输入div2，按tab，光标就到$3位置了，非常方便，如果我们要联动更改呢，很简单，只要在不同的位置使用相同的$n占位符即可，比如下面的代码
 
     ```xml
     <snippet>
@@ -202,7 +203,7 @@ lastUpdated: 6.2
     </snippet>
     ```
     
-    保存为html-doctype.sublime-snippet，然后我们`Ctrl + N`，然后SSHTML设置一下html语法，输入html按tab，然后光标就在`<title></title>`和`<p></p>`之间同时闪动了，这就达到联动修改的效果了。
+    保存为html-doctype.sublime-snippet，然后我们`Ctrl` + `N`，然后SSHTML设置一下html语法，输入html按tab，然后光标就在`<title></title>`和`<p></p>`之间同时闪动了，这就达到联动修改的效果了。
 
     ![snippet1](/images/snippet1.gif)
 
@@ -331,7 +332,7 @@ lastUpdated: 6.2
         ```
         AttributeError: 'module' object has no attribute 'now'
         ```
-        要修改为`from datetime import datetime`，这是版本问题导致
+        要修改为from datetime import datetime，这是版本问题导致
     * 保存自动更新时间请参考[1][18]，[2][19]，[3][20]
 
 **更新列表：**
