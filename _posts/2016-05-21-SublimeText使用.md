@@ -32,9 +32,9 @@ lastUpdated: 6.2
 * 无所不能的命令板  
     只要按`Ctrl` + `Shift` + `P`调出这个板，输入模糊的记忆，就能调取你想设置的功能窗
 * 全屏自由无干扰模式(`Shift` + `F11`,再按一次退出该模式)  
-    隐藏菜单栏：View | Hide Menu，显示菜单栏：按`Ctrl` + `Shift` + `P`，输入vmenu
+    隐藏菜单栏：**View | Hide Menu**，显示菜单栏：按`Ctrl` + `Shift` + `P`，输入vmenu
 * 拆分编辑，像视频多监控区域一样，多区域编辑，支持四个区域  
-    View | Layout设定行列Grid模式，或File | New View into File，然后拖拽标签页到区域
+    **View | Layout**设定行列Grid模式，或**File | New View into File**，然后拖拽标签页到区域
 * 语法高亮、代码提示补全、代码折叠、自定义皮肤/配色方案、多便签页
 * 自定义Anything  
     可以自定义按键绑定，菜单栏，代码片段/模板，宏定义，自动完成和更多内容
@@ -54,8 +54,8 @@ lastUpdated: 6.2
 
 ### 基础配置
 
-* 默认配置：Preferences | Settings - Default
-* 自定义配置：Preferences | Settings - User
+* 默认配置：**Preferences | Settings - Default**
+* 自定义配置：**Preferences | Settings - User**
 
     ```json
     {
@@ -69,11 +69,11 @@ lastUpdated: 6.2
       "trim_trailing_white_space_on_save": true
     }
     ```  
-    保存位置：Packages/User/Preferences.sublime-settings
+    保存位置：**Packages/User/Preferences.sublime-settings**
 
 * 插件包管理器安装
 
-    快捷键`Ctrl`+`{% raw %}`{% endraw %}`或View | Show Console调出命令行，输入以下代码
+    快捷键`Ctrl` + {% raw %}`{% endraw %} 或 **View | Show Console**调出命令行，输入以下代码
 
     ```python
     import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
@@ -91,9 +91,9 @@ lastUpdated: 6.2
 
     插件安装方法：
 
-    打开命令板，快捷键`Ctrl` + `Shift` + `P`或Tools | Command Palette
+    打开命令板，快捷键`Ctrl` + `Shift` + `P`或**Tools | Command Palette**
 
-    输入pci(全称是Package Control: Install Package)，回车
+    输入pci(全称是**Package Control: Install Package**)，回车
 
     待输入框再次出现后输入 Emmet 找到Emmet插件后回车进行安装，待左下角的跑马灯跑完之后说明安装成功了
 
@@ -103,7 +103,7 @@ lastUpdated: 6.2
 * 切换语法：`Ctrl` + `Shift` + `P` -> Set Syntax: [语法]
 * 同时选中html的开始和结束标签进行编辑：光标移到一个标签行上按`Ctrl` + `Shift +`'`
 * 选择单词：`Ctrl` + `D`
-* 逐个选择：`Ctrl` + `Shift + `←/→`
+* 逐个选择：`Ctrl` + `Shift + `←`/`→`
 * 复制新增当前行下移：`Ctrl` + `Shift` + `D`
 * 选择行：`Ctrl` + `L`
 * 下起一行：`Ctrl` + `Enter`
@@ -210,7 +210,7 @@ lastUpdated: 6.2
     我们的模板代码是可以加入默认值的，格式很简单${1:Placeholder}，而且还可以嵌套哦${1:Nested ${2:Placeholder}}
 
 * 自定义插件
-    Tools | New Plugin...
+    **Tools | New Plugin...**
 
     ```python
     import sublime, sublime_plugin
@@ -340,7 +340,7 @@ lastUpdated: 6.2
 * 2016-5-24
 * 自定义cmd命令行，输入cmd直接弹出命令行
     * Preferences -> Browser Packages里新建一个CMD文件夹
-    * CMD文件夹内新建一个cmd.py文件(也可以使用Tools | New Plugin...)，代码如下
+    * CMD文件夹内新建一个cmd.py文件(也可以使用**Tools | New Plugin...**)，代码如下
     
         ```python
         import os, sublime_plugin
