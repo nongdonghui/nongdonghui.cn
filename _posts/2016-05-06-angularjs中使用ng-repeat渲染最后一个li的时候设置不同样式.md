@@ -35,7 +35,8 @@ Controller中的代码定义是这样
 
 ```js
 $scope.isLast = function(flag) {
-  return flag ? 'item-last' : 'item-not-last';
+  return flag ? 'item-last'
+              : 'item-not-last';
 };
 ```
 CSS定义是这样
@@ -57,12 +58,12 @@ ngRepeat还有以下几种类型：
 
 |  Variable  |  Type      |  Details                                                                     |  
 |  --------- |  --------- |  --------------------------------------------------------------------------  |  
-|  `$index`  |  `number`  |  iterator offset of the repeated element (0..length-1)                       |  
-|  `$first`  |  `boolean` |  true if the repeated element is first in the iterator.                      |  
-|  `$middle` |  `boolean` |  true if the repeated element is between the first and last in the iterator. |  
-|  `$last`   |  `boolean` |  true if the repeated element is last in the iterator.                       |  
-|  `$even`   |  `boolean` |  true if the iterator position $index is even (otherwise false).             |  
-|  `$odd`    |  `boolean` |  true if the iterator position $index is odd (otherwise false).              |  
+|  $index  |  number  |  iterator offset of the repeated element (0..length-1)                       |  
+|  $first  |  boolean |  true if the repeated element is first in the iterator.                      |  
+|  $middle |  boolean |  true if the repeated element is between the first and last in the iterator. |  
+|  $last   |  boolean |  true if the repeated element is last in the iterator.                       |  
+|  $even   |  boolean |  true if the iterator position $index is even (otherwise false).             |  
+|  $odd    |  boolean |  true if the iterator position $index is odd (otherwise false).              |  
 
 **参考文章：**
 
