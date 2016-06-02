@@ -34,7 +34,7 @@ lastUpdated: 6.2
 * 全屏自由无干扰模式(`Shift` + `F11`,再按一次退出该模式)  
     隐藏菜单栏：**View | Hide Menu**，显示菜单栏：按`Ctrl` + `Shift` + `P`，输入vmenu
 * 拆分编辑，像视频多监控区域一样，多区域编辑，支持四个区域  
-    **View | Layout**设定行列Grid模式，或**File | New View into File**，然后拖拽标签页到区域
+    **View | Layout**设定行列Grid模式，或 **File | New View into File**，然后拖拽标签页到区域
 * 语法高亮、代码提示补全、代码折叠、自定义皮肤/配色方案、多便签页
 * 自定义Anything  
     可以自定义按键绑定，菜单栏，代码片段/模板，宏定义，自动完成和更多内容
@@ -91,7 +91,7 @@ lastUpdated: 6.2
 
     插件安装方法：
 
-    打开命令板，快捷键`Ctrl` + `Shift` + `P`或**Tools | Command Palette**
+    打开命令板，快捷键`Ctrl` + `Shift` + `P` 或 **Tools | Command Palette**
 
     输入pci(全称是**Package Control: Install Package**)，回车
 
