@@ -490,12 +490,16 @@
 }
 
 .markdown-body code {
-  padding: 0;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
+  padding: 0px 3px 1px 3px;
   margin: 0;
   font-size: 90%;
-  background-color: #eff0f1;
+  border-radius: 4px;
+  border-style: outset;
+  border: 1px solid #aaa;
+  background: #fafafa;
+  vertical-align: baseline;
+  line-height: 1.8em;
+  white-space: nowrap;
 }
 
 .markdown-body code:before,
