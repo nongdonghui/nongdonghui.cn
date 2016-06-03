@@ -69,7 +69,7 @@ lastUpdated: 6.3
       "trim_trailing_white_space_on_save": true
     }
     ```
-    
+
     保存位置：**Packages/User/Preferences.sublime-settings**
 
 * 插件包管理器安装
@@ -105,7 +105,7 @@ lastUpdated: 6.3
 * 新建：`Ctrl` + `N`
 * 切换语法：`Ctrl` + `Shift` + `P` -> Set Syntax: [语法]
 * 同时选中html的开始和结束标签进行编辑：光标移到一个标签行上按`Ctrl` + `Shift` + `'`
-* 选择单词：光标置于词后，按 `Ctrl` + `D`，重复执行追加选择下一个相同词，跳过可按`Ctrl` + `K`，或者按 `Alt` + `F3` 选择全部相同的词，倍儿爽
+* 选择单词：光标置于词后，按 `Ctrl` + `D`，重复执行追加选择下一个相同词，跳过可按`Ctrl` + `K`，或者按 `Alt` + `F3` 选择全部相同的词
 * 逐个选择：`Ctrl` + `Shift` + `←` / `→`
 * 复制新增当前行下移：`Ctrl` + `Shift` + `D`
 * 选择行：`Ctrl` + `L`，重复执行追加选择下一行
@@ -122,6 +122,7 @@ lastUpdated: 6.3
 * 从光标处删至行尾：按两次 `Ctrl` + 'K'
 * 括号首尾自由跳跃：`Ctrl` + `M`
 * 选择括号内的内容：`Ctrl` + `Shift` + `M` ，一般和上一个命令结合使用
+* 多处同时编辑：`Ctrl` + 点选多处，可以进行多位置编辑
 
 ### 进阶使用
 
