@@ -74,7 +74,7 @@ lastUpdated: 6.3
 
 * 插件包管理器安装
 
-    快捷键`Ctrl` + &#96; 或 **View | Show Console**调出命令行，输入以下代码
+    快捷键`Ctrl` + &#96;(Esc下面那个键) 或 **View | Show Console**调出命令行，输入以下代码
 
     ```python
     import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
@@ -104,7 +104,7 @@ lastUpdated: 6.3
 
 * 新建：`Ctrl` + `N`
 * 切换语法：`Ctrl` + `Shift` + `P` -> Set Syntax: [语法]
-* 同时选中html的开始和结束标签进行编辑：光标移到一个标签行上按`Ctrl` + `Shift` + `'`
+* 同时选中html的开始和结束标签进行编辑：光标移到一个标签行上按`Ctrl` + `Shift` + `'`(Enter左边那个键)
 * 选择单词：光标置于词后，按 `Ctrl` + `D`，重复执行追加选择下一个相同词，跳过可按`Ctrl` + `K`，或者按 `Alt` + `F3` 选择全部相同的词
 * 逐个选择：`Ctrl` + `Shift` + `←` / `→`
 * 复制新增当前行下移：`Ctrl` + `Shift` + `D`
@@ -271,7 +271,7 @@ lastUpdated: 6.3
 * 实时打印当前操作的命令，对于调试快捷键相当有用，启用方法：
 
     ```
-    Ctrl + `
+    Ctrl + `(Esc下面那个键)
     然后输入
     sublime.log_commands(True)
     回车进行启动监控
@@ -334,7 +334,7 @@ lastUpdated: 6.3
     * 没有substring函数，要用[start_idx:end_idx]来代替，start_idx和end_idx是可选项，参考[这里][15]
     * 比较用==或者is，参考[这里][16]
     * 转换为大写用.upper()函数
-    * 'lastUpdated: %s' % today这里的s是占位符，会用today填充
+    * `'lastUpdated: %s' % today` 这里的s是占位符，会用today填充
     * 如果使用`import datetime`会报[异常][17]
     
         ```
