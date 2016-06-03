@@ -103,7 +103,7 @@ lastUpdated: 6.3
 ### 常用功能
 
 * 新建：`Ctrl` + `N`
-* 切换语法：`Ctrl` + `Shift` + `P` -> Set Syntax: [语法]
+* 切换语法：`Ctrl` + `Shift` + `P` -> ss(Set Syntax) + [语法]
 * 同时选中html的开始和结束标签进行编辑：光标移到一个标签行上按`Ctrl` + `Shift` + `'`(Enter左边那个键)
 * 选择单词：光标置于词后，按 `Ctrl` + `D`，重复执行追加选择下一个相同词，跳过可按`Ctrl` + `K`，或者按 `Alt` + `F3` 选择全部相同的词
 * 逐个选择：`Ctrl` + `Shift` + `←` / `→`
