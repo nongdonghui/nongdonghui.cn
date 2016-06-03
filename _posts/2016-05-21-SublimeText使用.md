@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Sublime Text使用
+title: Sublime Text使用(Windows7)
 categories: SublimeText
 created: {{}}
-lastUpdated: 6.2
+lastUpdated: 6.3
 ---
 
 ## {{ page.title }}
@@ -23,12 +23,12 @@ lastUpdated: 6.2
 
 
 * 随意跳转，实时响应变化
-    * `Ctrl` + `P`：输入文件名，实时预览内容，回车打开，↑↓预览其他，有自动完成提示
+    * `Ctrl` + `P`：输入文件名，实时预览内容，回车打开，`↑` `↓` 预览其他，有自动完成提示
     * `Ctrl` + `P`：输入@+标记，实时跳到相应内容，可简写首字母组合，有自动完成提示
     * `Ctrl` + `P`：输入#+字符，实时跳到相应内容，有自动完成提示
     * `Ctrl` + `P`：输入:+行号，实时跳到相应行
 * 强大的多行选择和多行编辑，实时响应变化  
-    每行输入一个星期，把他们都选上，按`Ctrl` + `Shift` + `L`，然后输入双引号，按End然后输入逗号(,)，按`Ctrl` + `J`排放在一行，按`Ctrl` + `L`选择一行，`Shift` + `←`去选换行符，按[加数组标识，按`Home`，回到行首，定义变量名称
+    每行输入一个星期，把他们都选上，按`Ctrl` + `Shift` + `L`，然后输入双引号，按`End`然后输入`,`，按`Ctrl` + `J`排放在一行，按`Ctrl` + `L`选择一行，`Shift` + `←`去选换行符，按`[`加数组标识，按`Home`，回到行首，定义变量名称
 * 无所不能的命令板  
     只要按`Ctrl` + `Shift` + `P`调出这个板，输入模糊的记忆，就能调取你想设置的功能窗
 * 全屏自由无干扰模式(`Shift` + `F11`,再按一次退出该模式)  
@@ -68,12 +68,13 @@ lastUpdated: 6.2
       "translate_tabs_to_spaces": true,
       "trim_trailing_white_space_on_save": true
     }
-    ```  
+    ```
+    
     保存位置：**Packages/User/Preferences.sublime-settings**
 
 * 插件包管理器安装
 
-    快捷键`Ctrl` + {% raw %}`{% endraw %} 或 **View | Show Console**调出命令行，输入以下代码
+    快捷键`Ctrl` + &#96; 或 **View | Show Console**调出命令行，输入以下代码
 
     ```python
     import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
@@ -82,8 +83,10 @@ lastUpdated: 6.2
     按回车键，等待安装完成后重启Sublime Text
 
     常用的插件有：
+    
+    **IMESupport**：解决输入法不跟随的问题
 
-    **ConvertToUTF8**：解决输入法不跟随的问题
+    **ConvertToUTF8**：解决中文乱码问题
 
     **Emmet**：html快速构建工具
 
@@ -101,11 +104,11 @@ lastUpdated: 6.2
 
 * 新建：`Ctrl` + `N`
 * 切换语法：`Ctrl` + `Shift` + `P` -> Set Syntax: [语法]
-* 同时选中html的开始和结束标签进行编辑：光标移到一个标签行上按`Ctrl` + `Shift +`'`
-* 选择单词：`Ctrl` + `D`
+* 同时选中html的开始和结束标签进行编辑：光标移到一个标签行上按`Ctrl` + `Shift` + `'`
+* 选择单词：光标置于词后，按 `Ctrl` + `D`，重复执行追加选择下一个相同词，跳过可按`Ctrl` + `K`，或者按 `Alt` + `F3` 选择全部相同的词，倍儿爽
 * 逐个选择：`Ctrl` + `Shift` + `←` / `→`
 * 复制新增当前行下移：`Ctrl` + `Shift` + `D`
-* 选择行：`Ctrl` + `L`
+* 选择行：`Ctrl` + `L`，重复执行追加选择下一行
 * 下起一行：`Ctrl` + `Enter`
 * 上起一行：`Ctrl` + `Shift` + `Enter`
 * 当前行上下移动：`Ctrl` + `Shift` + `↑` / `↓`
@@ -115,6 +118,10 @@ lastUpdated: 6.2
 * 返回上/下一个光标位置：`Alt` + `-` / `Alt` + `Shift` + `-`
 * 切换到上/下一个视图：`Ctrl` + `Tab` / `Ctrl` + `Shift` + `Tab`
 * 多行合成一行：`Ctrl` + `J`
+* 从光标处删至行首：`Ctrl` + 'K' + 'Backspace'
+* 从光标处删至行尾：按两次 `Ctrl` + 'K'
+* 括号首尾自由跳跃：`Ctrl` + `M`
+* 选择括号内的内容：`Ctrl` + `Shift` + `M` ，一般和上一个命令结合使用
 
 ### 进阶使用
 
