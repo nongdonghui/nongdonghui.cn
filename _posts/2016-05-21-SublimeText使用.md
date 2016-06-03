@@ -167,7 +167,7 @@ lastUpdated: 6.3
     </snippet>
     ```
 
-    保存为html-p.sublime-snippet，然后我们`Ctrl` + `N`，然后SSHTML设置一下html语法，输入p按tab，然后光标就停留在了$1位置了，$1是一个占位符，它标识了光标出现的位置，但是如果我们的模板很长篇大论，我们需要快速切换到模板需要手动输入的位置时，怎么办呢，对了，就是可以用$n来为我们服务，比如我们修改p模板如下
+    保存为html-p.sublime-snippet，然后我们`Ctrl` + `N`，然后输入SSHTML设置一下html语法，输入p按`tab`，然后光标就停留在了$1位置了，$1是一个占位符，它标识了光标出现的位置，但是如果我们的模板很长篇大论，我们需要快速切换到模板需要手动输入的位置时，怎么办呢，对了，就是可以用$n来为我们服务，比如我们修改p模板如下
 
     ```xml
     <snippet>
@@ -189,7 +189,7 @@ lastUpdated: 6.3
     </snippet>
     ```
 
-    然后我们`Ctrl` + `N`，然后SSHTML设置一下html语法，输入p按tab，然后光标就停留在了$1位置了，输入div1，然后按tab，光标就跑到$2位置了，输入div2，按tab，光标就到$3位置了，非常方便，如果我们要联动更改呢，很简单，只要在不同的位置使用相同的$n占位符即可，比如下面的代码
+    然后我们`Ctrl` + `N`，然后输入SSHTML设置一下html语法，输入p按`tab`，然后光标就停留在了$1位置了，输入div1，然后按`tab`，光标就跑到$2位置了，输入div2，按`tab`，光标就到$3位置了，非常方便，如果我们要联动更改呢，很简单，只要在不同的位置使用相同的$n占位符即可，比如下面的代码
 
     ```xml
     <snippet>
@@ -211,7 +211,7 @@ lastUpdated: 6.3
     </snippet>
     ```
     
-    保存为html-doctype.sublime-snippet，然后我们`Ctrl` + `N`，然后SSHTML设置一下html语法，输入html按tab，然后光标就在`<title></title>`和`<p></p>`之间同时闪动了，这就达到联动修改的效果了。
+    保存为html-doctype.sublime-snippet，然后我们`Ctrl` + `N`，然后输入SSHTML设置一下html语法，输入html按`tab`，然后光标就在`<title></title>`和`<p></p>`之间同时闪动了，这就达到联动修改的效果了。
 
     ![snippet1](/images/snippet1.gif)
 
@@ -258,7 +258,7 @@ lastUpdated: 6.3
 
     ![date](/images/date.gif)
 
-    然而，如果并不想要·YYYY-mm-dd·效果呢，而是想要·YYYY-(+)m-(+)d·效果，查了一下[文档][10]，发现这个语法`%-m和%-d`可以去掉填充的0，但是在win7上并没有效果，于是继续查，最后有一法可用
+    然而，如果并不想要YYYY-mm-dd效果呢，而是想要YYYY-(+)m-(+)d效果，查了一下[文档][10]，发现这个语法`%-m和%-d`可以去掉填充的0，但是在win7上并没有效果，于是继续查，最后有一法可用
 
     ```python
     val = '{d.year}-{d.month}-{d.day}'.format(d=datetime.now())
