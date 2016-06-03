@@ -118,8 +118,8 @@ lastUpdated: 6.3
 * 返回上/下一个光标位置：`Alt` + `-` / `Alt` + `Shift` + `-`
 * 切换到上/下一个视图：`Ctrl` + `Tab` / `Ctrl` + `Shift` + `Tab`
 * 多行合成一行：`Ctrl` + `J`
-* 从光标处删至行首：`Ctrl` + 'K' + 'Backspace'
-* 从光标处删至行尾：按两次 `Ctrl` + 'K'
+* 从光标处删至行首：`Ctrl` + `K` + `Backspace`
+* 从光标处删至行尾：按两次 `Ctrl` + `K`
 * 括号首尾自由跳跃：`Ctrl` + `M`
 * 选择括号内的内容：`Ctrl` + `Shift` + `M` ，一般和上一个命令结合使用
 * 多处同时编辑：`Ctrl` + 点选多处，可以进行多位置编辑
