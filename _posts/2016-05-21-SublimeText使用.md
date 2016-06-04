@@ -3,7 +3,7 @@ layout: post
 title: Sublime Text使用(Windows7)
 categories: SublimeText
 created: {{}}
-lastUpdated: 6.3
+lastUpdated: 6.4
 ---
 
 ## {{ page.title }}
@@ -266,6 +266,42 @@ lastUpdated: 6.3
 
     ![date2](/images/date2.gif)
 
+    **新建文件保存时自动选到前一个文件所在目录**
+
+    参考[这里][22]，代码如下
+
+    ```python
+    # NewFileAtCurrentFolder
+
+    import sublime_plugin
+    import os.path
+
+    class NewFileListener(sublime_plugin.EventListener):
+        def on_new_async(self, view):
+            if not view.window().active_view():
+                print("NF: no view")
+                return
+
+            newView = view.window().active_view()
+            index = view.window().views().index(newView)
+            lastView = view.window().views()[index - 1]
+            if not lastView:
+                print("NF: no lastView")
+                return
+
+            fileName = lastView.file_name()
+            if not fileName:
+                print("NF: no fileName")
+                return
+
+            basePath = os.path.dirname(fileName)
+            if not basePath:
+                print("NF: no basePath")
+                return
+            print("NF: "+basePath)
+            newView.settings().set('default_dir', basePath)
+    ```
+
 ### 高级特性
 
 * 实时打印当前操作的命令，对于调试快捷键相当有用，启用方法：
@@ -418,3 +454,4 @@ lastUpdated: 6.3
 [19]: http://stackoverflow.com/questions/28032780/automatic-update-date-in-sublime-by-save
 [20]: http://stackoverflow.com/questions/23355542/sublime-text-3-plugin-for-removing-quotes
 [21]: http://stackoverflow.com/questions/18606682/how-can-i-open-command-line-prompt-from-sublime-in-windows7
+[22]: https://gist.github.com/finscn/8bc573bb3a970b1c214d
