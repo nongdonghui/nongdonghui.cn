@@ -17,7 +17,7 @@ lastUpdated:
 
 3.把org.eclipse.team.ui删除再启动，不能启动成功
 
-4.把org.eclipse.core.resources重命名为org.eclipse.core.resources**_old**，成功启动，但是你会发现里面没有项目，因为项目信息是保存在`.metadata\.plugins\org.eclipse.core.resources\.projects`这个目录下的，那么我们就把他们还原，先关闭MyEclipse，把新生成的org.eclipse.core.resources删掉，还原org.eclipse.core.resources**_old**为org.eclipse.core.resources，再重启即可
+4.把org.eclipse.core.resources重命名为org.eclipse.core.resources_old，成功启动，但是你会发现里面没有项目，因为项目信息是保存在`.metadata\.plugins\org.eclipse.core.resources\.projects`这个目录下的，那么我们就把他们还原，先关闭MyEclipse，把新生成的org.eclipse.core.resources删掉，还原org.eclipse.core.resources_old为org.eclipse.core.resources，再重启即可
 
 **更新列表：**
 
