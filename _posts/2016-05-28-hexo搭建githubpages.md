@@ -2,7 +2,7 @@
 layout: post
 title: hexo搭建github pages
 categories: github
-lastUpdated: 6.2
+lastUpdated: 6.16
 ---
 
 ## {{ page.title }}
@@ -247,12 +247,20 @@ INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
 
 * 2016-5-31
 * Read more长度的控制：hexo 的readmore 是由自己在写文章的时候设定的，在文章正文里面部分的合适位置加上<!-- more --> 首页的预览就会到标识的位置
+* 2016-6-16
+* 添加标签如下
 
+```
+tags:
+  - tagName
+```
+
+![hexo_1](/images/hexo_1.png)
 
 
 **参考文章：**
 
-* [xxx][1]
+* [hexo][1]
 
 
-[1]: http://xxx
+[1]: https://hexo.io/docs
