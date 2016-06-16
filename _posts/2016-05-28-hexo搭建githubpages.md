@@ -253,6 +253,7 @@ INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
 ```
 tags:
   - start
+  - hello
 ```
 
 ![hexo_1](/images/hexo_1.png)
