@@ -1,6 +1,6 @@
 ---
 layout: post
-title: _&location用法
+title: angularjs中&location用法
 categories: angularjs
 lastUpdated:
 ---
