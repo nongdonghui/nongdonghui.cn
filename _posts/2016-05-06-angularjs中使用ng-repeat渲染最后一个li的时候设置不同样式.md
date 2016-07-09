@@ -2,6 +2,7 @@
 layout: post
 title: angularjs中使用ng-repeat渲染最后一个li的时候设置不同样式
 categories: angularjs
+lastUpdated: 7.9
 ---
 
 ## {{ page.title }}
@@ -15,7 +16,7 @@ categories: angularjs
   {% raw %}{{item.name}}{% endraw %}
 </li>
 ```
-那么我就可以这样加
+那么我就可以这样加，多个判断用逗号分隔
 
 ```html
 <li ng-repeat="item in items"
