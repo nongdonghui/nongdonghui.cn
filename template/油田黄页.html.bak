@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <title>油田黄页</title>
+  <link href="http://g.alicdn.com/sj/dpl/1.5.1/css/sui.min.css" rel="stylesheet">
+  <link href="http://g.alicdn.com/sj/dpl/1.5.1/css/sui-append.min.css" rel="stylesheet">
+  <script type="text/javascript" src="http://g.alicdn.com/sj/lib/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="http://g.alicdn.com/sj/dpl/1.5.1/js/sui.min.js"></script>
+</head>
+<body>
+<p>
+  </p><div class="sui-btn-group">
+    <button class="sui-btn btn-bordered btn-primary">复制</button>
+    <button class="sui-btn btn-bordered btn-primary">粘贴</button>
+    <button class="sui-btn btn-bordered btn-primary">编辑</button>
+    <button class="sui-btn btn-bordered btn-primary">撤销</button>
+    <button class="sui-btn btn-bordered btn-primary">查找</button>
+    <button class="sui-btn btn-bordered btn-primary">删除</button>
+  </div>
+<p></p>
+<p>
+  </p><div class="sui-btn-toolbar">
+    <div class="sui-btn-group">
+      <button class="sui-btn btn-bordered btn-primary">复制</button>
+      <button class="sui-btn btn-bordered btn-primary">粘贴</button>
+      <button class="sui-btn btn-bordered btn-primary">编辑</button>
+    </div>
+    <div class="sui-btn-group">
+      <button class="sui-btn btn-bordered btn-danger">删除</button>
+      <button class="sui-btn btn-bordered btn-danger">撤销</button>
+    </div>
+  </div>
+<p></p>
+<p>
+  </p><div class="sui-btn-group">
+    <button class="sui-btn btn-primary">复制</button>
+    <button class="sui-btn btn-primary">粘贴</button>
+    <button class="sui-btn btn-primary">编辑</button>
+    <button class="sui-btn btn-primary">撤销</button>
+    <button class="sui-btn btn-primary">查找</button>
+    <button class="sui-btn btn-primary">删除</button>
+  </div>
+<p></p>
+<p>
+  </p><div class="sui-btn-group">
+    <button class="sui-btn">左边</button>
+    <button class="sui-btn">中间</button>
+    <button class="sui-btn">右边</button>
+  </div>
+<p></p>
+<p>
+  </p><div class="sui-btn-group">
+    <button class="sui-btn">复制</button>
+    <button class="sui-btn btn-primary">粘贴</button>
+    <button class="sui-btn btn-warning">按钮</button>
+    <button class="sui-btn btn-success">按钮</button>
+    <button class="sui-btn btn-danger">删除</button>
+  </div>
+<p></p>
+<h2>垂直方向</h2>
+<p>
+  </p><div class="sui-btn-group btn-group-vertical">
+    <button class="sui-btn btn-primary">左边</button>
+    <button class="sui-btn btn-primary">中间</button>
+    <button class="sui-btn btn-primary">右边</button>
+  </div>
+<p></p>
+<p>
+  </p><div class="sui-btn-group btn-group-vertical">
+    <button class="sui-btn btn-primary btn-bordered">左边</button>
+    <button class="sui-btn btn-primary btn-bordered">中间</button>
+    <button class="sui-btn btn-primary btn-bordered">右边</button>
+  </div>
+<p></p>
+<h2>分组</h2>
+<div class="sui-btn-toolbar">
+  <div class="sui-btn-group">
+    <button class="sui-btn">复制</button>
+    <button class="sui-btn">粘贴</button>
+    <button class="sui-btn">缩进</button>
+  </div>
+  <div class="sui-btn-group">
+    <button class="sui-btn btn-danger">删除</button>
+    <button class="sui-btn btn-primary">插入</button>
+  </div>
+</div>
+</body>
+</html>
