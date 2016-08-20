@@ -866,6 +866,7 @@ a.list-group-item .list-group-item-heading, button.list-group-item .list-group-i
 .phone-right {
     float: right!important;
 	margin-top:14px;
+	color: #31b0d5;
 }
 
 .media-body>.sub-title {
