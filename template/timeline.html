@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>时间轴</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<style>
+		/* http://rustheme.xyz/appui/html/frontend_about.html */
+		.row:before, .row:after {
+			content: " ";
+			display: table;
+		}
+		.list-numbers {
+			list-style: none;
+			counter-reset: item;
+		}
+		.list-numbers:before {
+			content: '';
+			display: inline-block;
+			position: absolute;
+			border: 1px solid rgba(0, 20, 35, 0.07);
+			left: 25px;
+			height: 85%;
+		}
+		*, *:before, *:after {
+			box-sizing: inherit;
+		}
+		.list-numbers li {
+			counter-increment: item;
+		}
+		.list-numbers.white li:before {
+			background-color: #fff;
+		}
+		.list-numbers li:before {
+			content: counter(item);
+			position: absolute;
+			background-color: #f9f9f9;
+			font-weight: 400;
+			left: 13px;
+			margin-top: -6.5px;
+			display: inline-block;
+			width: 1.875rem;
+			height: 1.875rem;
+			line-height: 1.875rem;
+			text-align: center;
+			border: 1px solid rgba(0, 20, 35, 0.07);
+			border-radius: 50%;
+		}
+		.m-b-lg {
+			margin-bottom: 48px !important;
+		}
+	</style>
+  </head>
+  <body>
+	<div class="container">
+		
+		<div class="row">
+		  <div class="col-md-4 col-md-offset-1">
+				<ol class="list-numbers white">
+					<li>
+						<p class="h4">Real-time sharing</p>
+						<p class="m-b-lg">Quot principes an usu. Usu cu putant audire accusam, aliquip aperiri sed ad. Has animal torquatos te, usu an vitae quodsi, enim invidunt ad pro.</p>
+					</li>
+					<li>
+						<p class="h4">Share with anyone</p>
+						<p class="m-b-lg">Graece vivendum torquatos ea qui. Summo minimum mandamus partiendo cu. Cum quando ea est. No porro dolor sea, ea pro aeque omnium.</p>
+					</li>
+					<li>
+						<p class="h4">Secure enviroment</p>
+						<p class="m-b-lg">Te putent timeam debitis vis, no fabulas ceteros honestatis eum. At eros accommodare duo. Ad repudiare vituperatoribus mea.</p>
+					</li>
+				</ol>
+			</div>
+		</div>
+
+	</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
