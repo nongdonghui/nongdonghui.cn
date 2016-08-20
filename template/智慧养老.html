@@ -1,241 +1,75 @@
-﻿<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="zh-CN">
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>智慧养老</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <link href="resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
-    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
-    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
-    <link href="files/智慧养老/styles.css" type="text/css" rel="stylesheet"/>
-    <script src="resources/scripts/jquery-1.7.1.min.js"></script>
-    <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
-    <script src="resources/scripts/axure/axQuery.js"></script>
-    <script src="resources/scripts/axure/globals.js"></script>
-    <script src="resources/scripts/axutils.js"></script>
-    <script src="resources/scripts/axure/annotation.js"></script>
-    <script src="resources/scripts/axure/axQuery.std.js"></script>
-    <script src="resources/scripts/axure/doc.js"></script>
-    <script src="data/document.js"></script>
-    <script src="resources/scripts/messagecenter.js"></script>
-    <script src="resources/scripts/axure/events.js"></script>
-    <script src="resources/scripts/axure/recording.js"></script>
-    <script src="resources/scripts/axure/action.js"></script>
-    <script src="resources/scripts/axure/expr.js"></script>
-    <script src="resources/scripts/axure/geometry.js"></script>
-    <script src="resources/scripts/axure/flyout.js"></script>
-    <script src="resources/scripts/axure/ie.js"></script>
-    <script src="resources/scripts/axure/model.js"></script>
-    <script src="resources/scripts/axure/repeater.js"></script>
-    <script src="resources/scripts/axure/sto.js"></script>
-    <script src="resources/scripts/axure/utils.temp.js"></script>
-    <script src="resources/scripts/axure/variables.js"></script>
-    <script src="resources/scripts/axure/drag.js"></script>
-    <script src="resources/scripts/axure/move.js"></script>
-    <script src="resources/scripts/axure/visibility.js"></script>
-    <script src="resources/scripts/axure/style.js"></script>
-    <script src="resources/scripts/axure/adaptive.js"></script>
-    <script src="resources/scripts/axure/tree.js"></script>
-    <script src="resources/scripts/axure/init.temp.js"></script>
-    <script src="files/智慧养老/data.js"></script>
-    <script src="resources/scripts/axure/legacy.js"></script>
-    <script src="resources/scripts/axure/viewer.js"></script>
-    <script src="resources/scripts/axure/math.js"></script>
-    <script type="text/javascript">
-      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
-      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
-      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
-    </script>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
   </head>
-  <style>
-		body { background-color: #EFEFEF; }
-	</style>
   <body>
-    <div id="base" class="">
+    
+		<div class="row">
+			<div class="col-xs-12 form-wizard">
+				<div class="steps clearfix">
+					<ul role="tablist">
+						<li role="tab" class="first current" aria-disabled="false" aria-selected="true">
+							<a id="wizard-validate-t-0" href="#wizard-validate-h-0" aria-controls="wizard-validate-p-0">
+								<span class="current-info audible">current step: </span>
+								<span class="number" style="background:#2880c8">1.</span>
+								<span class="title"> 实时健康，尽心呵护 </span>
+							</a>
+						</li>
+						<li role="tab" class="disabled current" aria-disabled="true">
+							<a id="wizard-validate-t-1" href="#wizard-validate-h-1" aria-controls="wizard-validate-p-1">
+								<span class="number" style="background:#6dc140">2.</span>
+								<span class="title"> 实时定位，杜绝失联 </span>
+							</a>
+						</li>
+						<li role="tab" class="disabled current" aria-disabled="true">
+							<a id="wizard-validate-t-2" href="#wizard-validate-h-2" aria-controls="wizard-validate-p-2">
+								<span class="number" style="background:#eeaf00">3.</span>
+								<span class="title"> 安全传感器精准预警 </span>
+							</a>
+						</li>
+						<li role="tab" class="disabled current" aria-disabled="true">
+							<a id="wizard-validate-t-3" href="#wizard-validate-h-3" aria-controls="wizard-validate-p-3">
+								<span class="number" style="background:#838cc7">4.</span>
+								<span class="title"> 防盗窃监控报警，不再失窃 </span>
+							</a>
+						</li>
+						<li role="tab" class="disabled current" aria-disabled="true">
+							<a id="wizard-validate-t-4" href="#wizard-validate-h-4" aria-controls="wizard-validate-p-4">
+								<span class="number" style="background:#2d9ec1">5.</span>
+								<span class="title"> 视频点播、视频心里辅导等<br>远程辅助指导 </span>
+							</a>
+						</li>
 
-      <!-- Unnamed (top-with-bgColor-back-border) -->
+						<li role="tab" class="disabled last current" aria-disabled="true">
+							<a id="wizard-validate-t-5" href="#wizard-validate-h-5" aria-controls="wizard-validate-p-5">
+								<span class="number" style="background:#53bbb3">6.</span>
+								<span class="title"> 社区活动推荐、旅游推荐、<br>电视节目推荐<br>帮助老年人丰富日常生活 </span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
 
-      <!-- Unnamed (Rectangle) -->
-      <div id="u460" class="ax_default shape">
-        <img id="u460_img" class="img " src="images/账号绑定/u1.png"/>
-        <!-- Unnamed () -->
-        <div id="u461" class="text" style="display: none; visibility: hidden">
-          <p><span></span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Vertical Line) -->
-      <div id="u462" class="ax_default line">
-        <img id="u462_img" class="img " src="images/智慧养老/u462.png"/>
-        <!-- Unnamed () -->
-        <div id="u463" class="text" style="display: none; visibility: hidden">
-          <p><span></span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Horizontal Line) -->
-      <div id="u464" class="ax_default line">
-        <img id="u464_img" class="img " src="images/智慧养老/u464.png"/>
-        <!-- Unnamed () -->
-        <div id="u465" class="text" style="display: none; visibility: hidden">
-          <p><span></span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Ellipse) -->
-      <div id="u466" class="ax_default marker">
-        <img id="u466_img" class="img " src="images/智慧养老/u466.png"/>
-        <!-- Unnamed () -->
-        <div id="u467" class="text" style="display: none; visibility: hidden">
-          <p><span></span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u468" class="ax_default label">
-        <div id="u468_div" class=""></div>
-        <!-- Unnamed () -->
-        <div id="u469" class="text" style="visibility: visible;">
-          <p><span>实时健康，尽心呵护</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Horizontal Line) -->
-      <div id="u470" class="ax_default line">
-        <img id="u470_img" class="img " src="images/智慧养老/u464.png"/>
-        <!-- Unnamed () -->
-        <div id="u471" class="text" style="display: none; visibility: hidden">
-          <p><span></span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Ellipse) -->
-      <div id="u472" class="ax_default marker">
-        <img id="u472_img" class="img " src="images/智慧养老/u472.png"/>
-        <!-- Unnamed () -->
-        <div id="u473" class="text" style="display: none; visibility: hidden">
-          <p><span></span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u474" class="ax_default label">
-        <div id="u474_div" class=""></div>
-        <!-- Unnamed () -->
-        <div id="u475" class="text" style="visibility: visible;">
-          <p><span>实时定位，杜绝失联</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Horizontal Line) -->
-      <div id="u476" class="ax_default line">
-        <img id="u476_img" class="img " src="images/智慧养老/u464.png"/>
-        <!-- Unnamed () -->
-        <div id="u477" class="text" style="display: none; visibility: hidden">
-          <p><span></span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Ellipse) -->
-      <div id="u478" class="ax_default marker">
-        <img id="u478_img" class="img " src="images/智慧养老/u478.png"/>
-        <!-- Unnamed () -->
-        <div id="u479" class="text" style="display: none; visibility: hidden">
-          <p><span></span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u480" class="ax_default label">
-        <div id="u480_div" class=""></div>
-        <!-- Unnamed () -->
-        <div id="u481" class="text" style="visibility: visible;">
-          <p><span>安全传感器精准预警</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Horizontal Line) -->
-      <div id="u482" class="ax_default line">
-        <img id="u482_img" class="img " src="images/智慧养老/u464.png"/>
-        <!-- Unnamed () -->
-        <div id="u483" class="text" style="display: none; visibility: hidden">
-          <p><span></span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Ellipse) -->
-      <div id="u484" class="ax_default marker">
-        <img id="u484_img" class="img " src="images/智慧养老/u484.png"/>
-        <!-- Unnamed () -->
-        <div id="u485" class="text" style="display: none; visibility: hidden">
-          <p><span></span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u486" class="ax_default label">
-        <div id="u486_div" class=""></div>
-        <!-- Unnamed () -->
-        <div id="u487" class="text" style="visibility: visible;">
-          <p><span>防盗窃监控报警，不再失窃</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Horizontal Line) -->
-      <div id="u488" class="ax_default line">
-        <img id="u488_img" class="img " src="images/智慧养老/u464.png"/>
-        <!-- Unnamed () -->
-        <div id="u489" class="text" style="display: none; visibility: hidden">
-          <p><span></span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Ellipse) -->
-      <div id="u490" class="ax_default marker">
-        <img id="u490_img" class="img " src="images/智慧养老/u490.png"/>
-        <!-- Unnamed () -->
-        <div id="u491" class="text" style="display: none; visibility: hidden">
-          <p><span></span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u492" class="ax_default label">
-        <div id="u492_div" class=""></div>
-        <!-- Unnamed () -->
-        <div id="u493" class="text" style="visibility: visible;">
-          <p><span>视频点播、视频心里辅导等远程</span></p><p><span>辅助指导</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Horizontal Line) -->
-      <div id="u494" class="ax_default line">
-        <img id="u494_img" class="img " src="images/智慧养老/u464.png"/>
-        <!-- Unnamed () -->
-        <div id="u495" class="text" style="display: none; visibility: hidden">
-          <p><span></span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Ellipse) -->
-      <div id="u496" class="ax_default marker">
-        <img id="u496_img" class="img " src="images/智慧养老/u496.png"/>
-        <!-- Unnamed () -->
-        <div id="u497" class="text" style="display: none; visibility: hidden">
-          <p><span></span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u498" class="ax_default label">
-        <div id="u498_div" class=""></div>
-        <!-- Unnamed () -->
-        <div id="u499" class="text" style="visibility: visible;">
-          <p><span>社区活动推荐、旅游推荐、电视</span></p><p><span>节目推荐帮助老年人丰富日常生活</span></p>
-        </div>
-      </div>
-    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
