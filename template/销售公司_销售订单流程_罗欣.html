@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<!-- saved from url=(0150)http://192.168.80.100/WebMobile/FormSales/SalesOrderL/SalesOrderLPage/SalesOrderLSQ.aspx?sp=sq&TaskID=S08231185cb447b80989acd155d3106&UserID=guanglidu -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta http-equiv="Expires" content="0"><meta http-equiv="Cache-Control" content="no-cache"><meta http-equiv="Cache-Control" content="no-store"><title>
+	销售公司_销售订单流程_罗欣
+</title><link href="./销售公司_销售订单流程_罗欣_files/normalNew.css" rel="stylesheet" type="text/css">
+    <script src="./销售公司_销售订单流程_罗欣_files/jquery-1.8.0.min.js" type="text/javascript"></script>     
+    <script src="./销售公司_销售订单流程_罗欣_files/jquery.cookie.js" type="text/javascript"></script>
+    <script src="./销售公司_销售订单流程_罗欣_files/json2.min.js" type="text/javascript"></script>
+    <script src="./销售公司_销售订单流程_罗欣_files/layer.js" type="text/javascript"></script><link rel="stylesheet" href="./销售公司_销售订单流程_罗欣_files/layer.css" id="layui_layer_skinlayercss">
+
+    <!--此处引用日期选择JS文件-->
+    <script src="./销售公司_销售订单流程_罗欣_files/mobiscroll.core.js" type="text/javascript"></script>
+    <script src="./销售公司_销售订单流程_罗欣_files/mobiscroll.frame.js" type="text/javascript"></script>
+    <script src="./销售公司_销售订单流程_罗欣_files/mobiscroll.scroller.js" type="text/javascript"></script>
+    <script src="./销售公司_销售订单流程_罗欣_files/mobiscroll.util.datetime.js" type="text/javascript"></script>
+    <script src="./销售公司_销售订单流程_罗欣_files/mobiscroll.datetimebase.js" type="text/javascript"></script>
+    <script src="./销售公司_销售订单流程_罗欣_files/mobiscroll.datetime.js" type="text/javascript"></script>     
+    <script src="./销售公司_销售订单流程_罗欣_files/mobiscroll.i18n.zh.js" type="text/javascript"></script> 
+    <link href="./销售公司_销售订单流程_罗欣_files/mobiscroll.frame.css" rel="stylesheet" type="text/css"><link href="./销售公司_销售订单流程_罗欣_files/mobiscroll.scroller.css" rel="stylesheet" type="text/css">
+
+    <script src="./销售公司_销售订单流程_罗欣_files/Rev_Public_Mobile.js" type="text/javascript"></script>
+    <script src="./销售公司_销售订单流程_罗欣_files/UserInfo.js" type="text/javascript"></script>
+    <script src="./销售公司_销售订单流程_罗欣_files/CheckInfo.js" type="text/javascript"></script>  
+    
+    <!--多行-->
+    <script src="./销售公司_销售订单流程_罗欣_files/TableInfo_Mobile.js" type="text/javascript"></script>
+    <script src="./销售公司_销售订单流程_罗欣_files/SalesOrderLList.js" type="text/javascript"></script>  
+
+    <!--此处引用本流程用JS文件请注意修改↓↓↓↓↓-->
+    <script src="./销售公司_销售订单流程_罗欣_files/SalesOrderL.js" type="text/javascript"></script>
+    <!--此处引用本流程用JS文件请注意修改↑↑↑↑↑-->
+</head>
+<body>
+    <form method="post" action="http://192.168.80.100/WebMobile/FormSales/SalesOrderL/SalesOrderLPage/SalesOrderLSQ.aspx?sp=sq&amp;TaskID=S08231185cb447b80989acd155d3106&amp;UserID=guanglidu" id="form">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTExMzk1MDE3NDdkZD0x8cHG/M9MdeX2c5DHeZSJ5zxEb9/m7zNa2nJAGLP/">
+</div>
+
+        <input id="txtTaskID" type="hidden" value="S08231185cb447b80989acd155d3106"><!--流程taskID-->
+        <input id="txtguid" type="hidden"><!--流程taskID-->
+        <input id="txtProName" type="hidden" value="销售公司_销售订单流程_罗欣"><!--流程名称-->
+        <input id="txtProInc" type="hidden">
+        <input id="txtStatus" type="hidden"><!--流程状态：0-;1-;2-;3-;-->
+        <input id="stepName" type="hidden"><!--流程当前步骤-->
+        <input type="hidden" id="YW_CID" value="79aed7b4-f6ce-4a45-948e-12d3ed6fe5a1"><!--业务ID-->
+        <input type="hidden" id="SP_TDID">
+        <input type="hidden" id="appCode" value="BPM/guanglidu                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   "><!--申请人账号-->
+        <input type="hidden" id="txtUserCode" value="BPM/guanglidu">
+        <input type="hidden" id="XRID">
+        <input type="hidden" id="Abbreviation" value="SO^罗欣"><!--编号前缀-->               
+        <input type="hidden" id="sfWrite" value="1"><!--是否允许修改附件-->
+        <input type="hidden" id="hidSkip">
+        <input type="hidden" id="hidSummary">
+        <textarea id="errorInfo" style="height: 200px; display: none; "></textarea><!--错误调试信息-->
+        <div>
+            <div class="content">
+                <div class="djbh" style="display:none;">
+                    <label id="labDjbh"></label>
+                </div>
+                <div id="userInfoDiv"><div id="divTop" class="divTitle" onclick="showUserInfo(this)"><a href="javascript:void(0);" class="atitle">基本信息</a></div><div id="divUserInfo" class="showDiv" style="display:none;"><div class="row"><div class="divOne">申请人：</div><div class="divOther"><label id="appuName">杜广利</label></div></div><div class="row"><div class="divOne">申请时间：</div><div class="divOther"><label id="appTime">2016-08-25 19:46</label></div></div><div class="row"><div class="divOne">发起部门：</div><div class="divOther"><label id="appDeptName">黑龙江招商</label></div></div><div class="row"><div class="divOne">联系电话：</div><div class="divOther"><label id="appTel"></label></div></div></div></div>                
+                <div id="divApplyInfo" onclick="showApplyInfo()" class="divTitle">
+                    <div>
+                        <a href="javascript:void(0);">申请信息</a>
+                        <i class="iconfont" style="float: right;font-size: 12pt;"></i>
+                    </div>                
+                </div>
+                <div id="divApplyInfoEdit" class="editDiv">
+                    <div class="row">
+                        <div class="divOne">汇款方式：</div>    
+                        <div class="divOther" id="TD-REMITTANCE_METHOD-E-KT" name="电汇|承兑|赊销">                            
+                        <select id="REMITTANCE_METHOD-E-KT" class="select" style="width:90%;min-width:65px;"><option value="电汇">电汇</option><option value="承兑">承兑</option><option value="赊销">赊销</option></select></div>                                                                                                                    
+                    </div>
+                    <div class="row">
+                        <div class="divOne">所属范围：</div>
+                        <div class="divOther" id="TD-THE_RANGE-E-KT" name="招商线|医院终端|纯三端|物流|OTC">                            
+                        <select id="THE_RANGE-E-KT" class="select" style="width:90%;min-width:65px;"><option value="招商线">招商线</option><option value="医院终端">医院终端</option><option value="纯三端">纯三端</option><option value="物流">物流</option><option value="OTC">OTC</option></select></div>
+                    </div>
+                    <div class="row">
+                        <div class="divOne">单据类别：</div>
+                        <div class="divOther" id="TD-BILL_TYPE-E-KT" name="新增|选取未通过订单">                            
+                        <select id="BILL_TYPE-E-KT" class="select" style="width:90%;min-width:65px;"><option value="新增">新增</option><option value="选取未通过订单">选取未通过订单</option></select></div>
+                    </div>
+                    <div class="row" style="display:none;">
+                        <div class="divOne">订单号：</div>
+                        <div class="divOther" id="TD-ORDER_CODE-S-KT" name="" pholder="">                            
+                        <input type="text" id="ORDER_CODE-S-KT" style="width:90%" class="txtinput" placeholder="" disabled="disabled"></div>                        
+                    </div>
+                    <div class="row">
+                        <div class="divOne">实际申请人：</div>
+                        <div class="divOther" id="TD-USER_NAME-S-BT" name="" pholder="请选择实际申请人">                            
+                        <input type="text" id="USER_NAME-S-BT" style="width:90%" class="txtinput" placeholder="请选择实际申请人" readonly="readonly"><span class="Required" style="color:Red">*</span></div>                                                                      
+                    </div>
+                    <div class="row" style="display:none;">
+                        <div class="divOne">实际申请人账号：</div>
+                        <div class="divOther" id="TD-USER_CODE-S-BT" name="" pholder="">                            
+                        <input type="text" id="USER_CODE-S-BT" style="width:90%" class="txtinput" placeholder=""><span class="Required" style="color:Red">*</span></div>                        
+                    </div>
+                    <div class="row">
+                        <div class="divOne">实际申请部门：</div>
+                        <div class="divOther" id="TD-USER_DPT-S-BT" name="" pholder="">                            
+                        <input type="text" id="USER_DPT-S-BT" style="width:90%" class="txtinput" placeholder="" readonly="readonly"><span class="Required" style="color:Red">*</span></div>                                                
+                    </div>
+                    <div class="row">
+                        <div class="divOne">客户简称：</div>
+                        <div class="divOther" id="TD-CUSTOM_NAME-S-BT" name="" pholder="请选择客户简称">                            
+                        <input type="text" id="CUSTOM_NAME-S-BT" style="width:90%" class="txtinput" placeholder="请选择客户简称" readonly="readonly"><span class="Required" style="color:Red">*</span></div>                                                
+                    </div>
+                    <div class="row">
+                        <div class="divOne">客户编码：</div>
+                        <div class="divOther" id="TD-CUSTOM_CODE-S-BT">                            
+                        <input type="text" id="CUSTOM_CODE-S-BT" style="width:90%" class="txtinput" placeholder="" readonly="readonly"><span class="Required" style="color:Red">*</span></div>                                                
+                    </div>
+                    <div class="row">
+                        <div class="divOne">汇款日期：</div>
+                        <div class="divOther" id="TD-REMITTANCE_DATE-T-BT" pholder="请选择汇款日期">                             
+                        <input type="text" id="REMITTANCE_DATE-T-BT" style="width:90%" class="txtinput" readonly="" placeholder="请选择汇款日期"><span class="Required" style="color:Red">*</span></div>                                               
+                    </div>
+                    <div class="row">
+                        <div class="divOne">汇款金额：</div>
+                        <div class="divOther" id="TD-REMITTANCE_MONEY-M-BT" name="" pholder="请输入汇款金额">                            
+                        <input type="text" id="REMITTANCE_MONEY-M-BT" style="width:90%;" class="txtinput" placeholder="请输入汇款金额"><span class="Required" style="color:Red">*</span></div>                                                
+                    </div>
+                    <div class="row">
+                        <div class="divOne">
+                            收款账号：
+                        </div>
+                        <div class="divOther" id="TD-COLL_ACCOUNT-E-BT" name="|程光红5666|杨静静5179|田金燕8679|张文娜7775|公司户3649|郝向娟6888|蒋小玮2619|公司户3119">
+                    <select id="COLL_ACCOUNT-E-BT" class="select" style="width:90%;min-width:65px;"><option value=""></option><option value="程光红5666">程光红5666</option><option value="杨静静5179">杨静静5179</option><option value="田金燕8679">田金燕8679</option><option value="张文娜7775">张文娜7775</option><option value="公司户3649">公司户3649</option><option value="郝向娟6888">郝向娟6888</option><option value="蒋小玮2619">蒋小玮2619</option><option value="公司户3119">公司户3119</option></select><span class="Required" style="color:Red">*</span></div>
+                </div>
+                    <div class="row">
+                        <div class="divOne">汇款备注：</div>
+                        <div class="divOther" id="TD-REMITTANCE_REMARK-A-KT" name="2000" pholder="请输入汇款备注">                            
+                        <textarea style="width:90%;height:50px" id="REMITTANCE_REMARK-A-KT" class="textarea" placeholder="请输入汇款备注"></textarea></div>                        
+                    </div> 
+                    <div class="row">
+                        <div class="divOne">发票开具：</div>
+                        <div class="divOther" id="TD-INVOICE_ISSUE-E-BT" name="|不开发票|开普通发票" pholder="">                            
+                        <select id="INVOICE_ISSUE-E-BT" class="select" style="width:90%;min-width:65px;"><option value=""></option><option value="不开发票">不开发票</option><option value="开普通发票">开普通发票</option></select><span class="Required" style="color:Red">*</span></div>                                                
+                    </div>   
+                    <div class="row">
+                        <div class="divOne">收货人：</div>
+                        <div class="divOther" id="TD-CONSIGNEE-S-BT" name="" pholder="请输入收货人">                             
+                        <input type="text" id="CONSIGNEE-S-BT" style="width:90%" class="txtinput" placeholder="请输入收货人"><span class="Required" style="color:Red">*</span></div>                                               
+                    </div>                     
+                    <div class="row">
+                        <div class="divOne">联系电话：</div>
+                        <div class="divOther" id="TD-CONTACT_NUM-P-BT" name="" pholder="请输入联系电话">                            
+                        <input type="tel" id="CONTACT_NUM-P-BT" style="width:90%;" class="txtinput" placeholder="请输入联系电话"><span class="Required" style="color:Red">*</span></div>                                                
+                    </div>
+                    <div class="row">
+                        <div class="divOne">
+                            发运方式：
+                        </div>
+                        <div class="divOther" id="TD-DELIVERY_T-S-BT" name="">
+                        <input type="text" id="DELIVERY_T-S-BT" style="width:90%" class="txtinput" placeholder="" readonly="readonly"><span class="Required" style="color:Red">*</span></div>                        
+                    </div>
+                    <div class="row">
+                        <div class="divOne" style="display:none;">
+                            发运方式编码：
+                        </div>
+                        <div class="divOther" style="display:none;" id="TD-DELIVERY-S-BT" name="">
+                        <input type="text" id="DELIVERY-S-BT" style="width:90%" class="txtinput" placeholder="" readonly="readonly"><span class="Required" style="color:Red">*</span></div>
+                    </div>
+                    <div class="row">
+                        <div class="divOne">实际发货地址：</div>
+                        <div class="divOther" id="TD-R_ADDRESS-A-KT" name="2000" pholder="请输入实际发货地址">                            
+                        <textarea style="width:90%;height:50px" id="R_ADDRESS-A-KT" class="textarea" placeholder="请输入实际发货地址"></textarea></div>                        
+                    </div>
+                    <div class="row" style="display:none;">
+                        <div class="divOne">订单日期：</div>
+                        <div class="divOther" id="TD-ORDER_DATE-T-BT" name="" pholder="请输入订单日期">                           
+                        <input type="text" id="ORDER_DATE-T-BT" style="width:90%" class="txtinput" readonly="" placeholder="请输入订单日期"><span class="Required" style="color:Red">*</span></div>                        
+                    </div>
+                    <div class="row" style="display:none;">
+                        <div class="divOne">税率：</div>
+                        <div class="divOther" id="TD-TAX_RATE-S-BT" name="" pholder="请输入税率">                            
+                        <input type="text" id="TAX_RATE-S-BT" style="width:90%" class="txtinput" placeholder="请输入税率"><span class="Required" style="color:Red">*</span></div>                        
+                    </div>
+                    <div class="row" style="display:none;">
+                        <div class="divOne">业务员ERP编码：</div>
+                        <div class="divOther" id="TD-SALESMAN_ERP-S-KT" name="" pholder="请输入业务员ERP编码">                            
+                        <input type="text" id="SALESMAN_ERP-S-KT" style="width:90%" class="txtinput" placeholder="请输入业务员ERP编码"></div>                        
+                    </div>
+                    <div class="row" style="display:none;">
+                        <div class="divOne">发货地址：</div>
+                        <div class="divOther" id="TD-ADDRESS-S-BT" name="" pholder="请输入发货地址">                               
+                        <input type="text" id="ADDRESS-S-BT" style="width:90%" class="txtinput" placeholder="请输入发货地址"><span class="Required" style="color:Red">*</span></div>                                               
+                    </div>
+                    <div class="row" style="display:none;">
+                        <div class="divOne">销售部门：</div>
+                        <div class="divOther" id="TD-SALES_DPT-S-BT" name="" pholder="请选择销售部门">                            
+                        <input type="text" id="SALES_DPT-S-BT" style="width:90%" class="txtinput" placeholder="请选择销售部门"><span class="Required" style="color:Red">*</span></div>                        
+                    </div>                    
+                </div>
+                <div id="divApplyInfoShow" class="showDiv" style="display:none;">                                        
+                </div>
+                <div id="divDetailInfo" class="divTitle">
+                    <div>
+                        <a href="javascript:void(0);">明细信息</a>
+                        <i class="iconfont" style="float: right;font-size: 12pt;"></i>
+                    </div>                
+                </div>
+                <div id="divDetail"></div>
+                <div class="divTitle" id="divAddItem" style="text-align:center;">                
+                    <a href="javascript:void(0);" onclick="chooseItem()">添加销售明细</a>                                              
+                </div>  
+                <div id="divRev_Attach"></div>
+                <div id="div_sp">
+                </div> 
+                <div id="divZjTitle" class="divTitle">
+                    <div>
+                        <a href="javascript:void(0);">转交信息</a>
+                        <i class="iconfont" style="float: right;font-size: 12pt;"></i>
+                    </div>                
+                </div>
+                <div class="editDiv" style="margin-bottom:10px;">
+                    <div class="row" id="dxbclr">
+                        <div class="divOne">
+                            下一步处理人：
+                        </div>
+                        <div class="divOther" id="TD-NEXT_USER-S-BT" name="" pholder="请选择下一步处理人">
+                        <input type="text" id="NEXT_USER-S-BT" style="width:90%" class="txtinput" placeholder="请选择下一步处理人" readonly="readonly"><span class="Required" style="color:Red">*</span></div>  
+                        <div class="divOther" style="display: none" id="TD-NEXT_CODE-S-BT">
+                        <input type="text" id="NEXT_CODE-S-BT" style="width:90%" class="txtinput" placeholder="" readonly="readonly"><span class="Required" style="color:Red">*</span></div>
+                    </div>
+                </div>
+                <div class="empty"></div>                              
+            </div>
+            <!--底部按钮区域-->
+            <div id="divSendFooter">
+                <div class="mainav1">
+                  <ul>
+                    <li class="home">
+                       <a href="javascript:void(0)" id="btnSend" target="_self">提交</a>        
+                    </li>                                   
+                  </ul>                
+                </div>
+            </div>
+            <div id="divCloseFooter" style="display:none;">
+                <div class="mainav1">
+                    <ul>
+                    <li class="home">
+                        <a href="javascript:void(0)" id="btnClose" target="_self">关闭</a>        
+                    </li>                                   
+                    </ul>                
+                </div>            
+            </div>
+        </div>
+    </form>
+
+
+</body></html>
