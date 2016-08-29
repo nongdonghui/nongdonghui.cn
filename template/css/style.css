@@ -931,24 +931,17 @@ a.list-group-item .list-group-item-heading, button.list-group-item .list-group-i
 .title .one {	
 	color: #0066FF;
 	float: left;
-	margin-left: 5px;
 	font-size: 18px;
-	padding-right: 3px;
-	border-right: 2px solid #56575B;
 }
 .title .two {
 	color: #56575B;
 	float: left;
-	margin-left: 5px;
 	font-size: 18px;
 }
 .title .two-with {
 	color: #56575B;
 	float: left;
-	margin-left: 5px;
 	font-size: 18px;
-	padding-right: 3px;
-	border-right: 2px solid #56575B;
 }
 .title .more {
 	background: #56575B;
