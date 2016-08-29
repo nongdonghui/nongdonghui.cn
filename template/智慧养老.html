@@ -18,54 +18,136 @@
       <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
+  <style>
+        .message-item {
+            margin-bottom: 25px;
+            margin-left: 40px;
+            position: relative;
+        }
+        
+        .message-item .message-inner {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            padding: 10px;
+            position: relative;
+        }
+        
+        .message-item .message-inner:before {
+            border-right: 10px solid #ddd;
+            border-style: solid;
+            border-width: 10px;
+            color: rgba(0, 0, 0, 0);
+            content: "";
+            display: block;
+            height: 0;
+            position: absolute;
+            left: -20px;
+            top: 6px;
+            width: 0;
+        }
+        
+        .message-item .message-inner:after {
+            border-right: 10px solid #fff;
+            border-style: solid;
+            border-width: 10px;
+            color: rgba(0, 0, 0, 0);
+            content: "";
+            display: block;
+            height: 0;
+            position: absolute;
+            left: -18px;
+            top: 6px;
+            width: 0;
+        }
+        
+        .message-item:before {
+            background: #fff;
+            border-radius: 2px;
+            bottom: -30px;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+            content: "";
+            height: 100%;
+            left: -30px;
+            position: absolute;
+            width: 3px;
+        }
+        
+        .message-item:after {
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            content: "";
+            height: 15px;
+            left: -36px;
+            position: absolute;
+            top: 10px;
+            width: 15px;
+        }
+		
+		.bd-color-1:after {border: 2px solid #2880c8; background: #2880c8; }
+		.bd-color-2:after {border: 2px solid #6dc140; background: #6dc140; }
+		.bd-color-3:after {border: 2px solid #eeaf00; background: #eeaf00; }
+		.bd-color-4:after {border: 2px solid #838cc7; background: #838cc7; }
+		.bd-color-5:after {border: 2px solid #2d9ec1; background: #2d9ec1; }
+		.bd-color-6:after {border: 2px solid #53bbb3; background: #53bbb3; }
+        
+    </style>
   <body>
-    
-		<div class="row">
-			<div class="col-xs-12 form-wizard">
-				<div class="steps clearfix">
-					<ul role="tablist">
-						<li role="tab" class="first current" aria-disabled="false" aria-selected="true">
-							<a id="wizard-validate-t-0" href="#wizard-validate-h-0" aria-controls="wizard-validate-p-0">
-								<span class="current-info audible">current step: </span>
-								<span class="number" style="background:#2880c8">1.</span>
-								<span class="title"> 实时健康，尽心呵护 </span>
-							</a>
-						</li>
-						<li role="tab" class="disabled current" aria-disabled="true">
-							<a id="wizard-validate-t-1" href="#wizard-validate-h-1" aria-controls="wizard-validate-p-1">
-								<span class="number" style="background:#6dc140">2.</span>
-								<span class="title"> 实时定位，杜绝失联 </span>
-							</a>
-						</li>
-						<li role="tab" class="disabled current" aria-disabled="true">
-							<a id="wizard-validate-t-2" href="#wizard-validate-h-2" aria-controls="wizard-validate-p-2">
-								<span class="number" style="background:#eeaf00">3.</span>
-								<span class="title"> 安全传感器精准预警 </span>
-							</a>
-						</li>
-						<li role="tab" class="disabled current" aria-disabled="true">
-							<a id="wizard-validate-t-3" href="#wizard-validate-h-3" aria-controls="wizard-validate-p-3">
-								<span class="number" style="background:#838cc7">4.</span>
-								<span class="title"> 防盗窃监控报警，不再失窃 </span>
-							</a>
-						</li>
-						<li role="tab" class="disabled current" aria-disabled="true">
-							<a id="wizard-validate-t-4" href="#wizard-validate-h-4" aria-controls="wizard-validate-p-4">
-								<span class="number" style="background:#2d9ec1">5.</span>
-								<span class="title"> 视频点播、视频心里辅导等<br>远程辅助指导 </span>
-							</a>
-						</li>
+    <div class="hspace-20"></div>
+	<div class="container">
 
-						<li role="tab" class="disabled last current" aria-disabled="true">
-							<a id="wizard-validate-t-5" href="#wizard-validate-h-5" aria-controls="wizard-validate-p-5">
-								<span class="number" style="background:#53bbb3">6.</span>
-								<span class="title"> 社区活动推荐、旅游推荐、<br>电视节目推荐<br>帮助老年人丰富日常生活 </span>
-							</a>
-						</li>
-					</ul>
+		<div class="qa-message-list">
+			<div class="message-item bd-color-1">
+				<div class="message-inner">
+					<div class="qa-message-content">
+						实时健康，尽心呵护
+					</div>
 				</div>
 			</div>
+
+			<div class="message-item bd-color-2">
+				<div class="message-inner">
+					<div class="qa-message-content">
+						实时定位，杜绝失联
+					</div>
+				</div>
+			</div>
+
+			<div class="message-item bd-color-3">
+				<div class="message-inner">
+					<div class="qa-message-content">
+						安全传感器精准预警
+					</div>
+				</div>
+			</div>
+
+			<div class="message-item bd-color-4">
+				<div class="message-inner">
+					<div class="qa-message-content">
+						防盗窃监控报警，不再失窃
+					</div>
+				</div>
+			</div>
+
+			<div class="message-item bd-color-5">
+				<div class="message-inner">
+					<div class="qa-message-content">
+						视频点播、视频心里辅导等远程辅助指导
+					</div>
+				</div>
+			</div>
+
+			<div class="message-item bd-color-6">
+				<div class="message-inner">
+					<div class="qa-message-content">
+						社区活动推荐、旅游推荐、电视节目推荐帮助老年人丰富日常生活
+					</div>
+				</div>
+			</div>
+
 		</div>
+		
+	</div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>
