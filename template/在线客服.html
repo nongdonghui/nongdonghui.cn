@@ -19,78 +19,83 @@
     <![endif]-->
 	<style>
 	body{background-color: #eee;}
-		.m-message {
-			
+		.m-message {			
+			padding: 10px 15px;
 			overflow-y: scroll;
-			    background-color: #eee;
+			background-color: #eee;
+		}
+		*, *:before, *:after {
+			box-sizing: border-box;
 		}
 		ul {
 			list-style: none;
+			    margin: 0;
+				padding: 0;
 		}
 		.m-message li {
-    margin-bottom: 15px;
-}
-.m-message .time {
-    margin: 7px 0;
-    text-align: center;
-}
-.m-message .time>span {
-    display: inline-block;
-    padding: 0 18px;
-    font-size: 9pt;
-    color: #fff;
-    border-radius: 2px;
-    background-color: #dcdcdc;
-}
-.main {
-    position: relative;
-    overflow: hidden;
-    background-color: #eee;
-	height: 100%;
-}
-.m-message .avatar {
-    float: left;
-    margin: 0 10px 0 0;
-    border-radius: 3px;
-}
-.m-message .self {
-    text-align: right;
-}
-.m-message .self .avatar {
-    float: right;
-    margin: 0 0 0 10px;
-}
-.m-message .self .text {
-    background-color: #b2e281;
-}
+			margin-bottom: 15px;
+		}
+		.m-message .time {
+			margin: 7px 0;
+			text-align: center;
+		}
+		.m-message .time>span {
+			display: inline-block;
+			padding: 0 18px;
+			font-size: 9pt;
+			color: #fff;
+			border-radius: 2px;
+			background-color: #dcdcdc;
+		}
+		.main {
+			position: relative;
+			overflow: hidden;
+			background-color: #eee;
+			height: 100%;
+		}
+		.m-message .avatar {
+			float: left;
+			margin: 0 10px 0 0;
+			border-radius: 3px;
+		}
+		.m-message .self {
+			text-align: right;
+		}
+		.m-message .self .avatar {
+			float: right;
+			margin: 0 0 0 10px;
+		}
+		.m-message .self .text {
+			background-color: #b2e281;
+		}
 
-.m-message .text {
-    display: inline-block;
-    position: relative;
-    padding: 0 10px;
-    max-width: calc(100% - 40px);
-    min-height: 30px;
-    line-height: 2.5;
-    font-size: 9pt;
-    text-align: left;
-    word-break: break-all;
-    background-color: #fafafa;
-    border-radius: 4px;
-}
-.m-message .text:before {
-    content: " ";
-    position: absolute;
-    top: 9px;
-    right: 100%;
-    border: 6px solid transparent;
-    border-right-color: #fafafa;
-}
-.m-message .self .text:before {
-    right: inherit;
-    left: 100%;
-    border-right-color: transparent;
-    border-left-color: #b2e281;
-}
+		.m-message .text {
+			display: inline-block;
+			position: relative;
+			padding: 0 10px;
+			max-width: calc(100% - 40px);
+			min-height: 30px;
+			line-height: 2.5;
+			font-size: 9pt;
+			text-align: left;
+			word-break: break-all;
+			background-color: #fafafa;
+			border-radius: 4px;
+		}
+		.m-message .text:before {
+			content: " ";
+			position: absolute;
+			top: 9px;
+			right: 100%;
+			border: 6px solid transparent;
+			border-right-color: #fafafa;
+		}
+		.m-message .self .text:before {
+			right: inherit;
+			left: 100%;
+			border-right-color: transparent;
+			border-left-color: #b2e281;
+		}
 	</style>
   </head>
   <body>
@@ -100,16 +105,16 @@
 		<li><p class="time"><span>18:29</span></p><div class="main"><img class="avatar" width="30" height="30" src="img/i2.png"><div class="text">您好，我是客服霞霞，请问有什么可以帮到您的？</div></div></li>		
 		<li><p class="time"><span>18:29</span></p><div class="main self"><img class="avatar" width="30" height="30" src="img/i1.jpg"><div class="text">请问我的A50787快递到哪里了？</div></div></li><!--v-for-end--></ul></div>
 
-<div class="container-fluid">	
-	<form class="form-inline navbar-fixed-bottom">
-	  <div class="form-group">
-		<div class="input-group" style="width: 100%;">
-		  <input type="text" class="form-control">
-		  <div class="input-group-addon" style="color: #fff;background-color: #337ab7;">发送</div>
+		<div class="container-fluid">	
+			<form class="form-inline navbar-fixed-bottom">
+			  <div class="form-group">
+				<div class="input-group" style="width: 100%;">
+				  <input type="text" class="form-control">
+				  <div class="input-group-addon" style="color: #fff;background-color: #337ab7;">发送</div>
+				</div>
+			  </div>	  
+			</form>
 		</div>
-	  </div>	  
-	</form>
-</div>
 
 	<!-- <div class="container-fluid">			
 		<div class="hspace-10"></div>
