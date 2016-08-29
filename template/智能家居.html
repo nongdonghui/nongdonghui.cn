@@ -17,71 +17,243 @@
       <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+	<style>
+		.widget {
+			padding: 0;
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+			box-shadow: none;
+			margin: 3px 0 10px 0;
+		}
+		.widget-header.header-small {
+			min-height: 29px;
+			padding-left: 10px;
+		}
+		.widget-header {
+			position: relative;
+			min-height: 35px;
+			background: #fff;
+			-webkit-box-shadow: 0 0 4px rgba(0,0,0,.3);
+			-moz-box-shadow: 0 0 4px rgba(0,0,0,.3);
+			box-shadow: 0 0 4px rgba(0,0,0,.3);
+			color: #555;
+			padding-left: 12px;
+			text-align: right;
+			border-top: #f76124 solid 2px;
+			background: none #f5f5f5;
+		}		
+		.widget-header>.widget-caption {
+			line-height: 34px;
+			padding: 0;
+			margin: 0;
+			float: left;
+			text-align: left;
+			font-weight: 400!important;
+			font-size: 13px;
+		}
+
+
+		.widget-body {
+			/* background-color: #fbfbfb; */
+			-webkit-box-shadow: 1px 0 10px 1px rgba(0,0,0,.3);
+			-moz-box-shadow: 1px 0 10px 1px rgba(0,0,0,.3);
+			box-shadow: 1px 0 10px 1px rgba(0,0,0,.3);
+			padding: 12px;
+		}
+
+		
+		.widget-header.header-small>.widget-buttons {
+			line-height: 29px;
+			height: 29px;
+		}
+
+		.widget-buttons {
+			display: inline-block;
+			padding: 0 5px;
+			line-height: 34px;
+			position: relative;
+			text-align: left;
+			height: 36px;
+			color: #999;
+		}
+
+		.margin-top-10 {
+			margin-top: 10px;
+		}
+
+
+	</style>
   </head>
   <body>
 	<div class="container-fluid">			
-		<div class="row n-nav">
-			<div class="col-xs-2 col-sm-2 col-md-2 active">
-				<span class="ctn active">安防</span>
-			</div>
-			<div class="col-xs-2 col-sm-2 col-md-2">
-				<span class="ctn">家居</span>
-			</div>
-			<div class="col-xs-2 col-sm-2 col-md-2">
-				<span class="ctn">照明</span>
-			</div>
-			<div class="col-xs-2 col-sm-2 col-md-2">
-				<span class="ctn">布线</span>
-			</div>
-			<div class="col-xs-2 col-sm-2 col-md-2">
-				<span class="ctn">楼控</span>
-			</div>
-			<div class="col-xs-2 col-sm-2 col-md-2">
-				<span class="ctn">集成</span>
+
+		<div class="row">
+			<div class="widget">
+				<div class="widget-header header-small">
+					<span class="widget-caption">精品展示</span>
+
+					<div class="widget-buttons">
+						更多
+					</div>
+				</div>
+				<div class="widget-body">					
+					<div class="media">
+					  <div class="media-left">
+						<a href="#">
+						  <img class="media-object img-avatar img-avatar-40" src="img/img20141106104319098.gif" alt="...">
+						</a>
+					  </div>				  
+					  <div class="media-body">
+						<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
+						<h4 class="media-heading">云平台的智能家居</h4>
+						<span>物联网*智能测控*云平台架构</span>					
+					  </div>				  
+					</div>
+					
+					<div class="hr-divider-10"></div>
+
+					<div class="media">
+					  <div class="media-left">
+						<a href="#">
+						  <img class="media-object img-avatar img-avatar-40" src="img/img20141106104319098.gif" alt="...">
+						</a>
+					  </div>				  
+					  <div class="media-body">
+						<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
+						<h4 class="media-heading">云平台的智能家居</h4>
+						<span>物联网*智能测控*云平台架构</span>					
+					  </div>				  
+					</div>
+					<div class="hr-divider-10"></div>
+
+					<div class="media">
+					  <div class="media-left">
+						<a href="#">
+						  <img class="media-object img-avatar img-avatar-40" src="img/img20141106104319098.gif" alt="...">
+						</a>
+					  </div>				  
+					  <div class="media-body">
+						<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
+						<h4 class="media-heading">云平台的智能家居</h4>
+						<span>物联网*智能测控*云平台架构</span>					
+					  </div>				  
+					</div>
+				</div>
 			</div>
 		</div>
-		<div class="list-group">
-		  <a href="#" class="list-group-item">
-			<h5 class="list-group-item-heading">盗贼秒开防盗门 大港智能摄像机防盗升级</h5>
-			<p class="list-group-item-text">搭载人工智能技术的“看家神器”——大港智能摄像机1080P版。在门窗等传统防盗手段抵御小偷的同时，也加入科技的力量，为家中的防盗手段全面升...</p>
-			<span class="from">大港安全资讯</span><span class="time">2016-8-12</span>
-		  </a>
-		  <a href="#" class="list-group-item">
-			<h5 class="list-group-item-heading">盗贼秒开防盗门 大港智能摄像机防盗升级</h5>
-			<p class="list-group-item-text">搭载人工智能技术的“看家神器”——大港智能摄像机1080P版。在门窗等传统防盗手段抵御小偷的同时，也加入科技的力量，为家中的防盗手段全面升...</p>
-			<span class="from">大港安全资讯</span><span class="time">2016-8-12</span>
-		  </a>
-		  <a href="#" class="list-group-item">
-			<h5 class="list-group-item-heading">盗贼秒开防盗门 大港智能摄像机防盗升级</h5>
-			<p class="list-group-item-text">搭载人工智能技术的“看家神器”——大港智能摄像机1080P版。在门窗等传统防盗手段抵御小偷的同时，也加入科技的力量，为家中的防盗手段全面升...</p>
-			<span class="from">大港安全资讯</span><span class="time">2016-8-12</span>
-		  </a>
-		  <a href="#" class="list-group-item">
-			<h5 class="list-group-item-heading">盗贼秒开防盗门 大港智能摄像机防盗升级</h5>
-			<p class="list-group-item-text">搭载人工智能技术的“看家神器”——大港智能摄像机1080P版。在门窗等传统防盗手段抵御小偷的同时，也加入科技的力量，为家中的防盗手段全面升...</p>
-			<span class="from">大港安全资讯</span><span class="time">2016-8-12</span>
-		  </a>
-		  <a href="#" class="list-group-item">
-			<h5 class="list-group-item-heading">盗贼秒开防盗门 大港智能摄像机防盗升级</h5>
-			<p class="list-group-item-text">搭载人工智能技术的“看家神器”——大港智能摄像机1080P版。在门窗等传统防盗手段抵御小偷的同时，也加入科技的力量，为家中的防盗手段全面升...</p>
-			<span class="from">大港安全资讯</span><span class="time">2016-8-12</span>
-		  </a>
-		  <a href="#" class="list-group-item">
-			<h5 class="list-group-item-heading">盗贼秒开防盗门 大港智能摄像机防盗升级</h5>
-			<p class="list-group-item-text">搭载人工智能技术的“看家神器”——大港智能摄像机1080P版。在门窗等传统防盗手段抵御小偷的同时，也加入科技的力量，为家中的防盗手段全面升...</p>
-			<span class="from">大港安全资讯</span><span class="time">2016-8-12</span>
-		  </a>
-		  <a href="#" class="list-group-item">
-			<h5 class="list-group-item-heading">盗贼秒开防盗门 大港智能摄像机防盗升级</h5>
-			<p class="list-group-item-text">搭载人工智能技术的“看家神器”——大港智能摄像机1080P版。在门窗等传统防盗手段抵御小偷的同时，也加入科技的力量，为家中的防盗手段全面升...</p>
-			<span class="from">大港安全资讯</span><span class="time">2016-8-12</span>
-		  </a>
-		  <a href="#" class="list-group-item">
-			<h5 class="list-group-item-heading">盗贼秒开防盗门 大港智能摄像机防盗升级</h5>
-			<p class="list-group-item-text">搭载人工智能技术的“看家神器”——大港智能摄像机1080P版。在门窗等传统防盗手段抵御小偷的同时，也加入科技的力量，为家中的防盗手段全面升...</p>
-			<span class="from">大港安全资讯</span><span class="time">2016-8-12</span>
-		  </a>
+
+		<div class="row">
+			<div class="widget">
+				<div class="widget-header header-small">
+					<span class="widget-caption">创意家居</span>
+
+					<div class="widget-buttons">
+						更多
+					</div>
+				</div>
+				<div class="widget-body">					
+					<div class="media">
+					  <div class="media-left">
+						<a href="#">
+						  <img class="media-object img-avatar img-avatar-40" src="img/img20141106104319098.gif" alt="...">
+						</a>
+					  </div>				  
+					  <div class="media-body">
+						<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
+						<h4 class="media-heading">云平台的智能家居</h4>
+						<span>物联网*智能测控*云平台架构</span>					
+					  </div>				  
+					</div>
+					
+					<div class="hr-divider-10"></div>
+
+					<div class="media">
+					  <div class="media-left">
+						<a href="#">
+						  <img class="media-object img-avatar img-avatar-40" src="img/img20141106104319098.gif" alt="...">
+						</a>
+					  </div>				  
+					  <div class="media-body">
+						<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
+						<h4 class="media-heading">云平台的智能家居</h4>
+						<span>物联网*智能测控*云平台架构</span>					
+					  </div>				  
+					</div>
+					<div class="hr-divider-10"></div>
+
+					<div class="media">
+					  <div class="media-left">
+						<a href="#">
+						  <img class="media-object img-avatar img-avatar-40" src="img/img20141106104319098.gif" alt="...">
+						</a>
+					  </div>				  
+					  <div class="media-body">
+						<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
+						<h4 class="media-heading">云平台的智能家居</h4>
+						<span>物联网*智能测控*云平台架构</span>					
+					  </div>				  
+					</div>
+				</div>
+			</div>
 		</div>
+
+		<div class="row">
+			<div class="widget">
+				<div class="widget-header header-small">
+					<span class="widget-caption">智能影音</span>
+
+					<div class="widget-buttons">
+						更多
+					</div>
+				</div>
+				<div class="widget-body">					
+					<div class="media">
+					  <div class="media-left">
+						<a href="#">
+						  <img class="media-object img-avatar img-avatar-40" src="img/img20141106104319098.gif" alt="...">
+						</a>
+					  </div>				  
+					  <div class="media-body">
+						<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
+						<h4 class="media-heading">云平台的智能家居</h4>
+						<span>物联网*智能测控*云平台架构</span>					
+					  </div>				  
+					</div>
+					
+					<div class="hr-divider-10"></div>
+
+					<div class="media">
+					  <div class="media-left">
+						<a href="#">
+						  <img class="media-object img-avatar img-avatar-40" src="img/img20141106104319098.gif" alt="...">
+						</a>
+					  </div>				  
+					  <div class="media-body">
+						<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
+						<h4 class="media-heading">云平台的智能家居</h4>
+						<span>物联网*智能测控*云平台架构</span>					
+					  </div>				  
+					</div>
+					<div class="hr-divider-10"></div>
+
+					<div class="media">
+					  <div class="media-left">
+						<a href="#">
+						  <img class="media-object img-avatar img-avatar-40" src="img/img20141106104319098.gif" alt="...">
+						</a>
+					  </div>				  
+					  <div class="media-body">
+						<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
+						<h4 class="media-heading">云平台的智能家居</h4>
+						<span>物联网*智能测控*云平台架构</span>					
+					  </div>				  
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+		
 	</div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
