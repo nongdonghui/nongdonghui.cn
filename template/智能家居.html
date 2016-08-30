@@ -10,6 +10,7 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+	<link href="css/iconfont/iconfont.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -17,252 +18,278 @@
       <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-	<style>
-		body { background-color: #EFEFEF; }
-
-		.widget {
-			padding: 0;
-			-webkit-box-shadow: none;
-			-moz-box-shadow: none;
-			box-shadow: none;
-			padding: 10px 0 10px 0;
-		}
-		.widget-header.header-small {
-			min-height: 29px;
-			padding-left: 10px;
-		}
-		.widget-header {
-			position: relative;
-			min-height: 35px;
-			background: #fff;
-			color: #555;
-			padding-left: 12px;
-			text-align: right;
-		}		
-		.widget-header>.widget-caption {
-			padding: 0;
-			margin: 0;
-			float: left;
-			text-align: left;
-			font-weight: 600!important;
-			font-size: 16px;
-		}
-
-		.widget-body {
-			
-		}
-		.widget-body .img-avatar.img-avatar-40{
-			border-radius: 0;
-		}
-		.widget-body .media {
-			margin-left: 10px;
-		}
-		.widget-body .hr-divider-10 {
-			width: 100%;
-			height: 1px;
-			background: #E0E0E0;
-			margin: 10px 0 10px 60px;
-		}
-		.widget-body .media-body i {
-			right: 10px;
-		}
-		.widget-body .media-body .badge {
-			background: #fa7d3c;
-			font-size: 10px;
-			font-weight: 400;
-		}
-
-		.widget-header.header-small>.widget-buttons {
-			line-height: 29px;
-			height: 29px;
-		}
-
-		.widget-buttons {
-			display: inline-block;
-			padding: 0 5px;
-			line-height: 34px;
-			position: relative;
-			text-align: left;
-			height: 36px;
-			color: #999;
-		}
-
-		.margin-top-10 {
-			margin-top: 10px;
-		}
-		
-		.h4, h4 {
-			font-size: 16px;
-		}
-
-
-	</style>
   </head>
+  <style>
+	body { background-color: #EFEFEF; }
+
+	.tab-divider {
+		float: right;
+		border-right: 2px solid #56575B;
+		height: 18px;
+		margin-left: 4px;
+		margin-right: 4px;
+		margin-top: 4px;
+	}
+
+	.widget {
+		
+	}
+	.widget-header {
+		padding: 10px;
+		font-size: 16px;
+		font-weight: bold;
+	}
+	.widget-body {
+		margin:0 0 0 10px;
+	}
+	.widget-body .media-heading {
+		font-size: 16px;
+		line-height: 21.33333px;
+	}
+	.widget-body .img-avatar {
+		border-radius: 0;
+	}
+	.widget-body .img-avatar.img-avatar-40 {
+		width: 44px;
+		height: 44px;
+		line-height: 44px;
+	}
+	.widget-body .media-left {
+		padding-right: 10px;
+	}
+	.margin-top-10 {
+		margin-top: 10px;
+		right: 10px;
+	}
+  </style>
   <body>
-	<div class="container-fluid">			
-
-		<div class="row">
-			<div class="widget bg-white">
-				<div class="widget-header header-small">
-					<span class="widget-caption">精品展示</span>
-				</div>
-				<hr style="margin:0 0 10px 10px">
-				<div class="widget-body">					
-					<div class="media">
-					  <div class="media-left">
-						<a href="#">
-						  <img class="media-object img-avatar img-avatar-40" src="img/img20141106104319098.gif" alt="...">
-						</a>
-					  </div>				  
-					  <div class="media-body">
-						<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
-						<h4 class="media-heading"><span class="badge">荐</span>云平台的智能家居</h4>
-						<span>物联网*智能测控*云平台架构</span>					
-					  </div>				  
-					</div>
-					
-					<div class="hr-divider-10"></div>
-
-					<div class="media">
-					  <div class="media-left">
-						<a href="#">
-						  <img class="media-object img-avatar img-avatar-40" src="img/img20141106104319098.gif" alt="...">
-						</a>
-					  </div>				  
-					  <div class="media-body">
-						<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
-						<h4 class="media-heading">云平台的智能家居</h4>
-						<span>物联网*智能测控*云平台架构</span>					
-					  </div>				  
-					</div>
-					<div class="hr-divider-10"></div>
-
-					<div class="media">
-					  <div class="media-left">
-						<a href="#">
-						  <img class="media-object img-avatar img-avatar-40" src="img/img20141106104319098.gif" alt="...">
-						</a>
-					  </div>				  
-					  <div class="media-body">
-						<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
-						<h4 class="media-heading">云平台的智能家居</h4>
-						<span>物联网*智能测控*云平台架构</span>					
-					  </div>				  
-					</div>
-				</div>
-			</div>
+    <div class="widget bg-white">
+		<div class="widget-header">
+			精品展示
 		</div>
-		
-		<div class="hspace-10"></div>
-
-		<div class="row">
-			<div class="widget bg-white">
-				<div class="widget-header header-small">
-					<span class="widget-caption">创意家居</span>
-				</div>
-				<hr style="margin:0 0 10px 10px">
-				<div class="widget-body">					
-					<div class="media">
-					  <div class="media-left">
-						<a href="#">
-						  <img class="media-object img-avatar img-avatar-40" src="img/img20141106104319098.gif" alt="...">
-						</a>
-					  </div>				  
-					  <div class="media-body">
-						<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
-						<h4 class="media-heading">云平台的智能家居</h4>
-						<span>物联网*智能测控*云平台架构</span>					
-					  </div>				  
-					</div>
-					
-					<div class="hr-divider-10"></div>
-
-					<div class="media">
-					  <div class="media-left">
-						<a href="#">
-						  <img class="media-object img-avatar img-avatar-40" src="img/img20141106104319098.gif" alt="...">
-						</a>
-					  </div>				  
-					  <div class="media-body">
-						<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
-						<h4 class="media-heading">云平台的智能家居</h4>
-						<span>物联网*智能测控*云平台架构</span>					
-					  </div>				  
-					</div>
-					<div class="hr-divider-10"></div>
-
-					<div class="media">
-					  <div class="media-left">
-						<a href="#">
-						  <img class="media-object img-avatar img-avatar-40" src="img/img20141106104319098.gif" alt="...">
-						</a>
-					  </div>				  
-					  <div class="media-body">
-						<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
-						<h4 class="media-heading">云平台的智能家居</h4>
-						<span>物联网*智能测控*云平台架构</span>					
-					  </div>				  
-					</div>
-				</div>
+		<hr style="margin:0 0 10px 0">
+		<div class="widget-body">
+			<div class="media">
+			  <div class="media-left">
+				<a href="#">
+				  <img class="media-object img-avatar img-avatar-40" src="img/z1.jpg" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
+				<h4 class="media-heading">云平台的智能家居</h4>
+				<span>物联网+智能监测+云平台架构</span>
+			  </div>			  
 			</div>
-		</div>
-		
-		<div class="hspace-10"></div>
-
-		<div class="row">
-			<div class="widget bg-white">
-				<div class="widget-header header-small">
-					<span class="widget-caption">智能影音</span>
-				</div>
-				<hr style="margin:0 0 10px 10px">
-				<div class="widget-body">					
-					<div class="media">
-					  <div class="media-left">
-						<a href="#">
-						  <img class="media-object img-avatar img-avatar-40" src="img/img20141106104319098.gif" alt="...">
-						</a>
-					  </div>				  
-					  <div class="media-body">
-						<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
-						<h4 class="media-heading">云平台的智能家居</h4>
-						<span>物联网*智能测控*云平台架构</span>					
-					  </div>				  
-					</div>
-					
-					<div class="hr-divider-10"></div>
-
-					<div class="media">
-					  <div class="media-left">
-						<a href="#">
-						  <img class="media-object img-avatar img-avatar-40" src="img/img20141106104319098.gif" alt="...">
-						</a>
-					  </div>				  
-					  <div class="media-body">
-						<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
-						<h4 class="media-heading">云平台的智能家居</h4>
-						<span>物联网*智能测控*云平台架构</span>					
-					  </div>				  
-					</div>
-					<div class="hr-divider-10"></div>
-
-					<div class="media">
-					  <div class="media-left">
-						<a href="#">
-						  <img class="media-object img-avatar img-avatar-40" src="img/img20141106104319098.gif" alt="...">
-						</a>
-					  </div>				  
-					  <div class="media-body">
-						<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
-						<h4 class="media-heading">云平台的智能家居</h4>
-						<span>物联网*智能测控*云平台架构</span>					
-					  </div>				  
-					</div>
-				</div>
+			<hr style="margin:10px 0">
+			<div class="media">
+			 <div class="media-left">
+				<a href="#">
+				  <img class="media-object img-avatar img-avatar-40" src="img/z1.jpg" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
+				<h4 class="media-heading">云平台的智能家居</h4>
+				<span>物联网+智能监测+云平台架构</span>
+			  </div>
 			</div>
-		</div>
-		
-		
+			<hr style="margin:10px 0">
+			<div class="media">
+			  <div class="media-left">
+				<a href="#">
+				  <img class="media-object img-avatar img-avatar-40" src="img/z1.jpg" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
+				<h4 class="media-heading">云平台的智能家居</h4>
+				<span>物联网+智能监测+云平台架构</span>
+			  </div>
+			</div>
+			<hr style="margin:10px 0">
+			<div class="media">
+			  <div class="media-left">
+				<a href="#">
+				  <img class="media-object img-avatar img-avatar-40" src="img/z1.jpg" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
+				<h4 class="media-heading">云平台的智能家居</h4>
+				<span>物联网+智能监测+云平台架构</span>
+			  </div>
+			</div>
+			<hr style="margin:10px 0">
+			<div class="media">
+			  <div class="media-left">
+				<a href="#">
+				  <img class="media-object img-avatar img-avatar-40" src="img/z1.jpg" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
+				<h4 class="media-heading">云平台的智能家居</h4>
+				<span>物联网+智能监测+云平台架构</span>
+			  </div>
+			</div>
+			<div class="hspace-10"></div>
+		</div>		
 	</div>
+
+	<div class="hspace-10"></div>
+
+	<div class="widget bg-white">
+		<div class="widget-header">
+			创意家居
+		</div>
+		<hr style="margin:0 0 10px 0">
+		<div class="widget-body">
+			<div class="media">
+			  <div class="media-left">
+				<a href="#">
+				  <img class="media-object img-avatar img-avatar-40" src="img/z2.jpg" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
+				<h4 class="media-heading">云平台的智能家居</h4>
+				<span>物联网+智能监测+云平台架构</span>
+			  </div>			  
+			</div>
+			<hr style="margin:10px 0">
+			<div class="media">
+			 <div class="media-left">
+				<a href="#">
+				  <img class="media-object img-avatar img-avatar-40" src="img/z2.jpg" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
+				<h4 class="media-heading">云平台的智能家居</h4>
+				<span>物联网+智能监测+云平台架构</span>
+			  </div>
+			</div>
+			<hr style="margin:10px 0">
+			<div class="media">
+			  <div class="media-left">
+				<a href="#">
+				  <img class="media-object img-avatar img-avatar-40" src="img/z2.jpg" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
+				<h4 class="media-heading">云平台的智能家居</h4>
+				<span>物联网+智能监测+云平台架构</span>
+			  </div>
+			</div>
+			<hr style="margin:10px 0">
+			<div class="media">
+			  <div class="media-left">
+				<a href="#">
+				  <img class="media-object img-avatar img-avatar-40" src="img/z2.jpg" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
+				<h4 class="media-heading">云平台的智能家居</h4>
+				<span>物联网+智能监测+云平台架构</span>
+			  </div>
+			</div>
+			<hr style="margin:10px 0">
+			<div class="media">
+			  <div class="media-left">
+				<a href="#">
+				  <img class="media-object img-avatar img-avatar-40" src="img/z2.jpg" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
+				<h4 class="media-heading">云平台的智能家居</h4>
+				<span>物联网+智能监测+云平台架构</span>
+			  </div>
+			</div>
+			<div class="hspace-10"></div>
+		</div>		
+	</div>
+
+	<div class="hspace-10"></div>
+
+	<div class="widget bg-white">
+		<div class="widget-header">
+			智能影音
+		</div>
+		<hr style="margin:0 0 10px 0">
+		<div class="widget-body">
+			<div class="media">
+			  <div class="media-left">
+				<a href="#">
+				  <img class="media-object img-avatar img-avatar-40" src="img/z3.jpg" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
+				<h4 class="media-heading">云平台的智能家居</h4>
+				<span>物联网+智能监测+云平台架构</span>
+			  </div>			  
+			</div>
+			<hr style="margin:10px 0">
+			<div class="media">
+			 <div class="media-left">
+				<a href="#">
+				  <img class="media-object img-avatar img-avatar-40" src="img/z3.jpg" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
+				<h4 class="media-heading">云平台的智能家居</h4>
+				<span>物联网+智能监测+云平台架构</span>
+			  </div>
+			</div>
+			<hr style="margin:10px 0">
+			<div class="media">
+			  <div class="media-left">
+				<a href="#">
+				  <img class="media-object img-avatar img-avatar-40" src="img/z3.jpg" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
+				<h4 class="media-heading">云平台的智能家居</h4>
+				<span>物联网+智能监测+云平台架构</span>
+			  </div>
+			</div>
+			<hr style="margin:10px 0">
+			<div class="media">
+			  <div class="media-left">
+				<a href="#">
+				  <img class="media-object img-avatar img-avatar-40" src="img/z3.jpg" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
+				<h4 class="media-heading">云平台的智能家居</h4>
+				<span>物联网+智能监测+云平台架构</span>
+			  </div>
+			</div>
+			<hr style="margin:10px 0">
+			<div class="media">
+			  <div class="media-left">
+				<a href="#">
+				  <img class="media-object img-avatar img-avatar-40" src="img/z3.jpg" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<i class="glyphicon glyphicon-menu-right pull-right arrow-color-grey margin-top-10"></i>
+				<h4 class="media-heading">云平台的智能家居</h4>
+				<span>物联网+智能监测+云平台架构</span>
+			  </div>
+			</div>
+			<div class="hspace-10"></div>
+		</div>		
+	</div>
+
+	
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>
