@@ -174,4 +174,7 @@ public class Product {
 
 **参考文章：**
 
+* [Putting all together][1]
 
+
+[1]: http://freemarker.org/docs/pgui_quickstart_all.html
