@@ -57,7 +57,9 @@ LoadLibrary(F:\oracle\bin\oci.dll) returned 0
 
 **更新列表：**
 
-*
+* 2017-08-31
+
+[PLSQL使用IP地址连接远程服务器][6]
 
 
 
@@ -73,3 +75,4 @@ LoadLibrary(F:\oracle\bin\oci.dll) returned 0
 [3]: http://blog.csdn.net/angus_17/article/details/7762472
 [4]: http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html
 [5]: https://www.allroundautomations.com/bodyplsqldevreg.html
+[6]: http://elvis4139.iteye.com/blog/2270660
