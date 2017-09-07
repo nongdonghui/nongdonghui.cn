@@ -23,7 +23,12 @@ svnlook log "%REPOS%" -t "%TXN%" | findstr "....." > nul
 if %errorlevel% gtr 0 goto err
 exit 0
 :err
-echo 上传失败！请添加注释. 注释长度至少为5个字符. Commit aborted! 1>&2
+echo 上传失败！请添加注释. 注释长度至少为5个字符,具体格式如下 : 1>&2
+echo 【提交类型】:BUG/新功能/需求修改/版本制作/代码整理/解决编译不过/阶段性递交/追加递交 1>&2   
+echo 【问题描述】:该单的描述，从devtrack中复制过来或从功能性对本次修改的描述 1>&2    
+echo 【修改内容】: 1>&2  
+echo 1.修改的内容1 1>&2  
+echo 2.修改的内容1 1>&2 
 exit 1
 ```
 
