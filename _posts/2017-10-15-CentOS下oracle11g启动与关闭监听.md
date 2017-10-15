@@ -27,6 +27,16 @@ lsnrctl status
 
 * export是为了解决oracle_sid不一致,默认的oracle_sid是orcl,即默认的数据库实例,如果自定义了,就需要修改启动的实例名
 
+如果在执行startup时报如下异常:
+
+```
+有可能会出现以下错误：
+ORA-01078:failure in processing system parameters
+LRM-00109:could not open parameter file ‘/opt/oracle/product~~~~/dbs/initorac.ora’
+```
+
+就需要使用export ORACLE_SID=new_oracle_sid来修改oracle_sid
+
 * lsnrctl start是启动监听程序
 
 
