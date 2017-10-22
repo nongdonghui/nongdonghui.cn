@@ -9,7 +9,8 @@ lastUpdated:
 
 {{ page.date | date: "%Y.%-m.%-d" }} | <a href="/archive#{{ page.categories }}">{{ page.categories}}</a>
 
-  
+ 1.
+ 
 -bash:/etc/profile Permission Denied
 
 解决办法：
@@ -24,6 +25,11 @@ chmod +x /etc  或者   chmod 755 /etc
 
 stat /     查看根目录权限，保持为755即可！
 
+2.env: /etc/init.d/nginx: Permission denied
+
+解决:
+
+chmod a+x /etc/init.d/nginx
 
 **更新列表：**
 
