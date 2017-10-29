@@ -82,6 +82,13 @@ logging.properties file that looks something like this:
 jconsole -J-Djava.util.logging.config.file=logging.properties
 ```
 
+10.运行tomcat的`# ./shutdown.sh`后报异常
+
+```
+Error: JMX connector server communication error: service:jmx:rmi://hostname:1099
+```
+
+
 
 **更新列表：**
 
@@ -97,6 +104,8 @@ jconsole -J-Djava.util.logging.config.file=logging.properties
 * [Java VisualVM使用手册][4]
 * [Java虚拟机性能管理神器 - VisualVM（8） 查找JAVA应用程序耗时的方法函数][5]
 * [Monitor Your Applications With JConsole - Part 2][6]
+* [解决tomcat启动jmx远程管理后不能正常关闭问题][7]
+* [tomcat开启jmx后，shutdown.bat不能关闭tomcat ][8]
 
 
 [1]: http://blog.csdn.net/clementad/article/details/51253110
@@ -105,3 +114,5 @@ jconsole -J-Djava.util.logging.config.file=logging.properties
 [4]: http://blog.csdn.net/wzyzzu/article/details/50380511
 [5]: http://blog.csdn.net/chwshuang/article/details/44203471
 [6]: http://blog.csdn.net/holymonkey/article/details/6625756
+[7]: http://blog.csdn.net/liyiliyi/article/details/1188641
+[8]: http://ekekyn.blog.163.com/blog/static/313887320134162433323/
