@@ -101,7 +101,7 @@ public class HelloWorldImpl implements IHelloWorld {
 * 进入目录
 
 ```
-cd C:\download\eclipse\workspace\company_ws
+cd /d C:\download\eclipse\workspace\company_ws
 ```
 
 * 生成jaxws相应的java文件
@@ -119,7 +119,7 @@ wsgen -s src/main/java -d target -cp target/classes com.company.ws.hello.HelloWo
 * 进入测试目录
 
 ```
-cd C:\download\eclipse\workspace\company_ws\src\test\java
+cd /d C:\download\eclipse\workspace\company_ws\src\test\java
 ```
 
 * 生成测试代码
