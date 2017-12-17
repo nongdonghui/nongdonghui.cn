@@ -1,3 +1,4 @@
 # GitHub build config
 _site/
+*.bak
 
