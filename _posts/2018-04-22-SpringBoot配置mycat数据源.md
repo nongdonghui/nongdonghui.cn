@@ -1,7 +1,7 @@
 ---
 layout: post
 title: SpringBoot配置mycat数据源
-categories: git
+categories: SpringBoot
 lastUpdated:
 ---
 
