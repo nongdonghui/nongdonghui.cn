@@ -30,8 +30,8 @@ public CharacterEncodingFilter characterEncodingFilter() {
 **参考文章：**
 
 * [Spring Boot 中文乱码问题][1]
-* [][2]
+* [How to config spring boot application to support both UTF-8 and GBK encode?][2]
 
 
 [1]: https://www.huangyunkun.com/2015/02/01/spring-boot-utf8-filter/
-[2]: 
+[2]: https://stackoverflow.com/questions/39939555/how-to-config-spring-boot-application-to-support-both-utf-8-and-gbk-encode
