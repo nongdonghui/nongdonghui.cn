@@ -16,6 +16,10 @@ D:\java\jre1.8\bin>keytool -list
 D:\java\jre1.8\bin>keytool -import -trustcacerts -alias keystore -keystore "D:\java\jre1.8\lib\security\cacerts" -file D:\java\jre1.8\bin\keystore.cer -storepass changeit
 ```
 
+注意最后一步的密码必须是changeit,否则提示
+错误提示：sun.security.validator.ValidatorException: PKIX path building failed
+
+
 **更新列表：**
 
 *
@@ -24,7 +28,7 @@ D:\java\jre1.8\bin>keytool -import -trustcacerts -alias keystore -keystore "D:\j
 
 **参考文章：**
 
-* [][1]
+* [错误提示：sun.security.validator.ValidatorException: PKIX path building failed][1]
 
 
-[1]: 
+[1]: http://blog.51cto.com/helpdesk/1046442
