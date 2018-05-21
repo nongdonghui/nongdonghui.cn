@@ -105,7 +105,7 @@ location = / {
 **参考文章：**
 
 * [Configuring HTTPS servers][1]
-* [nginx配置location总结及rewrite规则写法[2]
+* [nginx配置location总结及rewrite规则写法][2]
 * [][3]
 * [][4]
 
