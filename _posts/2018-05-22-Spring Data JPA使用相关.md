@@ -39,7 +39,7 @@ void updatePersonEmailByLastName(@Param("lastName")String lastName,@Param("email
 
 6.JPA可以使用case when语法
 
-7.
+7.[JpaRepository 查询规范][17]
 
 **更新列表：**
 
@@ -65,6 +65,8 @@ void updatePersonEmailByLastName(@Param("lastName")String lastName,@Param("email
 * [spring boot通过maven filter替换properties属性（多环境配置）][14]
 * [Maven filter 配置的使用][15]
 * [SpringBoot之LogBack常用配置][16]
+* [JpaRepository 查询规范][17]
+* [JPA使用数据库视图问题][18]
 
 [1]: https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
 [2]: https://github.com/spring-projects/spring-boot
@@ -82,6 +84,8 @@ void updatePersonEmailByLastName(@Param("lastName")String lastName,@Param("email
 [14]: https://blog.csdn.net/q397739000/article/details/53037649
 [15]: http://bibithink.iteye.com/blog/2253457
 [16]: https://blog.csdn.net/qq_25868207/article/details/78085673
+[17]: https://blog.csdn.net/weixin_40344177/article/details/78469815
+[18]: http://www.iteye.com/problems/91010
 
 
 
