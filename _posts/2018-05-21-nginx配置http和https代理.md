@@ -11,7 +11,7 @@ lastUpdated:
 
 ```
 http {
-	upstream app_server.com {
+	upstream x5.app.com {
 	    ip_hash;
 	    server 10.177.196.120:8080;
 	    server 10.177.196.121:8080;
@@ -30,23 +30,23 @@ http {
 	    ssl_prefer_server_ciphers         on;
 
 	    location / {
-		    proxy_pass http://app_server.com;
+		    proxy_pass http://x5.app.com;
 	    }
 	}
 
 	server {
 	    listen 80;
 	    server_name app_server;
-	    location = / {
-		    rewrite ^/ https://$host:443;
-	    }	    
+	    rewrite ^(.*)$  https://$host$1 permanent;
 	}
 }
 ```
 
 这样即可访问
-http://192.168.1.188   默认90端口可省略
+http://192.168.1.188   默认80端口可省略
 https://192.168.1.188  默认443端口可省略
+
+这样访问http://x5.app.com或https://x5.app.com都可以跳转到https://x5.app.com
 
 * tomcat配置说明
 
