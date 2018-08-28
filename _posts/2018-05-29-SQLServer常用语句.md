@@ -99,6 +99,21 @@ alter table abcd alter column c char(10) not null
 ALTER Table abcd ADD CONSTRAINT pk_abcd   PRIMARY KEY (a, b, c )
 ```
 
+4.查询占位符
+
+```
+select * from 表名
+where 联系电话 like '[1-3]%' --------查电话是1-3开头的人
+--------like是像这些条件的语句，能用通配符：%、_、[]、[^]
+--------意思分别代表：所有字符、一个字符、一位上可取值、一位上不可取值
+
+select * from 表名
+where 姓名 like '[e[]%'
+or 姓名 like '%e]'
+escape 'e' ------------显示以‘[’开头或以‘]’结尾的所有数据，中间有不显示
+----------escape ''是指定通配符
+```
+
 **更新列表：**
 
 *
@@ -109,11 +124,11 @@ ALTER Table abcd ADD CONSTRAINT pk_abcd   PRIMARY KEY (a, b, c )
 
 * [Sql的with as 的使用][1]
 * [Sql Server删除主键和重建主键][2]
-* [][3]
+* [sql server中sql语句][3]
 * [][4]
 
 [1]: https://blog.csdn.net/turejackon/article/details/76607492
 [2]: https://blog.csdn.net/bobwu/article/details/5715529
-[3]: 
+[3]: https://zhidao.baidu.com/question/257951371
 [4]: 
 
