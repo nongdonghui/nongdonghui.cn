@@ -114,6 +114,39 @@ escape 'e' ------------显示以‘[’开头或以‘]’结尾的所有数据�
 ----------escape ''是指定通配符
 ```
 
+5.连接表更新
+
+```
+For Oracle:
+update ipop_worktype_loader wl set wl.status=0
+where  exists (select 1 from ipop_worktype_lkp w where  wl.worktype_id = w.worktype_id and w.application_Id=10 and wl.status=1)
+ 
+For MS SQL Server:
+update  wl  set wl.status=0  from ipop_worktype_lkp w,ipop_worktype_loader wl
+where wl.worktype_id = w.worktype_id and w.application_Id=10 and wl.status=1
+```
+
+6.sqlserver数据库中随机生成N位的随机数
+
+```
+select RIGHT(100000000 + CONVERT(bigint, ABS(CHECKSUM(NEWID()))), N);
+```
+
+7.sql 触发器 if条件判断
+
+```
+if integral>50 and integral<200
+begin
+update customer
+set lev=1
+end
+
+else 
+begin
+
+end
+```
+
 **更新列表：**
 
 *
@@ -125,10 +158,15 @@ escape 'e' ------------显示以‘[’开头或以‘]’结尾的所有数据�
 * [Sql的with as 的使用][1]
 * [Sql Server删除主键和重建主键][2]
 * [sql server中sql语句][3]
-* [][4]
+* [Oracle和SQL Server连接表的更新操作Update SQL 语句][4]
+* [sqlserver数据库中随机生成N位的随机数][5]
+* [sql 触发器 if条件判断][6]
+* [SQLServer触发器创建、删除、修改、查看][7]
 
 [1]: https://blog.csdn.net/turejackon/article/details/76607492
 [2]: https://blog.csdn.net/bobwu/article/details/5715529
 [3]: https://zhidao.baidu.com/question/257951371
-[4]: 
-
+[4]: http://www.cnblogs.com/ycxyyzw/archive/2012/03/09/2387668.html
+[5]: https://blog.csdn.net/u013628196/article/details/44778099
+[6]: http://www.cnblogs.com/activities/archive/2012/06/06/2537605.html
+[7]: https://blog.csdn.net/fwj380891124/article/details/7016328
