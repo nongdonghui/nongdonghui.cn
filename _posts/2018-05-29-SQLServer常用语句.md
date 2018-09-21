@@ -147,6 +147,61 @@ begin
 end
 ```
 
+8.SQLServer数据集合的交、并、差集运算
+
+```
+并集：select * from t1 union select * from t2
+
+不过滤重复：select * from t1 union all   select * from t2
+
+t1对t2的差集：select * from t1 except select * from t2 
+
+t1对t2的交集：select * from t1 intersect select * from t2
+
+```
+
+8.创建触发器时，从更新的表中查询出数据值
+
+```
+create trigger [tig_update] on 表名
+after update  
+as 
+declare @id int
+begin
+	if (update(主表列名))
+		begin
+			select @id=id from inserted
+			update 子表名 set lasttime = GETDATE() where pid = @id
+		end
+end
+```
+
+9.在SQL中获取一个长字符串中某个字符串出现次数的实现方法
+
+```
+declare @a varchar(100)
+set @a='X-BGS-2010-09-15-001'
+select len(replace(@a,'-','--'))-len(@a)
+```
+
+10.sql server 实现lastIndexOf
+
+```
+len(@WapImage)+1-charindex('.',reverse(@WapImage)) 
+```
+
+11.判断某个字符串是否包含另一个字符串
+
+```
+一般有两个方法：
+
+1.用like——select * from tablename where field1 like like ‘%key%’
+
+这种方法可以查一个句子里面包含什么词儿啥的。
+
+2.用charindex（）——charindex（字符，字符串）>0 –>包含
+```
+
 **更新列表：**
 
 *
@@ -162,6 +217,13 @@ end
 * [sqlserver数据库中随机生成N位的随机数][5]
 * [sql 触发器 if条件判断][6]
 * [SQLServer触发器创建、删除、修改、查看][7]
+* [SQLServer数据集合的交、并、差集运算][8]
+* [SQLServer存储过程返回值总结][9]
+* [使用存储过程并返回值与及返回值的获得方法][10]
+* [在SQL中获取一个长字符串中某个字符串出现次数的实现方法][11]
+* [sql server 实现lastIndexOf][12]
+* [sql中判断某个字符串是否包含一个字符串][13]
+* [sqlserver函数的使用][14]
 
 [1]: https://blog.csdn.net/turejackon/article/details/76607492
 [2]: https://blog.csdn.net/bobwu/article/details/5715529
@@ -170,3 +232,10 @@ end
 [5]: https://blog.csdn.net/u013628196/article/details/44778099
 [6]: http://www.cnblogs.com/activities/archive/2012/06/06/2537605.html
 [7]: https://blog.csdn.net/fwj380891124/article/details/7016328
+[8]: https://blog.csdn.net/jinjazz/article/details/4527863
+[9]: https://www.cnblogs.com/soundcode/p/6810712.html
+[10]: http://www.cnblogs.com/zm235/archive/2008/05/09/1189622.html
+[11]: https://www.jb51.net/article/39813.htm
+[12]: http://tanyongbing.iteye.com/blog/2071375
+[13]: https://www.cnblogs.com/ahlx/p/5292200.html
+[14]: https://jingyan.baidu.com/article/7908e85caa9511af481ad2b4.html##1
