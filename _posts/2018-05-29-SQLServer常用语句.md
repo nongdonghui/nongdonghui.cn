@@ -202,6 +202,22 @@ len(@WapImage)+1-charindex('.',reverse(@WapImage))
 2.用charindex（）——charindex（字符，字符串）>0 –>包含
 ```
 
+12.使用sqlcmd 命令执行sql 脚本
+
+```
+sqlcmd -S"127.0.0.1" -U"sa" -P"abcd1234!"  -i"fincc.sql" 
+```
+
+13.获取部门字符串
+
+```
+declare @s varchar(500)
+declare @n varchar(500)
+set @s='/ORG01.ogn/BzAVRGMxhhxBzsIw2DQ.dpt/sU4kgIg3aCkmHQcpqcX.pos/MltPzzQvty9s6J6XS0I@sU4kgIg3aCkmHQcpqcX.psm'
+set @n=reverse(substring(reverse(@s), charindex('tpd.',reverse(@s)), LEN(@s)-charindex('tpd.',reverse(@s))))
+select REVERSE(substring(REVERSE(@n), 5, charindex('/',REVERSE(@n))-5))
+```
+
 **更新列表：**
 
 *
@@ -224,6 +240,7 @@ len(@WapImage)+1-charindex('.',reverse(@WapImage))
 * [sql server 实现lastIndexOf][12]
 * [sql中判断某个字符串是否包含一个字符串][13]
 * [sqlserver函数的使用][14]
+* [使用sqlcmd 命令执行sql 脚本][15]
 
 [1]: https://blog.csdn.net/turejackon/article/details/76607492
 [2]: https://blog.csdn.net/bobwu/article/details/5715529
@@ -239,3 +256,4 @@ len(@WapImage)+1-charindex('.',reverse(@WapImage))
 [12]: http://tanyongbing.iteye.com/blog/2071375
 [13]: https://www.cnblogs.com/ahlx/p/5292200.html
 [14]: https://jingyan.baidu.com/article/7908e85caa9511af481ad2b4.html##1
+[15]: https://blog.csdn.net/zghnpdswyp/article/details/49635609
