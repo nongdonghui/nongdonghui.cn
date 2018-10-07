@@ -218,6 +218,19 @@ set @n=reverse(substring(reverse(@s), charindex('tpd.',reverse(@s)), LEN(@s)-cha
 select REVERSE(substring(REVERSE(@n), 5, charindex('/',REVERSE(@n))-5))
 ```
 
+14.delete where exists使用
+
+```
+DELETE FROM suppliers
+WHERE EXISTS
+  ( select customers.name
+     from customers
+     where customers.customer_id = suppliers.supplier_id
+     and customers.customer_name = 'IBM' );
+
+这将在供应商表，其中有一个客户表的名称是IBM，CUSTOMER_ID是相同的supplier_id记录中删除所有记录。
+```
+
 **更新列表：**
 
 *
@@ -241,6 +254,7 @@ select REVERSE(substring(REVERSE(@n), 5, charindex('/',REVERSE(@n))-5))
 * [sql中判断某个字符串是否包含一个字符串][13]
 * [sqlserver函数的使用][14]
 * [使用sqlcmd 命令执行sql 脚本][15]
+* [sql delete 语句用法介绍][16]
 
 [1]: https://blog.csdn.net/turejackon/article/details/76607492
 [2]: https://blog.csdn.net/bobwu/article/details/5715529
@@ -257,3 +271,4 @@ select REVERSE(substring(REVERSE(@n), 5, charindex('/',REVERSE(@n))-5))
 [13]: https://www.cnblogs.com/ahlx/p/5292200.html
 [14]: https://jingyan.baidu.com/article/7908e85caa9511af481ad2b4.html##1
 [15]: https://blog.csdn.net/zghnpdswyp/article/details/49635609
+[16]: https://yq.aliyun.com/ziliao/41767
