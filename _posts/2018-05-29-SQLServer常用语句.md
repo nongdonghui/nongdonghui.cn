@@ -229,6 +229,22 @@ WHERE EXISTS
      and customers.customer_name = 'IBM' );
 
 这将在供应商表，其中有一个客户表的名称是IBM，CUSTOMER_ID是相同的supplier_id记录中删除所有记录。
+
+15.查看sqlserver数据库当前死锁
+
+```
+--死锁检测
+use master
+Select * from sysprocesses where blocked<>0
+--找到SPID  
+exec sp_lock
+--根据SPID找到OBJID
+select object_name(85575343)
+--根据OBJID找到表名
+
+---------------------
+
+本文来自 saga_gallon 的CSDN 博客 ，全文地址请点击：https://blog.csdn.net/saga_gallon/article/details/52465187?utm_source=copy 
 ```
 
 **更新列表：**
@@ -255,6 +271,8 @@ WHERE EXISTS
 * [sqlserver函数的使用][14]
 * [使用sqlcmd 命令执行sql 脚本][15]
 * [sql delete 语句用法介绍][16]
+* [查看sqlserver数据库当前死锁][17]
+* [数据库连接池到底应该设多大？这篇文章可能会颠覆你的认知][18]
 
 [1]: https://blog.csdn.net/turejackon/article/details/76607492
 [2]: https://blog.csdn.net/bobwu/article/details/5715529
@@ -272,3 +290,5 @@ WHERE EXISTS
 [14]: https://jingyan.baidu.com/article/7908e85caa9511af481ad2b4.html##1
 [15]: https://blog.csdn.net/zghnpdswyp/article/details/49635609
 [16]: https://yq.aliyun.com/ziliao/41767
+[17]: https://blog.csdn.net/saga_gallon/article/details/52465187
+[18]: https://blog.csdn.net/pangjl1982/article/details/79295241
