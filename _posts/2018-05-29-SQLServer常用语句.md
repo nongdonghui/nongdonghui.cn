@@ -242,9 +242,23 @@ exec sp_lock
 select object_name(85575343)
 --根据OBJID找到表名
 
----------------------
+```
 
-本文来自 saga_gallon 的CSDN 博客 ，全文地址请点击：https://blog.csdn.net/saga_gallon/article/details/52465187?utm_source=copy 
+16.查询字段中包含字母的结果
+
+```
+select PATINDEX('%[A-Za-z]%', 'ads23432')>0
+```
+
+17.with语句使用
+
+```
+with aliasName as (select * from tableName)
+
+如果有多个,则用逗号分隔,如
+
+with alias1 as (select * from tableName1),
+alias2 as (select * from tableName2)
 ```
 
 **更新列表：**
