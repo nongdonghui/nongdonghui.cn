@@ -261,6 +261,89 @@ with alias1 as (select * from tableName1),
 alias2 as (select * from tableName2)
 ```
 
+18.SQL 中如何去掉decimal字段後面的0
+
+先转为floag再转为varchar
+
+```
+CONVERT(varchar(10), cast(a.qty as float))
+```
+
+19.Sql server存储过程中常见游标循环用法
+
+```
+DECLARE 
+  @A1 VARCHAR(10),
+  @A2 VARCHAR(10),
+  @A3 INT
+DECLARE YOUCURNAME CURSOR FOR SELECT A1,A2,A3 FROM YOUTABLENAME 
+OPEN YOUCURNAME 
+fetch next from youcurname into @a1,@a2,@a3 
+while @@fetch_status<>-1
+ begin 
+   --您要执行的操作写在这里 
+   fetch next from youcurname into @a1,@a2,@a3 
+end 
+close youcurname 
+deallocate youcurname
+```
+
+20.sqlserver 行转列
+
+```
+SELECT 
+    [UserName],
+    SUM(CASE [Subject] WHEN '数学' THEN [Source] ELSE 0 END) AS '[数学]',
+    SUM(CASE [Subject] WHEN '英语' THEN [Source] ELSE 0 END) AS '[英语]',
+    SUM(CASE [Subject] WHEN '语文' THEN [Source] ELSE 0 END) AS '[语文]'     
+FROM [TestRows2Columns]
+GROUP BY [UserName]
+```
+
+21.使用临时表实现字符串合并处理的示例
+
+```
+--3.3.3 使用临时表实现字符串合并处理的示例
+--处理的数据
+CREATE TABLE tb(col1 varchar(10),col2 int)
+INSERT tb SELECT 'a',1
+UNION ALL SELECT 'a',2
+UNION ALL SELECT 'b',1
+UNION ALL SELECT 'b',2
+UNION ALL SELECT 'b',3
+ 
+--合并处理
+SELECT col1,col2=CAST(col2 as varchar(100)) 
+INTO #t FROM tb
+ORDER BY col1,col2
+DECLARE @col1 varchar(10),@col2 varchar(100)
+UPDATE #t SET 
+    @col2=CASE WHEN @col1=col1 THEN @col2+','+col2 ELSE col2 END,
+    @col1=col1,
+    col2=@col2
+SELECT * FROM #t
+/*--更新处理后的临时表
+col1       col2
+---------- -------------
+a          1
+a          1,2
+b          1
+b          1,2
+b          1,2,3
+--*/
+--得到最终结果
+SELECT col1,col2=MAX(col2) FROM #t GROUP BY col1
+/*--结果
+col1       col2
+---------- -----------
+a          1,2
+b          1,2,3
+--*/
+--删除测试
+DROP TABLE tb,#t
+GO
+```
+
 **更新列表：**
 
 *
@@ -287,6 +370,11 @@ alias2 as (select * from tableName2)
 * [sql delete 语句用法介绍][16]
 * [查看sqlserver数据库当前死锁][17]
 * [数据库连接池到底应该设多大？这篇文章可能会颠覆你的认知][18]
+* [SQL 中如何去掉decimal字段後面的0][19]
+* [Sql server存储过程中常见游标循环用法][20]
+* [sqlserver 行转列][21]
+* [如何将SQL查询结果的列数据连接成一行（在SQL中用函数或存储过程实现）][22]
+* [sql存储过程，语句拼接，使用游标][23]
 
 [1]: https://blog.csdn.net/turejackon/article/details/76607492
 [2]: https://blog.csdn.net/bobwu/article/details/5715529
@@ -306,3 +394,8 @@ alias2 as (select * from tableName2)
 [16]: https://yq.aliyun.com/ziliao/41767
 [17]: https://blog.csdn.net/saga_gallon/article/details/52465187
 [18]: https://blog.csdn.net/pangjl1982/article/details/79295241
+[19]: https://blog.csdn.net/donnie88888888/article/details/52439299
+[20]: https://www.cnblogs.com/tuyile006/p/5319117.html
+[21]: https://blog.csdn.net/zml_900417520/article/details/45641047
+[22]: https://bbs.csdn.net/topics/250076021
+[23]: https://blog.csdn.net/bing1051/article/details/16986175
