@@ -344,6 +344,53 @@ DROP TABLE tb,#t
 GO
 ```
 
+22.字符串转日期时间
+
+```
+convert(datetime,'2017-12-12 00:00:01', 20)
+```
+
+23.SQL Server中取得某个月的天数
+
+```
+declare @dt datetime 
+set @dt=getdate() 
+select 32-Day(@dt+(32-Day(@dt)))
+```
+
+24.SQL Server中 求两个指定日期的相差天数
+
+```
+-- 求两个指定日期的相差天数,不考虑时、分、秒
+
+declare @StartDateTime datetime
+
+declare @EndDateTime datetime
+
+declare @iDays int
+
+select @StartDateTime = '2009-04-06'
+
+select @EndDateTime = '2009-04-10 09:23:23'
+
+select @iDays = datediff(day,convert(varchar(100),@StartDateTime,23),convert(varchar(100),@EndDateTime,23))
+
+print @iDays
+```
+
+25.SQL server 除法运算
+
+```
+select 500 / (501) *100
+
+结果为0，由于数值是INT类型，怎么才能得到小数点呢？
+
+select 500 / (501 + 0.0) *100
+
+99.800300
+这样就有小数点了
+```
+
 **更新列表：**
 
 *
