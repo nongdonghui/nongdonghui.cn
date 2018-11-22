@@ -391,6 +391,38 @@ select 500 / (501 + 0.0) *100
 这样就有小数点了
 ```
 
+26.sql表中如何获得最大时间的记录
+
+```
+SELECT  * FROM  table   WHERE   MaxTime= (select MAX(MaxTime) from  table) 
+```
+
+27.sqlserver以逗号分割的字符串拆分到临时表
+
+```
+alter FUNCTION [dbo].[func_split](@str nvarchar(4000),@separtor varchar(10))   
+  returns @temp table([row] [int] IDENTITY(1,1) NOT NULL,valuess nvarchar(4000))   
+  as    
+begin  
+   declare @i int  
+   set  @str=rtrim(ltrim(@str))   
+   set  @i=charindex(@separtor,@str)   
+   while   @i>=1   
+    begin  
+     insert   @temp   values(left(@str,@i-1))   
+     set  @str=substring(@str,@i+1,len(@str)-@i)   
+     set  @i=charindex(@separtor,@str)   
+    end  
+    if @str<>''    
+    insert @temp values(@str)   
+    return    
+end
+
+select * from  dbo.func_split('1,2,3,4,5,7', ',')
+```
+
+28.
+
 **更新列表：**
 
 *
