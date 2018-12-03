@@ -421,7 +421,31 @@ end
 select * from  dbo.func_split('1,2,3,4,5,7', ',')
 ```
 
-28.
+28.SqlServer实现mysql中GROUP_CONCAT函数
+
+```
+-- 新建测试表
+CREATE TABLE temp(id int, value varchar(10));
+ 
+-- 插入测试数据
+INSERT INTO temp VALUES(1, 'aa'); 
+INSERT INTO temp VALUES(1, 'bb'); 
+INSERT INTO temp VALUES(2, 'cc'); 
+INSERT INTO temp VALUES(2, 'dd'); 
+INSERT INTO temp VALUES(2, 'ff'); 
+ 
+ 
+-- 查询，实现相同id的name以，分隔拼成字符串，id和value都为字段名称
+  SELECT id, 
+         [value] = stuff((
+                 SELECT ',' + [value] 
+                   FROM temp t 
+                  WHERE t.id = temp.id 
+                    FOR xml path('')) , 1 , 1 , '') 
+    FROM temp 
+GROUP BY id;
+
+```
 
 **更新列表：**
 
@@ -454,6 +478,7 @@ select * from  dbo.func_split('1,2,3,4,5,7', ',')
 * [sqlserver 行转列][21]
 * [如何将SQL查询结果的列数据连接成一行（在SQL中用函数或存储过程实现）][22]
 * [sql存储过程，语句拼接，使用游标][23]
+* [SqlServer实现mysql中GROUP_CONCAT函数][24]
 
 [1]: https://blog.csdn.net/turejackon/article/details/76607492
 [2]: https://blog.csdn.net/bobwu/article/details/5715529
@@ -478,3 +503,4 @@ select * from  dbo.func_split('1,2,3,4,5,7', ',')
 [21]: https://blog.csdn.net/zml_900417520/article/details/45641047
 [22]: https://bbs.csdn.net/topics/250076021
 [23]: https://blog.csdn.net/bing1051/article/details/16986175
+[24]: https://blog.csdn.net/Cxy_357/article/details/82190771
