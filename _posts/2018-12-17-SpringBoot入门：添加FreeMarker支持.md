@@ -21,7 +21,9 @@ lastUpdated:
 
 * [SpringBoot入门：添加FreeMarker支持][1]
 * [【SpringBoot教程四】:SpringBoot+FreeMark模板引擎][2]
+* [SpringBoot实战 之 数据交互篇][3]
 
 
 [1]: https://blog.csdn.net/LouGnib/article/details/68065043
 [2]: https://blog.csdn.net/lu1005287365/article/details/53363490
+[3]: https://blog.csdn.net/chinrui/article/details/70832310
