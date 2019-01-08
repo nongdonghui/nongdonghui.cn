@@ -32,6 +32,25 @@ END
 
 ```
 
+2.SQLSERVER merge的简单用法
+
+```
+MERGE INTO @TargetTable AS T           
+USING @SourceTable AS S                
+   ON T.ID = S.ID                      
+WHEN MATCHED         
+   THEN UPDATE SET T.DSPT = S.DSPT  
+WHEN NOT MATCHED BY TARGET   
+   THEN INSERT VALUES(S.ID,S.DSPT)
+WHEN NOT MATCHED BY SOURCE            
+   THEN DELETE
+OUTPUT $ACTION AS [ACTION],
+   Deleted.ID AS 'Deleted ID',
+   Deleted.DSPT AS 'Deleted Description',
+   Inserted.ID AS 'Inserted ID',
+   Inserted.DSPT AS 'Inserted Description'
+INTO @Log;
+```
 
 
 **更新列表：**
@@ -44,11 +63,11 @@ END
 
 * [SQL Server存储过程创建和修改][1]
 * [SQL：查找被锁的表，以及锁表的SQL语句（重点推荐）][2]
-* [][3]
+* [SQLSERVER merge的简单用法][3]
 * [][4]
 
 [1]: http://www.cnblogs.com/sosoft/p/3535696.html
 [2]: https://www.cnblogs.com/Fooo/p/3552861.html
-[3]: 
+[3]: https://blog.csdn.net/ws379374000/article/details/78499767
 [4]: 
 
