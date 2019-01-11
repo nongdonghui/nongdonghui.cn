@@ -263,7 +263,7 @@ alias2 as (select * from tableName2)
 
 18.SQL 中如何去掉decimal字段後面的0
 
-先转为floag再转为varchar
+先转为float再转为varchar
 
 ```
 CONVERT(varchar(10), cast(a.qty as float))
@@ -394,7 +394,7 @@ select 500 / (501 + 0.0) *100
 26.sql表中如何获得最大时间的记录
 
 ```
-SELECT  * FROM  table   WHERE   MaxTime= (select MAX(MaxTime) from  table) 
+SELECT  top 1 * FROM  table   WHERE   MaxTime= (select MAX(MaxTime) from  table) 
 ```
 
 27.sqlserver以逗号分割的字符串拆分到临时表
