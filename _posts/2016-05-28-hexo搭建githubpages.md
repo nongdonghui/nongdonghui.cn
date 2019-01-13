@@ -1,6 +1,6 @@
 ---
 layout: post
-title: hexo搭建github pages
+title: hexo搭建githubpages
 categories: github
 lastUpdated: 6.16
 ---
