@@ -9,6 +9,46 @@ lastUpdated:
 
 {{ page.date | date: "%Y.%-m.%-d" }} | <a href="/archive#{{ page.categories }}">{{ page.categories}}</a>
 
+常用查询语句
+
+```
+--1.获取当前所有的驱动器
+exec master.dbo.xp_availablemedia
+
+执行结果
+    name	low free	high free	media type
+1    C:\	633081856	3	2
+2    D:\	-2144931840	5	2
+3    E:\	1789870080	3	2
+4    Q:\	-156397568	1	2
+5    F:\	0	0	8
+
+--2.获得子目录列表
+exec master.dbo.xp_subdirs 'd:\'
+
+--3.获得“所有”子目录的目录树结构
+exec master.dbo.xp_dirtree 'd:\'
+
+--4.数据库所有表空间统计脚本
+exec sp_MSForEachTable
+@precommand=N'
+create table ##(
+tname sysname,   --表名称
+num int,    --行数
+rspace nvarchar(10),  --表分配空间总量
+uspace nvarchar(10),  --数据使用空间量
+uindex varchar(10),   --索引使用空间量
+unuser varchar(10))',  --未用空间量
+@command1=N'insert ## exec sp_spaceused ''?''',
+@postcommand=N'select * from ## order by num desc '
+go
+drop table ##
+go
+
+--5.
+
+```
+
 1.存储过程格式规范例子
 
 ```
@@ -124,6 +164,7 @@ WHERE  a.indid NOT IN(0,255)
 5.查询数据库字段
 
 ```
+-- 简化版
 select a.name as col_name,k.remarks,t.name as type,
 case when (t.name='date' or t.name='datetime' or t.name='int' or t.name='text') then '' 
      when t.name='decimal' then cast(a.precision as varchar(10))+','+cast(a.scale as varchar(10))     
@@ -148,6 +189,45 @@ where b.type = 'U'
 and charindex('UDT',t.name,0)<=0 
 and charindex('sys',t.name,0)<=0 
 and b.name ='MM_BNBase'
+
+--完整版
+DECLARE @TableName varchar(20)
+SET @TableName='HR_Duty'
+SELECT
+        (CASE when a.colorder=1 then d.name else '' end) AS 表名,
+        a.colorder 字段序号,
+        a.name 字段名,
+        (case when COLUMNPROPERTY( a.id,a.name,'IsIdentity')=1 then '√'else '' end) 标识,
+        (case when (SELECT count(*)
+        FROM sysobjects
+        WHERE (name in
+                  (SELECT name
+                FROM sysindexes
+                WHERE (id = a.id) AND (indid in
+                          (SELECT indid
+                         FROM sysindexkeys
+                         WHERE (id = a.id) AND (colid in
+                                   (SELECT colid
+                                  FROM syscolumns
+                                  WHERE (id = a.id) AND (name = a.name))))))) AND
+              (xtype = 'PK'))>0 then '√' else '' end) 主键,
+       b.name 类型,
+       a.length 占用字节数,
+       COLUMNPROPERTY(a.id,a.name,'PRECISION') as 长度,
+       isnull(COLUMNPROPERTY(a.id,a.name,'Scale'),0) as 小数位数,
+       (case when a.isnullable=1 then '√'else '' end) 允许空,
+       isnull(e.text,'') 默认值,
+       isnull(g.[value],'') AS 字段说明
+
+FROM syscolumns  a
+    LEFT JOIN systypes b on  a.xtype=b.xusertype
+    inner join sysobjects d on a.id=d.id  and  d.xtype='U' and  d.name<>'dtproperties'
+    left join syscomments e on a.cdefault=e.id
+    left join sys.extended_properties g on a.id=g.major_id AND a.colid = g.minor_id
+WHERE d.name=@TableName    --如果只查询指定表,加上此条件
+order by a.id,a.colorder
+
+SELECT * FROM sys.extended_properties
 ```
 
 6.查看SQL SERVER 数据库正在执行的语句和时长等
@@ -177,6 +257,55 @@ AND session_Id NOT IN (@@SPID)
 ORDER BY DATEDIFF ( millisecond,start_time, GETDATE() ) desc
 ```
 
+7.SQL监控脚本（适用于SQL Server 2005以上）
+
+```
+SELECT  creation_time  N'语句编译时间'
+        ,last_execution_time  N'上次执行时间'
+        ,total_physical_reads N'物理读取总次数'
+        ,total_logical_reads/execution_count N'每次逻辑读次数'
+        ,total_logical_reads  N'逻辑读取总次数'
+        ,total_logical_writes N'逻辑写入总次数'
+        , execution_count  N'执行次数'
+        , total_worker_time/1000 N'所用的CPU总时间ms'
+        , total_elapsed_time/1000  N'总花费时间ms'
+        , (total_elapsed_time / execution_count)/1000  N'平均时间ms'
+        ,SUBSTRING(st.text, (qs.statement_start_offset/2) + 1,
+         ((CASE statement_end_offset
+          WHEN -1 THEN DATALENGTH(st.text)
+          ELSE qs.statement_end_offset END
+            - qs.statement_start_offset)/2) + 1) N'执行语句'
+FROM sys.dm_exec_query_stats AS qs
+CROSS APPLY sys.dm_exec_sql_text(qs.sql_handle) st
+where SUBSTRING(st.text, (qs.statement_start_offset/2) + 1,
+         ((CASE statement_end_offset
+          WHEN -1 THEN DATALENGTH(st.text)
+          ELSE qs.statement_end_offset END
+            - qs.statement_start_offset)/2) + 1) not like '%fetch%'
+ORDER BY  total_elapsed_time / execution_count DESC 
+```
+
+8.查询优化
+
+对数据库查询进行优化，应尽量避免全表扫描，首先应考虑在where 及order by 涉及的列上建立索引
+
+```　
+应尽量避免在 where 子句中对字段进行 null 值判断，否则将导致引擎放弃使用索引而进行全表扫描
+select id from t where num is null
+
+应尽量避免在 where 子句中使用！=或<>操作符，否则将引擎放弃使用索引而进行全表扫描
+
+应尽量避免在 where 子句中使用 or 来连接条件，否则将导致引擎放弃使用索引而进行全表扫描
+
+in 和 not in 也要慎用，否则会导致全表扫描
+
+如果在 where 子句中使用参数，也会导致全表扫描
+
+应尽量避免在 where 子句中对字段进行表达式操作，这将导致引擎放弃使用索引而进行全表扫描
+
+应尽量避免在where子句中对字段进行函数操作，这将导致引擎放弃使用索引而进行全表扫描
+```
+
 **更新列表：**
 
 *
@@ -193,7 +322,13 @@ ORDER BY DATEDIFF ( millisecond,start_time, GETDATE() ) desc
 * [sqlserver查询表索引语句][6]
 * [SQL Server如何查看SQL语句的执行时间][7]
 * [Sqlserver查询表描述和字段相关信息][8]
-* [][9]
+* [查看SQL SERVER 数据库正在执行的语句和时长等][9]
+* [SQL监控脚本（适用于SQL Server 2005以上）][10]
+* [SQL Server 语法收集][11]
+* [SQL Server适用脚本收集一][12]
+* [SQL分页存储过程（适用于SQL2005以上版本）][13]
+* [用sql脚本创建sqlserver数据库范例语句][14]
+* [DB - 常用SQL积累][15]
 
 [1]: http://www.cnblogs.com/sosoft/p/3535696.html
 [2]: https://www.cnblogs.com/Fooo/p/3552861.html
@@ -204,3 +339,9 @@ ORDER BY DATEDIFF ( millisecond,start_time, GETDATE() ) desc
 [7]: https://ld.sogou.com/article?aid=3001586722
 [8]: https://blog.csdn.net/smartsmile2012/article/details/80950906
 [9]: https://blog.csdn.net/fzgjf08/article/details/54580042
+[10]: https://www.cnblogs.com/seer/archive/2013/04/09/3010420.html
+[11]: https://www.cnblogs.com/lollipop/archive/2012/09/12/2681542.html
+[12]: https://www.cnblogs.com/songrun/archive/2013/06/08/3125940.html
+[13]: https://www.cnblogs.com/kingfly/archive/2009/09/10/1564364.html
+[14]: https://www.jb51.net/article/24715.htm
+[15]: https://www.cnblogs.com/raysbo/archive/2008/05/26/1207475.html
