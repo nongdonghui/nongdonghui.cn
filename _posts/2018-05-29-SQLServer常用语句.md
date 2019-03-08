@@ -447,6 +447,51 @@ GROUP BY id;
 
 ```
 
+29.数据字典SQL
+
+```
+DECLARE @TableName varchar(20)
+SET @TableName='MM_BNHead'
+SELECT
+        --(CASE when a.colorder=1 then d.name else '' end) AS 表名,
+        a.colorder 字段序号,
+        a.name 字段名,
+        isnull(g.[value],'') AS 字段说明,        
+        b.name 类型,
+        '' as 创建人,
+        --COLUMNPROPERTY(a.id,a.name,'PRECISION') as 长度,        
+        case when b.name='decimal' then CONVERT(varchar(10),COLUMNPROPERTY(a.id,a.name,'PRECISION')) + ',' + CONVERT(varchar(10),isnull(COLUMNPROPERTY(a.id,a.name,'Scale'),0))
+        else CONVERT(varchar(10),COLUMNPROPERTY(a.id,a.name,'PRECISION')) + '' end as 长度,
+        --isnull(COLUMNPROPERTY(a.id,a.name,'Scale'),0) as 小数位数,
+        (case when a.isnullable=1 then '' else 'Y' end) 是否必填
+        /*,
+        (case when COLUMNPROPERTY( a.id,a.name,'IsIdentity')=1 then '√'else '' end) 标识,
+        (case when (SELECT count(*)
+        FROM sysobjects
+        WHERE (name in
+                  (SELECT name
+                FROM sysindexes
+                WHERE (id = a.id) AND (indid in
+                          (SELECT indid
+                         FROM sysindexkeys
+                         WHERE (id = a.id) AND (colid in
+                                   (SELECT colid
+                                  FROM syscolumns
+                                  WHERE (id = a.id) AND (name = a.name))))))) AND
+              (xtype = 'PK'))>0 then '√' else '' end) 主键,
+       
+       a.length 占用字节数,         
+       isnull(e.text,'') 默认值       
+		*/
+FROM syscolumns  a
+    LEFT JOIN systypes b on  a.xtype=b.xusertype
+    inner join sysobjects d on a.id=d.id  and  d.xtype='U' and  d.name<>'dtproperties'
+    left join syscomments e on a.cdefault=e.id
+    left join sys.extended_properties g on a.id=g.major_id AND a.colid = g.minor_id
+WHERE d.name=@TableName    --如果只查询指定表,加上此条件
+order by a.id,a.colorder
+```
+
 **更新列表：**
 
 *
