@@ -305,6 +305,11 @@ in 和 not in 也要慎用，否则会导致全表扫描
 
 应尽量避免在where子句中对字段进行函数操作，这将导致引擎放弃使用索引而进行全表扫描
 ```
+9.查询相关规范
+
+```
+
+```
 
 **更新列表：**
 
@@ -329,6 +334,9 @@ in 和 not in 也要慎用，否则会导致全表扫描
 * [SQL分页存储过程（适用于SQL2005以上版本）][13]
 * [用sql脚本创建sqlserver数据库范例语句][14]
 * [DB - 常用SQL积累][15]
+* [你可能不知道的 10 条 SQL 技巧，涨知识了！][16]
+* [SQLServer 查看SQL语句的执行时间][17]
+* [看懂SqlServer查询计划][18]
 
 [1]: http://www.cnblogs.com/sosoft/p/3535696.html
 [2]: https://www.cnblogs.com/Fooo/p/3552861.html
@@ -345,3 +353,6 @@ in 和 not in 也要慎用，否则会导致全表扫描
 [13]: https://www.cnblogs.com/kingfly/archive/2009/09/10/1564364.html
 [14]: https://www.jb51.net/article/24715.htm
 [15]: https://www.cnblogs.com/raysbo/archive/2008/05/26/1207475.html
+[16]: https://blog.csdn.net/u011342403/article/details/78737700
+[17]: https://blog.csdn.net/suxuelian/article/details/80198415
+[18]: http://www.cnblogs.com/fish-li/archive/2011/06/06/2073626.html
