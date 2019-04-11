@@ -55,7 +55,7 @@ values
 
 **参考文章：**
 
-* [][1]
+* [MYBATIS 插入空值时报错 TYPEEXCEPTION][1]
 
 
-[1]: 
+[1]: http://www.cnblogs.com/yun965861480/p/6906883.html
