@@ -338,9 +338,15 @@ begin
 			set @strValue=convert(varchar(38),convert(decimal(18,5),@inValue))
 		else
 			set @strValue=convert(varchar(38),convert(decimal(18,6),@inValue))
-	
-	if(@scale = 0 and charindex('.', @strValue)>0) -- 有小数点,舍弃小数点后的0
-		set @strValue=substring(@strValue,0,charindex('.', @strValue))
+		
+	if(@scale = 0 and charindex('.', @strValue)>0) -- 有小数点,四舍五入
+		if (substring(reverse(@strValue),patindex('%[^0]%',reverse(@strValue)),1)='.')
+			set @strValue=substring(@strValue,0,charindex('.', @strValue))
+		else
+			set @strValue =left(@strValue,len(@strValue)- patindex('%[^0]%.%',reverse(@strValue))+1)
+			
+	if(@scale = 0 and charindex('.', @strValue)>0)
+		set @strValue = convert(varchar(38),convert(decimal(18),@strValue))
 	
 	if(@strValue is null or @strValue = '') -- null或空字符
 		set @returnValue=''
