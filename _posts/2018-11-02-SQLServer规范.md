@@ -380,6 +380,46 @@ end
 */
 ```
 
+11.sqlserver中按字符分割字符串
+
+创建函数
+
+```
+--方法1：循环截取法
+CREATE FUNCTION Fun_split(@s     VARCHAR(8000),--待分拆的字符串
+                          @split VARCHAR(10) --数据分隔符
+)
+RETURNS @re TABLE(
+  col VARCHAR(100))
+AS
+  BEGIN
+      DECLARE @splitlen INT
+
+      SET @splitlen=Len(@split + 'a') - 2
+
+      WHILE Charindex(@split, @s) > 0
+        BEGIN
+            INSERT @re
+            VALUES(LEFT(@s, Charindex(@split, @s) - 1))
+
+            SET @s=Stuff(@s, 1, Charindex(@split, @s) + @splitlen, '')
+        END
+
+      INSERT @re
+      VALUES(@s)
+
+      RETURN
+  END
+
+GO
+```
+
+使用方法:因为返回的是一个table,只有一列col,可以直接用
+
+```
+select col as '拆分列表' from dbo.Fun_split('a,b,c,d', ',')
+```
+
 **更新列表：**
 
 *
@@ -406,6 +446,7 @@ end
 * [你可能不知道的 10 条 SQL 技巧，涨知识了！][16]
 * [SQLServer 查看SQL语句的执行时间][17]
 * [看懂SqlServer查询计划][18]
+* [sqlserver字符串拆分(split)方法汇总][19]
 
 [1]: http://www.cnblogs.com/sosoft/p/3535696.html
 [2]: https://www.cnblogs.com/Fooo/p/3552861.html
@@ -425,3 +466,4 @@ end
 [16]: https://blog.csdn.net/u011342403/article/details/78737700
 [17]: https://blog.csdn.net/suxuelian/article/details/80198415
 [18]: http://www.cnblogs.com/fish-li/archive/2011/06/06/2073626.html
+[19]: http://www.cnblogs.com/aierong/archive/2008/11/19/sqlserver_split.html
