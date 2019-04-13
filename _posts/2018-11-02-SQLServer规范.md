@@ -311,6 +311,35 @@ in 和 not in 也要慎用，否则会导致全表扫描
 
 ```
 
+10.去掉字符串后的以0为结尾的小数
+
+```
+create function fun_clear_zero(@inValue varchar(20))
+returns varchar(20)
+as
+begin
+	/*
+	select dbo.fun_clear_zero(null)
+	select dbo.fun_clear_zero('')
+	select dbo.fun_clear_zero('616419')
+	select dbo.fun_clear_zero('616419.00')
+	select dbo.fun_clear_zero('616419.05')
+	select dbo.fun_clear_zero('616419.050')
+	select dbo.fun_clear_zero('616419.50')
+	*/
+	declare @returnValue varchar(20)
+	if(@inValue is null or @inValue = '') -- null或空字符
+		set @returnValue=''
+	else if(charindex('.', @inValue)='0') -- 没有小数点
+		set @returnValue=@inValue
+	else if(substring(reverse(@inValue),patindex('%[^0]%',reverse(@inValue)),1)='.') -- 小数点后全是0的		
+		set @returnValue=left(@inValue,len(@inValue)-patindex('%[^0]%',reverse(@inValue)))
+	else
+		set @returnValue =left(@inValue,len(@inValue)- patindex('%[^0]%.%',reverse(@inValue))+1) -- 小数点后有0
+	return @returnValue		
+end
+```
+
 **更新列表：**
 
 *
