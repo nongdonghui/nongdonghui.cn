@@ -311,33 +311,67 @@ in 和 not in 也要慎用，否则会导致全表扫描
 
 ```
 
-10.去掉字符串后的以0为结尾的小数
+10.sqlserver decimal转换为str,并去掉无效的位数0
 
 ```
-create function fun_clear_zero(@inValue varchar(20))
-returns varchar(20)
+create function fun_dec2str(@inValue decimal(38,18), @scale int, @defaultValue varchar(38))
+returns varchar(38)
 as
 begin
-	/*
-	select dbo.fun_clear_zero(null)
-	select dbo.fun_clear_zero('')
-	select dbo.fun_clear_zero('616419')
-	select dbo.fun_clear_zero('616419.00')
-	select dbo.fun_clear_zero('616419.05')
-	select dbo.fun_clear_zero('616419.050')
-	select dbo.fun_clear_zero('616419.50')
-	*/
-	declare @returnValue varchar(20)
-	if(@inValue is null or @inValue = '') -- null或空字符
-		set @returnValue=''
-	else if(charindex('.', @inValue)='0') -- 没有小数点
-		set @returnValue=@inValue
-	else if(substring(reverse(@inValue),patindex('%[^0]%',reverse(@inValue)),1)='.') -- 小数点后全是0的		
-		set @returnValue=left(@inValue,len(@inValue)-patindex('%[^0]%',reverse(@inValue)))
+	declare @returnValue varchar(38)
+	declare @strValue varchar(38)
+	
+	if (@inValue is null)
+		set @strValue = @defaultValue
 	else
-		set @returnValue =left(@inValue,len(@inValue)- patindex('%[^0]%.%',reverse(@inValue))+1) -- 小数点后有0
-	return @returnValue		
+		if (@scale = 0)
+			set @strValue=convert(varchar(38),@inValue)			
+		else if (@scale = 1)
+			set @strValue=convert(varchar(38),convert(decimal(18,1),@inValue))
+		else if(@scale = 2)
+			set @strValue=convert(varchar(38),convert(decimal(18,2),@inValue))
+		else if(@scale = 3)
+			set @strValue=convert(varchar(38),convert(decimal(18,3),@inValue))
+		else if(@scale = 4)
+			set @strValue=convert(varchar(38),convert(decimal(18,4),@inValue))
+		else if(@scale = 5)
+			set @strValue=convert(varchar(38),convert(decimal(18,5),@inValue))
+		else
+			set @strValue=convert(varchar(38),convert(decimal(18,6),@inValue))
+	
+	if(@scale = 0 and charindex('.', @strValue)>0) -- 有小数点,舍弃小数点后的0
+		set @strValue=substring(@strValue,0,charindex('.', @strValue))
+	
+	if(@strValue is null or @strValue = '') -- null或空字符
+		set @returnValue=''
+	else if(charindex('.', @strValue)=0) -- 没有小数点
+		set @returnValue=@strValue
+	else if(substring(reverse(@strValue),patindex('%[^0]%',reverse(@strValue)),1)='.') -- 小数点后全是0的
+		set @returnValue=left(@strValue,len(@strValue)-patindex('%[^0]%',reverse(@strValue)))
+	else
+		set @returnValue =left(@strValue,len(@strValue)- patindex('%[^0]%.%',reverse(@strValue))+1) -- 小数点后有0
+			
+	return @returnValue	
 end
+
+/*
+    -- 测试用例
+	select dbo.fun_dec2str(null,1,'')        -- expected : 
+	select dbo.fun_dec2str('',1,'')          -- expected : error
+	select dbo.fun_dec2str(616419,0,'')      -- expected : 616419
+	select dbo.fun_dec2str(616419.00,0,'')   -- expected : 616419
+	select dbo.fun_dec2str(616419.05,0,'')   -- expected : 616419
+	select dbo.fun_dec2str(616419.050,0,'')  -- expected : 616419
+	select dbo.fun_dec2str(616419.50,0,'')   -- expected : 616419
+	
+	select dbo.fun_dec2str(null,1,'')        -- expected : 
+	select dbo.fun_dec2str('',1,'')          -- expected : error
+	select dbo.fun_dec2str(616419,1,'')      -- expected : 616419
+	select dbo.fun_dec2str(616419.00,1,'')   -- expected : 616419
+	select dbo.fun_dec2str(616419.05,1,'')   -- expected : 616419.1
+	select dbo.fun_dec2str(616419.050,1,'')  -- expected : 616419.1
+	select dbo.fun_dec2str(616419.50,1,'')   -- expected : 616419.5
+*/
 ```
 
 **更新列表：**
