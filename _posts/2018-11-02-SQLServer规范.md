@@ -420,6 +420,15 @@ GO
 select col as '拆分列表' from dbo.Fun_split('a,b,c,d', ',')
 ```
 
+12.SQLServer判断临时表字段是否存在
+
+```
+if col_length('tempdb.dbo.#TempTB','columnName') is not null
+  print '存在'
+else
+  print '不存在'
+```
+
 **更新列表：**
 
 *
