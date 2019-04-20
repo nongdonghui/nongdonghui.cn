@@ -9,7 +9,7 @@ lastUpdated:
 
 {{ page.date | date: "%Y.%-m.%-d" }} | <a href="/archive#{{ page.categories }}">{{ page.categories}}</a>
 
-  
+在存储过程首行添加set nocount on即可解决问题  
 
 
 **更新列表：**
