@@ -429,6 +429,53 @@ else
   print '不存在'
 ```
 
+13.使用动态语句创建游标
+
+```
+http://www.manjuke.com/2012/11/create-cursor-using-dynamic-sql-query.html
+
+CREATE PROCEDURE [dbo].[Gsp_Create_GenericCursor]
+    /* Parameters */
+    @vQuery        NVARCHAR(MAX)
+    ,@Cursor    CURSOR VARYING OUTPUT
+AS
+BEGIN
+    SET NOCOUNT ON
+    
+    DECLARE 
+        @vSQL        AS NVARCHAR(MAX)
+    
+    SET @vSQL = 'SET @Cursor = CURSOR FORWARD_ONLY STATIC FOR ' + @vQuery + ' OPEN @Cursor;'
+    
+   
+    EXEC sp_executesql
+         @vSQL
+         ,N'@Cursor cursor output'  
+         ,@Cursor OUTPUT;
+END
+
+
+DECLARE @obj AS CURSOR
+DECLARE @i AS INT    
+ 
+ 
+    EXEC dbo.Gsp_Create_GenericCursor 
+        @vQuery = N'SELECT 1 AS FLD1 UNION SELECT 2 UNION SELECT 3 UNION SELECT 4'
+        ,@Cursor = @obj OUTPUT
+        
+        FETCH NEXT FROM @obj INTO @i
+        
+        WHILE (@@FETCH_STATUS = 0)
+        BEGIN
+            PRINT @i
+            
+            FETCH NEXT FROM @obj INTO @i
+        END
+        
+        CLOSE @obj
+        DEALLOCATE @obj
+```
+
 **更新列表：**
 
 *
@@ -456,6 +503,7 @@ else
 * [SQLServer 查看SQL语句的执行时间][17]
 * [看懂SqlServer查询计划][18]
 * [sqlserver字符串拆分(split)方法汇总][19]
+* [Create a Cursor using Dynamic SQL Query][20]
 
 [1]: http://www.cnblogs.com/sosoft/p/3535696.html
 [2]: https://www.cnblogs.com/Fooo/p/3552861.html
@@ -476,3 +524,4 @@ else
 [17]: https://blog.csdn.net/suxuelian/article/details/80198415
 [18]: http://www.cnblogs.com/fish-li/archive/2011/06/06/2073626.html
 [19]: http://www.cnblogs.com/aierong/archive/2008/11/19/sqlserver_split.html
+[20]: http://www.manjuke.com/2012/11/create-cursor-using-dynamic-sql-query.html
