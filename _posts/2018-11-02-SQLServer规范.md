@@ -504,6 +504,7 @@ DECLARE @i AS INT
 * [看懂SqlServer查询计划][18]
 * [sqlserver字符串拆分(split)方法汇总][19]
 * [Create a Cursor using Dynamic SQL Query][20]
+* [SQL 列转行][21]
 
 [1]: http://www.cnblogs.com/sosoft/p/3535696.html
 [2]: https://www.cnblogs.com/Fooo/p/3552861.html
@@ -525,3 +526,4 @@ DECLARE @i AS INT
 [18]: http://www.cnblogs.com/fish-li/archive/2011/06/06/2073626.html
 [19]: http://www.cnblogs.com/aierong/archive/2008/11/19/sqlserver_split.html
 [20]: http://www.manjuke.com/2012/11/create-cursor-using-dynamic-sql-query.html
+[21]: https://blog.csdn.net/vipxiaotian/article/details/4409423
