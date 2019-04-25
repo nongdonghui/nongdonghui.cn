@@ -476,6 +476,42 @@ DECLARE @i AS INT
         DEALLOCATE @obj
 ```
 
+14.查看数据库当前连接数
+
+```
+SELECT * FROM 
+[Master].[dbo].[SYSPROCESSES] WHERE [DBID] 
+IN 
+(
+SELECT 
+   [DBID]
+FROM 
+   [Master].[dbo].[SYSDATABASES] 
+WHERE 
+   NAME='databaseName'
+)
+```
+
+15.如何测试一个SQL查询的响应时间
+
+```
+SELECT SUBSTRING(qt.text, ( qs.statement_start_offset / 2 ) + 1,
+( ( CASE qs.statement_end_offset
+WHEN -1 THEN DATALENGTH(qt.text)
+ELSE qs.statement_end_offset
+END - qs.statement_start_offset ) / 2 ) + 1) ,
+qs.execution_count ,
+qs.total_worker_time as total_worker_time_in_s,
+qs.last_worker_time as last_worker_time_in_ms,
+(qs.total_worker_time /qs.execution_count)/1000 as avg_execution_time_ms,
+qs.last_execution_time
+FROM sys.dm_exec_query_stats qs
+CROSS APPLY sys.dm_exec_sql_text(qs.sql_handle) qt
+ORDER BY qs.last_execution_time DESC
+--这个里面的total_worker_time在不考虑网络传输的情况下，可以看为是响应时间。
+--测试结果：total_worker_time=编译时间+等待时间+执行时间+返回时间
+```
+
 **更新列表：**
 
 *
@@ -505,6 +541,7 @@ DECLARE @i AS INT
 * [sqlserver字符串拆分(split)方法汇总][19]
 * [Create a Cursor using Dynamic SQL Query][20]
 * [SQL 列转行][21]
+* [如何测试一个SQL查询的响应时间][22]
 
 [1]: http://www.cnblogs.com/sosoft/p/3535696.html
 [2]: https://www.cnblogs.com/Fooo/p/3552861.html
@@ -527,3 +564,4 @@ DECLARE @i AS INT
 [19]: http://www.cnblogs.com/aierong/archive/2008/11/19/sqlserver_split.html
 [20]: http://www.manjuke.com/2012/11/create-cursor-using-dynamic-sql-query.html
 [21]: https://blog.csdn.net/vipxiaotian/article/details/4409423
+[22]: http://www.imooc.com/wenda/detail/455392
