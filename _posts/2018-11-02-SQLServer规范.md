@@ -423,6 +423,9 @@ select col as '拆分列表' from dbo.Fun_split('a,b,c,d', ',')
 12.SQLServer判断临时表字段是否存在
 
 ```
+-查询所有列名
+select name from tempdb.sys.columns where object_id = OBJECT_ID('tempdb.dbo.#tempTB')
+
 if col_length('tempdb.dbo.#TempTB','columnName') is not null
   print '存在'
 else
@@ -542,6 +545,7 @@ ORDER BY qs.last_execution_time DESC
 * [Create a Cursor using Dynamic SQL Query][20]
 * [SQL 列转行][21]
 * [如何测试一个SQL查询的响应时间][22]
+* [SQLServer获取临时表列名并判断指定列名是否存在][23]
 
 [1]: http://www.cnblogs.com/sosoft/p/3535696.html
 [2]: https://www.cnblogs.com/Fooo/p/3552861.html
@@ -565,3 +569,4 @@ ORDER BY qs.last_execution_time DESC
 [20]: http://www.manjuke.com/2012/11/create-cursor-using-dynamic-sql-query.html
 [21]: https://blog.csdn.net/vipxiaotian/article/details/4409423
 [22]: http://www.imooc.com/wenda/detail/455392
+[23]: https://www.cnblogs.com/huyueping/p/10342178.html
