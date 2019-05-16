@@ -9,8 +9,11 @@ lastUpdated:
 
 {{ page.date | date: "%Y.%-m.%-d" }} | <a href="/archive#{{ page.categories }}">{{ page.categories}}</a>
 
+注意存储过程第一行需要写明
 
-
+```
+SET NOCOUNT ON;
+```
 
 
 **更新列表：**
@@ -23,6 +26,6 @@ lastUpdated:
 * [][2]
 * [][3]
 
-[1]: 
-[2]: https://blog.csdn.net/zmhzhangminhua/article/details/38704281
+[1]: https://blog.csdn.net/zmhzhangminhua/article/details/38704281
+[2]: 
 [3]: 
