@@ -46,6 +46,11 @@ lastUpdated:
 			show: true,
 			list: [1,2,3,4,5]
 		 },
+         // beforeCreate,created,beforeMount,mounted,beforeUpdate,updated,beforeDestroy,destroyed
+		 created: function () {
+			// `this` points to the v instance
+			console.log('created: count is: ' + this.count)
+		 },
 		 computed: {
 			fullName: function() {
 				return this.firstName + "--" + this.lastName;
