@@ -115,6 +115,14 @@ npm install -g cordova-hot-code-push-cli
   "content_url": "http://192.168.20.186:8099/cordova/www" 
 }
 
+其中update 何时触发进行安装（install）代码热更新
+代码热更新涉及两个主要过程：fetch update 和 install update。前者获取热更新变更文件，后者将获取到的更新文件安装到 App 中生效。
+此字段是针对后者，何时 install update，可选值：
+
+start：应用启动，默认项（install update when application is launched）
+resume：应用从后台恢复（install the update when application is resumed from background state）
+now：下载更新后立即执行（install update as soon as it has been downloaded）
+
 5.执行cordova-hcp build,生成hash文件
 
 6.然后将www文件夹拷贝覆盖http://192.168.20.186:8099/cordova/www文件夹
@@ -218,7 +226,9 @@ if (window.location.protocol === 'file:') {
 * [Vue.js系列之vue-resource（6）][13]
 * [使用cordova-app-loader热更新cordova项目][14]
 * [Cordova热更新插件使用][15]
-* [][16]
+* [cordova-hot-code-push][16]
+* [Cordova 代码热更新][17]
+* [][18]
 
 [1]: https://www.jianshu.com/p/25d797b983cd
 [2]: https://blog.csdn.net/dsb2008dsb/article/details/52159361
@@ -235,4 +245,6 @@ if (window.location.protocol === 'file:') {
 [13]: https://blog.csdn.net/u013778905/article/details/54235906
 [14]: https://my.oschina.net/u/871551/blog/751173
 [15]: https://www.jianshu.com/p/21962c2f322f
-[16]: 
+[16]: https://github.com/nordnet/cordova-hot-code-push
+[17]: https://objcer.com/2017/06/18/cordova-hot-code-push/
+[18]: 
