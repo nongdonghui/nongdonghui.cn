@@ -93,6 +93,35 @@ assetsPublicPath: '',
 npm run dev
 ```
 
+第八步：Cordova热更新插件使用
+
+```
+1.添加自动更新插件
+cordova plugin add cordova-hot-code-push-plugin
+
+2.添加cordova hot code push客户端
+npm install -g cordova-hot-code-push-cli
+
+3.修改config.xml
+<chcp>
+    <auto-download enabled="true" />
+    <auto-install enabled="true" />
+    <config-file url="http://192.168.20.186:8099/cordova/www/chcp.json" />
+</chcp>
+
+4.根目录下新建cordova-hcp.json，内容为
+{ 
+  "update": "start", 
+  "content_url": "http://192.168.20.186:8099/cordova/www" 
+}
+
+5.执行cordova-hcp build,生成hash文件
+
+6.然后将www文件夹拷贝覆盖http://192.168.20.186:8099/cordova/www文件夹
+
+然后app打开时会自动下载更新内容
+```
+
 Q1 使用Websocket异常：
 
 ```
@@ -188,7 +217,8 @@ if (window.location.protocol === 'file:') {
 * [使用 Hooks 自定义 build 过程][12]
 * [Vue.js系列之vue-resource（6）][13]
 * [使用cordova-app-loader热更新cordova项目][14]
-* [][15]
+* [Cordova热更新插件使用][15]
+* [][16]
 
 [1]: https://www.jianshu.com/p/25d797b983cd
 [2]: https://blog.csdn.net/dsb2008dsb/article/details/52159361
@@ -204,4 +234,5 @@ if (window.location.protocol === 'file:') {
 [12]: https://www.ctolib.com/docs-cordova-3x-primer-foundation-c-use-hooks-to-define-build.html
 [13]: https://blog.csdn.net/u013778905/article/details/54235906
 [14]: https://my.oschina.net/u/871551/blog/751173
-[15]: 
+[15]: https://www.jianshu.com/p/21962c2f322f
+[16]: 
