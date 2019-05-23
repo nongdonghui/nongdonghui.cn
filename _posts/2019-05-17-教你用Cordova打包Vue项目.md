@@ -41,6 +41,58 @@ cordova platform add android
 
 ```
 
+第四步：引入cordova.js
+
+```
+在index.html引入cordova.js
+<body>
+    <div id="app"></div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <!-- built files will be auto injected -->
+</body>
+```
+
+第五步：修改src中的main.js
+
+```
+import Vue from 'vue'
+import App from './App'
+import router from './router'
+
+Vue.config.productionTip = false;
+
+document.addEventListener('deviceready', function() {
+    new Vue({
+        el: '#app',
+        router,
+        store,
+        template: '<App/>',
+        components: { App }
+    })
+    window.navigator.splashscreen.hide()
+}, false);
+```
+
+第六步：config文件夹中的index.js文件
+
+```
+修改build和dev中的
+
+assetsSubDirectory: 'static',
+assetsPublicPath: '/',
+
+为
+
+assetsSubDirectory: '',
+assetsPublicPath: '',
+```
+
+第七步：运行
+
+```
+npm run dev
+```
+
 Q1 使用Websocket异常：
 
 ```
@@ -69,6 +121,44 @@ because 'unsafe-eval' is not an allowed source of script in the following Conten
 解救方法：
 修改webpack.dev.conf.js
 设置devtool: 'cheap-module-source-map'
+```
+
+Q2：怎么在运行时引入cordova.js和document.addEventListener('deviceready')
+
+```
+在main.js进行运行时引入，即手机端时引入cordova.js，然后监听硬件设备事件，否则不需要引入：
+
+if (window.location.protocol === 'file:') {
+    const cordovaScript = document.createElement('script');
+	cordovaScript.setAttribute('type', 'text/javascript');
+	cordovaScript.setAttribute('src', 'cordova.js');
+	document.body.appendChild(cordovaScript);
+
+    document.addEventListener('deviceready', function() {
+		cordova.getAppVersion.getVersionNumber().then(function (version) {
+			var versionCode = version; // parseInt(version.toString().replace(/\./g,''));
+			navigator.notification.alert(
+					'当前版本：' + versionCode,		// 对话的消息
+					alertCallback,					// 回调函数
+					'提示',							// 标题
+					'确认'							// 按钮文字
+			);
+			console.log(versionCode);
+		});
+		new Vue({
+			router,
+			store,
+			render: h => h(home)
+		}).$mount('#app');
+		window.navigator.splashscreen.hide();
+	}, false);
+} else {
+    const app = new Vue({
+		router,
+		store,
+		render: h => h(home)
+	}).$mount('#app');
+}
 ```
 
 常用命令：
