@@ -176,6 +176,8 @@ lastUpdated:
 **参考文章：**
 
 * [一个Java后端的Vue自学笔记][1]
+* [Vue.js 教程 (9) : 过渡动画][2]
 
 
 [1]: https://blog.csdn.net/hz_940611/article/details/80544670
+[2]: http://www.cnblogs.com/avon/p/6030875.html

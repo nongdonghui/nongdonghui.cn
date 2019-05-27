@@ -198,6 +198,13 @@ if (window.location.protocol === 'file:') {
 }
 ```
 
+Q3
+"WebSocket connection to 'ws://localhost/Test/socket' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED"
+服务器没开
+
+WebSocket connection to 'wss://192.168.20.186:8099/ld-mobile-server/weigh' failed: Error in connection establishment: net::ERR_CERT_AUTHORITY_INVALID
+证书没有配置
+
 常用命令：
 
 ```
