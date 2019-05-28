@@ -66,14 +66,14 @@ login.http登录运行之后，将token替换配置文件内的token值，再运
 **参考文章：**
 
 * [关于快速测试API接口的一个新技能][1]
-* [][2]
+* [HTTP client in IntelliJ IDEA code editor][2]
 * [][3]
 * [][4]
 * [][5]
 * [][6]
 
 [1]: https://www.jb51.net/article/141856.htm
-[2]: 
+[2]: https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html
 [3]: 
 [4]: 
 [5]: 
