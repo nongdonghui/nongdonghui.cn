@@ -205,6 +205,22 @@ Q3
 WebSocket connection to 'wss://192.168.20.186:8099/ld-mobile-server/weigh' failed: Error in connection establishment: net::ERR_CERT_AUTHORITY_INVALID
 证书没有配置
 
+解决WSS报错：WebSocket connection failed: Error in connection establishment: net::ERR_CERT_AUTHORITY_INVALID
+
+```
+1. 打开 Chrome，新开一个Tab页面。
+
+2. 访问自己的测试域名：https://www.wss.com。
+
+3. 你会发现浏览器告警："您的连接不是私密连接......."。
+
+4. 不要慌，往下面看，点"高级"。
+
+5. 继续点击 "继续前往 www.wss.com（不安全）"。
+
+6. 页面会提示"400 Bad Request......"，不用管，这是因为用HTTP协议访问WSS服务所致，不用管，到这里就可以解决提示错误啦。
+```
+
 常用命令：
 
 ```
@@ -235,7 +251,8 @@ WebSocket connection to 'wss://192.168.20.186:8099/ld-mobile-server/weigh' faile
 * [Cordova热更新插件使用][15]
 * [cordova-hot-code-push][16]
 * [Cordova 代码热更新][17]
-* [][18]
+* [解决WSS报错：WebSocket connection failed: Error in connection establishment: net::ERR_CERT_AUTHORITY_INVALID][18]
+* [][19]
 
 [1]: https://www.jianshu.com/p/25d797b983cd
 [2]: https://blog.csdn.net/dsb2008dsb/article/details/52159361
@@ -254,4 +271,5 @@ WebSocket connection to 'wss://192.168.20.186:8099/ld-mobile-server/weigh' faile
 [15]: https://www.jianshu.com/p/21962c2f322f
 [16]: https://github.com/nordnet/cordova-hot-code-push
 [17]: https://objcer.com/2017/06/18/cordova-hot-code-push/
-[18]: 
+[18]: http://www.blogdaren.com/post-2456.html
+[19]: 
