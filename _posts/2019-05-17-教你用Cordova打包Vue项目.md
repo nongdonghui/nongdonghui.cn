@@ -205,6 +205,10 @@ Q3
 WebSocket connection to 'wss://192.168.20.186:8099/ld-mobile-server/weigh' failed: Error in connection establishment: net::ERR_CERT_AUTHORITY_INVALID
 证书没有配置
 
+Bad Request
+This combination of host and port requires TLS.
+没有使用https访问
+
 解决WSS报错：WebSocket connection failed: Error in connection establishment: net::ERR_CERT_AUTHORITY_INVALID
 
 ```
