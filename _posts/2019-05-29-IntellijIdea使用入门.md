@@ -33,6 +33,8 @@ File-Settings...-Editor-General-Editor Tabs-(Appearance:Placement选择None)即�
 
 * [Editor basics][1]
 * [Intellij IDEA 一些不为人知的技巧][2]
+* [注册][3]
 
 [1]: https://www.jetbrains.com/help/idea/using-code-editor.html
 [2]: https://www.jianshu.com/p/364b94a664ff
+[3]: http://idea.iteblog.com/
