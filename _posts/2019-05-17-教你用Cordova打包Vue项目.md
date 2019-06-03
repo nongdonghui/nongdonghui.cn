@@ -225,6 +225,10 @@ This combination of host and port requires TLS.
 6. 页面会提示"400 Bad Request......"，不用管，这是因为用HTTP协议访问WSS服务所致，不用管，到这里就可以解决提示错误啦。
 ```
 
+Q4.vue文件的乱码问题
+
+编辑器的文件编码设置为utf-8
+
 常用命令：
 
 ```
@@ -256,7 +260,8 @@ This combination of host and port requires TLS.
 * [cordova-hot-code-push][16]
 * [Cordova 代码热更新][17]
 * [解决WSS报错：WebSocket connection failed: Error in connection establishment: net::ERR_CERT_AUTHORITY_INVALID][18]
-* [][19]
+* [vue文件的乱码问题][19]
+* [][20]
 
 [1]: https://www.jianshu.com/p/25d797b983cd
 [2]: https://blog.csdn.net/dsb2008dsb/article/details/52159361
@@ -276,4 +281,5 @@ This combination of host and port requires TLS.
 [16]: https://github.com/nordnet/cordova-hot-code-push
 [17]: https://objcer.com/2017/06/18/cordova-hot-code-push/
 [18]: http://www.blogdaren.com/post-2456.html
-[19]: 
+[19]: https://www.imooc.com/wenda/detail/355085
+[20]: 
