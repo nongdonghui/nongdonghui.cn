@@ -515,6 +515,16 @@ ORDER BY qs.last_execution_time DESC
 --测试结果：total_worker_time=编译时间+等待时间+执行时间+返回时间
 ```
 
+16.删除
+
+```
+DELETE FROM TableA
+WHERE EXISTS (SELECT *
+              FROM TableB
+              WHERE TableB.ID1 = TableA.ID1
+                AND TableB.ID2 = TableA.ID2)
+```
+
 **更新列表：**
 
 *
