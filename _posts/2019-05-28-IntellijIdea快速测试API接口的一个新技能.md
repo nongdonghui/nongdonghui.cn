@@ -65,7 +65,7 @@ login.http登录运行之后，将token替换配置文件内的token值，再运
 
 
 ```
-all.http
+all . http
 
 ### 系统登录
 POST {{url}}/login?username=bgs01&password=111111&deviceId=1
