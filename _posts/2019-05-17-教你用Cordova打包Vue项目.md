@@ -39,6 +39,8 @@ cordova platform add android
 <meta name="msapplication-tap-highlight" content="no">
 <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 
+注意：不打包的时候（浏览器运行时）修改为<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
 ```
 
 第四步：引入cordova.js
@@ -48,7 +50,6 @@ cordova platform add android
 <body>
     <div id="app"></div>
     <script type="text/javascript" src="cordova.js"></script>
-    <!-- built files will be auto injected -->
 </body>
 ```
 
@@ -228,6 +229,8 @@ This combination of host and port requires TLS.
 Q4.vue文件的乱码问题
 
 编辑器的文件编码设置为utf-8
+
+
 
 常用命令：
 
