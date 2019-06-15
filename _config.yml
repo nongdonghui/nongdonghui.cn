@@ -2,7 +2,7 @@ markdown: redcarpet
 highlighter: pygments
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "tables", "with_toc_data"]
-url: https://nongdonghui.github.io/
+url: /
 author:
   name: 'nongdonghui'
   email: '357228560@qq.com'
