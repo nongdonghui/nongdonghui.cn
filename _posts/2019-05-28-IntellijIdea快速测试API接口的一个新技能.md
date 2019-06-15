@@ -62,9 +62,11 @@ login.http登录运行之后，将token替换配置文件内的token值，再运
 
 以下是把登录后的token保存，然后发首页请求的时候直接使用保存的token作为参数
 
-all.http
+
 
 ```
+all.http
+
 ### 系统登录
 POST {{url}}/login?username=bgs01&password=111111&deviceId=1
 Accept : application/json
