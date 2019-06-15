@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SpringBoot+Maven添加本地jar包并package可执行jar包的方法
+title: SpringBoot Maven添加本地jar包并package可执行jar包的方法
 categories: SpringBoot
 lastUpdated:
 ---
