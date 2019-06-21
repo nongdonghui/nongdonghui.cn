@@ -525,6 +525,18 @@ WHERE EXISTS (SELECT *
                 AND TableB.ID2 = TableA.ID2)
 ```
 
+17.查询所有表的数据量
+
+```
+SELECT object_name (i.id) TableName, 
+	   rows as RowCnt 
+FROM sysindexes i 
+INNER JOIN sysObjects o 
+	ON (o.id = i.id AND o.xType = 'U ') 
+WHERE indid < 2 
+ORDER BY RowCnt
+```
+
 **更新列表：**
 
 *
